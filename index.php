@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="IE">
     <link href="https://fonts.googleapis.com/css2?family=Roboto+Slab&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="./Assets/Modules/style.css">
+    <link rel="stylesheet" href="./Assets/Modules/Styles/main.css">
     <title>Collabrate With Influencers!</title>
 </head>
 
@@ -49,6 +49,6 @@
             <div class="line3"></div>
         </div>
     </nav>    
-    <script  src="./Assets/Modules/script.js"></script>
+    <script  src="./Assets/Modules/Scripts/app.js">"></script>
 </body>
 </html>
