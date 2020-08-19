@@ -41,7 +41,6 @@ nav{
     font-size: 18px;
 }
 
-
 .burger{
     display: none;
     cursor: pointer;
@@ -55,7 +54,6 @@ nav{
     box-shadow: inherit;
     transition: all 0.3s ease;
 }
-
 
 .login-register-button li{
     display: flex;
@@ -84,6 +82,7 @@ nav{
     color:white;
     box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
 }
+
 
 @media screen and (max-width:1024px){
     body{
@@ -129,9 +128,7 @@ nav{
 
 }
 
-.nav-active{
-    transform: translateX(0%);
-}
+
 
 @media screen and (max-width:860px){
     .login-register-button li{
@@ -155,6 +152,10 @@ nav{
     }
 }
 
+.nav-active{
+    transform: translateX(0%);
+}
+
 .toggle .line1 {
     transform: rotate(-45deg) translate(-7px,8px);
 }
@@ -166,3 +167,4 @@ nav{
 .toggle .line3 {
     transform: rotate(45deg) translate(-7px,-8px);
 }
+
