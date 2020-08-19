@@ -6,13 +6,13 @@
     <meta http-equiv="X-UA-Compatible" content="IE">
     <link href="https://fonts.googleapis.com/css2?family=Roboto+Slab&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="./Assets/Modules/Styles/main.css">
-    <title>Collabrate With Influencers!</title>
+    <title>Urban Bank | Official Website</title>
 </head>
 
-<body>
+<body>  
     <nav>
         <div class="logo">
-            Logo 
+            <a href=""><img src="./Assets/Images/Bank_Logo/urban_bank_logo.png" alt="Urban Bank"></a>
         </div>
         <ul class="nav-links">
             <li>
