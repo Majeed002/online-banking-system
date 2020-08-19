@@ -49,6 +49,6 @@
             <div class="line3"></div>
         </div>
     </nav>    
-    <script  src="./Assets/Modules/Scripts/app.js">"></script>
+    <script  src="./Assets/Modules/Scripts/app.js"></script>
 </body>
 </html>
