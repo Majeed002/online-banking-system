@@ -6,14 +6,17 @@
     <meta http-equiv="X-UA-Compatible" content="IE">
     <link href="https://fonts.googleapis.com/css2?family=Roboto+Slab&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="./Assets/Modules/Styles/main.css">
-    <title>Collabrate With Influencers!</title>
+    <title>Urban Bank | Official Website</title>
 </head>
 
 <body>
+    <!-- Navigation Bar  of Website-->  
     <nav>
+        <!-- Logo Image of the navbar-->
         <div class="logo">
-            Logo 
+            <a href=""><img src="./Assets/Images/Bank_Logo/urban_bank_logo.png" title="Urban Bank" alt="Bank Logo"></a>
         </div>
+        <!-- NavLinks-->
         <ul class="nav-links">
             <li>
                 <a href="#" >Home</a>
@@ -34,7 +37,7 @@
             </li>
             
         </ul>
-     
+        <!-- Login and Register Button-->
             <ul class="login-register-button">
             <li>
                 <a href="#" >
@@ -42,15 +45,21 @@
                 </a>
             </li>
         </ul> 
-
+        <!--Burger Menu for navbar-->
         <div class="burger">
             <div class="line1"></div>
             <div class="line2"></div>
             <div class="line3"></div>
         </div>
-    </nav>    
-    <script  src="./Assets/Modules/Scripts/app.js"></script>
-
+    </nav>   
+    <!-- End of the Navigation Bar-->
+    <!--
+    <button class="to-top">
+        <a href="#" class="top-top"></a>
+    </button>
+    -->
     
+
+    <script  src="./Assets/Modules/Scripts/app.js"></script> 
 </body>
 </html>
