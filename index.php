@@ -6,6 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE">
     <link href="https://fonts.googleapis.com/css2?family=Roboto+Slab&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="./Assets/Modules/Styles/main.css">
+    <link rel="icon" href="./Assets/Images/Bank_Logo/Title_icon.png" type="png">
     <title>Urban Bank | Official Website</title>
 </head>
 
