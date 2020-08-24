@@ -14,7 +14,7 @@ nav{
     justify-content: space-between;
     align-items: center;
     min-height: 12vh;
-    background-color:#1a2451;
+    background-color: rgb(26, 64, 99);
 }
 /* Logo style*/
 .logo img{
