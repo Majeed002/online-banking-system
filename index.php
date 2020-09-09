@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="IE">
+    <link rel="stylesheet" href="./Assets/Modules/Styles/icons.css">
     <link href="https://fonts.googleapis.com/css2?family=Roboto+Slab&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="./Assets/Modules/Styles/main.css">
     <link rel="icon" href="./Assets/Images/Bank_Logo/Title_icon.png" type="png">
@@ -20,29 +21,30 @@
         <!-- NavLinks-->
         <ul class="nav-links">
             <li>
-                <a href="#" >Home</a>
+                <a href="./index.html" >Home</a>
             </li>
             <li>
                 <a href="#">Services</a>
             </li>
             <li>
-                <a href="#">Blog</a>
+                <a href="#">About Us</a>
+            </li>
+            <li>
+                <a href="#">Blogs</a>
             </li>
             <li>
                 <a href="#">News</a></li>
             <li>
                 <a href="#">Downloads</a>
             </li>
-            <li>
-                <a href="#">About Us</a>
-            </li>
+            
             
         </ul>
         <!-- Login and Register Button-->
             <ul class="login-register-button">
             <li>
-                <a href="#" >
-                    <button>Login/Register</button>
+                <a href="./login.html" >
+                    <button>LOGIN/REGISTER</button>
                 </a>
             </li>
         </ul> 
@@ -54,13 +56,155 @@
         </div>
     </nav>   
     <!-- End of the Navigation Bar-->
+    
+    <div class="img-slider">   
+    </div>
+
+
+
+    <div class="interest-rate-container">
+        <div class="heading-interest-rate">
+            <h2>
+                Interest Rate
+            </h2>
+        </div>
+        <div class="interest-rate-loan-wrapper">
+            <div class="loan" id="personal-loan-card">
+                <div class="loan-title">
+                    <i class="fas fa-wallet" style="color: rgb(122, 92, 63);"></i>
+                    Personal Loan
+                </div>
+                <div class="interest-rate-percentage">
+                    1.5% p.a.
+                </div>
+                <div class="interest-rate-date">
+                    w.e.f. 01.08.2020 
+                </div>
+                <div class="interest-rate-tc">
+                   <a href="#">
+                   *T&C Apply
+                   </a> 
+                </div>
+                <!--
+                     <i class="fas fa-wallet fa-10x bg-img" style="color: rgba(211, 211, 211, 0.774);"></i>
+                -->  
+            </div>
+
+            <div class="loan">
+                <div class="loan-title">
+                    <i class="fas fa-home" style="color: rgb(48, 122, 60);"></i>
+                    Home Loan
+                </div>
+                <div class="interest-rate-percentage">
+                    6.95% p.a.
+                </div>
+                <div class="interest-rate-date">
+                    w.e.f. 01.08.2020 
+                </div>
+                <div class="interest-rate-tc">
+                   <a href="#">
+                   *T&C Apply
+                   </a> 
+                </div>
+            </div>
+
+            <div class="loan">
+                <div class="loan-title">
+                    <i class="fas fa-car" style="color: rgba(184, 41, 5, 0.938);"></i>
+                    Car Loan
+                </div>
+                <div class="interest-rate-percentage">
+                    3.45% p.a.
+                </div>
+                <div class="interest-rate-date">
+                    w.e.f. 01.08.2020 
+                </div>
+                <div class="interest-rate-tc">
+                   <a href="#">
+                   *T&C Apply
+                   </a> 
+                </div>
+            </div>
+
+            <div class="loan">
+                <div class="loan-title">
+                    <i class="fas fa-chart-line" style="color: rgb(9, 162, 209);"></i>
+                    Business Loan
+                </div>
+                <div class="interest-rate-percentage">
+                    8.35% p.a.
+                </div>
+                <div class="interest-rate-date">
+                    w.e.f. 01.08.2020 
+                </div>
+                <div class="interest-rate-tc">
+                   <a href="#">
+                   *T&C Apply
+                   </a> 
+                </div>
+            </div>
+
+            <div class="loan">
+                <div class="loan-title">
+                    <i class="fas fa-coins" style="color: rgb(204, 185, 98);"></i>
+                    Gold Loan
+                </div>
+                <div class="interest-rate-percentage">
+                    6.25% p.a.
+                </div>
+                <div class="interest-rate-date">
+                    w.e.f. 01.08.2020 
+                </div>
+                <div class="interest-rate-tc">
+                   <a href="#">
+                   *T&C Apply
+                   </a> 
+                </div>
+            </div>
+
+            <div class="loan">
+                <div class="loan-title">
+                    <i class="fas fa-graduation-cap" style="color: rgb(75, 75, 75);"></i>
+                    Education Loan
+                </div>
+                <div class="interest-rate-percentage">
+                    3.95% p.a.
+                </div>
+                <div class="interest-rate-date">
+                    w.e.f. 01.08.2020 
+                </div>
+                <div class="interest-rate-tc">
+                   <a href="#">
+                   *T&C Apply
+                   </a> 
+                </div>
+            </div>
+            
+        </div>
+        <div class="button-interest-rate">
+            
+            <a class="btn-interest-rate" href="#" target="_blank">
+                <button  class="btn-interest-rate"type="button" >
+                    <span>Check Eligibility</span>
+                </button>
+            </a>
+           
+        </div>
+    </div>
+    
     <!--
     <button class="to-top">
         <a href="#" class="top-top"></a>
     </button>
     -->
-    
 
+ <!--
+<footer class="main-footer">
+        &copy; 2020 Urban Bank | All Right Reserved  
+    </footer>
+ -->
+    
+    
     <script  src="./Assets/Modules/Scripts/app.js"></script> 
 </body>
 </html>
