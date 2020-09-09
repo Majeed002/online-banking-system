@@ -20,7 +20,7 @@
         <!-- NavLinks-->
         <ul class="nav-links">
             <li>
-                <a href="./index.html" >Home</a>
+                <a href="./index.php" >Home</a>
             </li>
             <li>
                 <a href="#">Services</a>
@@ -96,11 +96,11 @@
                 </div>
                 <div class="forgot-password">
                      Forgot 
-                     <a href="./forgot-username.html">
+                     <a href="./forgot-username.php">
                         <span>Username</span>
                     </a> 
                      or 
-                     <a href="./forgot-password.html">
+                     <a href="./forgot-password.php">
                         <span>Password?</span>
                     </a>
                     

@@ -21,7 +21,7 @@
         <!-- NavLinks-->
         <ul class="nav-links">
             <li>
-                <a href="./index.html" >Home</a>
+                <a href="./index.php" >Home</a>
             </li>
             <li>
                 <a href="#">Services</a>
@@ -43,7 +43,7 @@
         <!-- Login and Register Button-->
             <ul class="login-register-button">
             <li>
-                <a href="./login.html" >
+                <a href="./login.php" >
                     <button>LOGIN/REGISTER</button>
                 </a>
             </li>

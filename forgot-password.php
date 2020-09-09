@@ -24,7 +24,7 @@
             <!-- NavLinks-->
             <ul class="nav-links">
                 <li>
-                    <a href="./index.html" >Home</a>
+                    <a href="./index.php">Home</a>
                 </li>
                 <li>
                     <a href="#">Services</a>
