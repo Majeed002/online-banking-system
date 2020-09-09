@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Anton&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Balsamiq+Sans&family=Roboto+Condensed:wght@300&display=swap');
 /* intial spacing */
 *{
     margin: 0px;
@@ -5,16 +7,19 @@
     box-sizing: border-box;
 }
 body{
-    font-family: 'Roboto Slab', sans-serif;
+    background-image: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+    background-attachment: fixed;
 }
+
 /* Navbar Style*/
 nav{
-    display:flex;
+    display:flex;   
     flex-wrap: wrap;
     justify-content: space-between;
     align-items: center;
     min-height: 12vh;
     background-color: rgb(26, 64, 99);
+    box-shadow: 0px 10px 10px 0px rgb(189, 189, 189);
 }
 /* Logo style*/
 .logo img{
@@ -34,11 +39,13 @@ nav{
     list-style: none;
 }
 .nav-links a {
-    color: #fdca0e;
+    color: whitesmoke;
     text-decoration: none;
     letter-spacing: 1px;
+    font-family: 'Anton', sans-serif;
     font-weight: 550;
-    font-size: 18px;
+    font-size: 20px;
+    text-transform: uppercase;
 }
 
 /*Login and Register button style*/
@@ -50,24 +57,27 @@ nav{
 .login-register-button li button{
     width: 150px;
     min-height: 40px;
-    font-size: 15px;
+    font-size: 0.9rem;
+    font-family: Arial, Helvetica, sans-serif;
     background-color: #fdca0e;
-    color:#1a2451;
+    color:rgb(33, 85, 133);
     font-family: inherit;
+    letter-spacing: 0.5px;
     border-radius: 25px;
     transition: 0.3s ease;
     outline: none;
     box-shadow: none;
-    border: 1px
+    border: 1px;
 }
 .login-register-button button:focus {
     border: 0;
  }
 
 .login-register-button li button:hover{
+    background-image: linear-gradient(to left, rgb(233, 225, 153) 0%, #f0c424 100%);
     z-index: 10px;
-    color:white;
-    box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
+    color: white;
+    box-shadow: 0 12px 16px 0 rgba(161, 161, 161, 0.514), 0 17px 50px 0 rgba(0,0,0,0.19);
 }
 
 /*Burger style*/
@@ -79,11 +89,12 @@ nav{
     width: 40px;
     height: 5px;
     margin: 5px;
-    background-color: #fdca0e;
+    background-color: whitesmoke;
     border-radius: 2px ;
     box-shadow: inherit;
     transition: all 0.3s ease;
 }
+
 
 /*Media Queries for Navbar */
 @media screen and (max-width:1024px){
@@ -95,16 +106,17 @@ nav{
         max-width: 165px;
         padding: 0px 0px 0px 5px;
     }
+    
     .nav-links {
         position: absolute;
         right: 0px;
-        height: 90vh;
-        top: 10vh;
+        height: 88vh;
+        top: 12vh;
         width: 100%;
         display: flex;
         flex-direction: column;
         align-items: center;
-        background-color: #1a2451;
+        background-color: rgb(26, 64, 99);
         transform: translateX(100%);
         transition: transform 0.5s ease-in;
     }
@@ -122,11 +134,11 @@ nav{
     .login-register-button li button{
         width: 120px;
         min-height: 40px;
-        font-size: 13px;
+        font-size: 0.7rem;
     }
     .login-register-button li{
         display: flex;
-        padding-left: 53vw;
+        padding-left: 50vw;
         padding-right: 0px;
         background-color: inherit;
     }
@@ -141,7 +153,7 @@ nav{
         padding: 0px 0px 0px 5px;
     }
     .login-register-button li{
-        padding-left: 40vw;
+        padding-left: 38vw;
     }
 }
 @media screen and (max-width:600px){
@@ -152,7 +164,7 @@ nav{
     }
 
     .login-register-button li{
-        padding-left: 32vw;
+        padding-left: 25vw;
     }
 }
 
@@ -197,3 +209,750 @@ nav{
     width: 100px;
  }
  */
+
+/* Image-slider*/
+.img-slider{
+    width:100%;
+    height:88vh;
+}
+
+.img-slider img{
+    width: 100%;
+    max-width: 100vw;
+    height: 100%;
+}
+@media screen and (max-width:778px){
+    .img-slider{
+        height: 55vh;
+    }
+}
+@media screen and (max-width:600px){
+    .img-slider{
+        height: 55vh;
+    }
+}
+
+.interest-rate-container{
+    height: 100vh;
+ }
+
+#personal-loan-card{
+    background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAOEAAADhCAMAAAAJbSJIAAAAclBMVEUAAAD////o6OhhYWH7+/stLS3w8PDX19c2NjYhISHl5eWjo6OGhoaQkJD5+fmMjIyzs7PIyMiamppbW1tOTk4nJycPDw/R0dGqqqpnZ2dBQUG6urre3t5zc3Nubm4iIiJISEgLCwsaGhp9fX2fn59UVFSMjX5jAAADv0lEQVR4nO3d6XaqMBQF4EQZtIDibEtrtcP7v+LF1gFDCB1O1mnO3d9/19p7qUEwg9LSKe4A3qFh+NAwfGgYPjQMHxqGDw3DZ2+YVMVuND6oP28dL/Ly7rsNN3nMHfyb4iz6RsPshTvvj+STLzbccif9ufIrDdPQPp437vsbFtwZf+nB+km9NoyW3Al/7cVW8dJwsuLOR2DkaJiEOYSaLN/Fc0MJ7+BRe0Q9NVxwJyPT+ioqEaNow9TacMMdi5L5A+6j4Zg7FaXM0vCNOxSph3bDiDsTsaTVcM4diVjVasidiNrUbFhxJ6I2NBvecyeiFpsNuQORWxsNU+5A9IyGAT+36GBcENUrdyByc6Nh+Hf2JvOKL+POt8G8Q+TOQ26rZTe8bz/h733NsEoHwbA93O/pN360vCYs7oKx4x+PULgbDrjjEXAWfOJOR8HZcMadjoKzYdL/+r/vP2+Ycqej4Gz4xp2OgrPhgTsdBWfD9p8AAXI3NO8mQ9TTUC033Al/q69hbT8MxS7fbtr/H4ozLKU3rE0T6Q2VKsQ3VPFAesPrn2zcOTzKxDc8VeRO4dVMfMOPG1zuDH69i294HFC5I3j2LL5hPdhwJ/BtIb6hmnAH8G7GHcA7aXPa2p64A3i35w7gnZQp+gAAAAAAAAAAAAAAAAAAAAAAAMFaL/J58bTnjuFNft6MJKrk7Y9Uy2/2IkkfuPOQa63ZzbkTEbPstZJxZyJl3UxG0jTnjq1W5OzyvLMX1Al3MDKdGx5NuZMR6Tj6QNCb6NjwaM+djUbnISRShtN1d0EtY+XPu6PhI3c4EkNHQxlDzdLRcMAdjoTreyjk5APHFo5C9kJ2XA+FbEnevYmjmKMPOi/5Qj6kjq3VAjjj74s6TgEU9CDj2TqcijrbwTxg5UjItfAsbu03WnJHInd7xMpE4lr0UXn5Nt5JeXzRsijKWZUFd1oqAAAAAAAAAAAAAAAAAABAPzlTprqsuQN4N+IO4J2Q2acOYmfdXMibGGa64w7gnRY+mB6Ulji9r2GshCyL6rRUkiaC27wqaeu9TWXdUPbZa4NjQ8lv4kgfG2rBs22zz4Ypdw5/os+GuuAO4stcnxoK2nnhxkpfGmqZB7CljYbJC3caD950o6GeyBtQP9dkXhrqSNquS6e9UK4NpY2o5wWZzYY6FTTeXBZG3zSUs6R2cV3GZzTUUSbgnv+9uSWY2bC2yYP+sK7y2/XCloa1QVXsRuPgbo1Xy9fto9nF3lASNAwfGoYPDcOHhuFDw/ChYfjkN/wHaHc+JHe8S90AAAAASUVORK5CYII=');
+    background-size: 20rem; 
+    background-repeat: no-repeat;
+    background-blend-mode: hue;
+    background-position: -15px 100px; 
+} 
+.interest-rate-container .heading-interest-rate h2{
+    font-size: 2.2rem;
+    letter-spacing: 0.2px;
+    color: rgb(26, 64, 99);
+    text-align: center;
+    padding-top: 25px;
+    text-transform: uppercase;
+    text-decoration-color: lightsalmon;
+}
+
+.interest-rate-loan-wrapper{
+    display: grid;
+    margin: 20px;
+    grid-gap: 3rem;
+    color: rgb(26, 64, 99);
+    grid-template-columns: repeat(auto-fit, minmax(450px, 1fr));
+    padding: 0em 4em;
+}
+
+.interest-rate-loan-wrapper > div{  
+  background-color: rgba(255, 255, 255, 0.8);
+  height: 350px;
+  width: auto;
+}
+
+.interest-rate-loan-wrapper > div:hover{
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19),
+    0 8px 20px 0 rgba(0, 0, 0, 0.19);
+    transform: scale(1.02);
+    transition: all 0.3s ease-in-out;
+}
+
+.interest-rate-loan-wrapper > div:hover::after{
+    content: '';
+    opacity: 1;
+}
+
+.interest-rate-loan-wrapper .loan .loan-title {
+    text-align: center;
+    padding-top: 3rem;
+    margin-bottom: 20px;
+    font-size: 2.5rem;
+}
+
+.interest-rate-container .loan .interest-rate-percentage{
+    text-align: center;
+    padding-top: 2rem;
+    margin-bottom: 20px;
+    font-size: 2.5rem;
+}
+
+.interest-rate-container .loan .interest-rate-date{
+    text-align: center;
+    padding-top: 0.1rem;
+    margin-bottom: 20px;
+    font-size: 1rem;
+}
+
+.interest-rate-container .loan .interest-rate-tc{
+    text-align: right;
+    padding-top: 3rem;
+    margin-bottom: 20px;
+    font-size: 1rem;
+}
+.interest-rate-container .loan .interest-rate-tc a{
+    text-align: right;
+    padding-top: 3rem;
+    padding-right: 0.5rem;
+    margin-bottom: 20px;
+    font-size: 1rem;
+    text-decoration: none;
+    color: rgb(26, 64, 99);
+}
+
+.button-interest-rate {
+    margin-top: 3rem;
+    margin-bottom: 2rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.button-interest-rate button{
+    height:50px;
+    width: 200px;
+    border: 3px solid rgb(26, 64, 99);
+    font-size: 1rem;
+    text-transform: uppercase;
+    font-weight: bold;
+    background-color: inherit;
+    color: rgb(26, 64, 99);
+    outline: none;
+    box-shadow: none;
+    text-decoration: none;
+}
+
+
+.button-interest-rate button:hover{
+    background-color: rgb(26, 64, 99);
+    color: whitesmoke;
+    transform: scale(1.0);
+    transition: all 0.3s ease-in-out;   
+}
+
+.interest-rate-loan-wrapper .button-interest-rate button:hover::after{
+    content: '';
+    opacity: 1;
+}
+
+
+
+
+@media (max-width:1598px) and (min-width:1025px){
+    .interest-rate-loan-wrapper{
+        grid-template-columns: repeat(auto-fit, minmax(360px, 1fr));
+        padding: 0em 1em;
+    }
+}
+
+@media screen and (max-width:1024px){
+    
+    .interest-rate-loan-wrapper{
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        padding: 0em 1em;
+    }
+}
+
+@media screen and (max-width:778px){
+    
+    .interest-rate-loan-wrapper{
+        grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+        padding: 0em 1em;
+    }
+}
+
+
+@media screen and (max-width:600px){
+    
+    .interest-rate-loan-wrapper{
+        grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+        padding: 0em 1em;
+    }
+}
+
+
+
+/* Footer */
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*
+
+  LOGIN-FORM-PAGE
+
+*/
+
+.user-login-form-container {
+    margin: 3em auto 0em auto;
+    background-color: rgba(255, 255, 255, 0.8);
+    border-radius: 25px;
+    box-shadow: 
+    12px 12px 16px 0 rgba(0, 0, 0, 0.25),
+    -8px -8px 12px 0 rgba(255, 255, 255, 0.301);
+    width: 500px;
+    height: 45rem;
+    padding-top: 25px;
+}
+
+.logo-urban-bank-login{
+    width: 140px  ;
+    height: auto;
+    background-color: rgb(26, 64, 99);
+    margin:  0px auto;
+    border-radius: 50%;
+    box-shadow: 
+    12px 12px 16px 0 rgba(0, 0, 0, 0.404),
+    -8px -8px 12px 0 rgba(255, 255, 255, 0.3);
+}
+.logo-urban-bank-login-img{
+    display: flex;
+    margin-left: auto;
+    margin-right: auto;
+    width: auto;
+    max-width: 120px;
+    height: auto;
+    padding: 10px 0px;
+}
+
+.log-in-title{
+    padding-top: 1.2rem;
+    text-align: center;
+    font-size: 2.5rem;
+    font-weight: 500;
+    font-family: 'Montserrat', sans-serif;
+    color: rgb(26, 64, 99);
+}
+
+.login-credentials div{
+    margin: 2rem 3rem;
+    display: flex;
+    flex-direction: column;
+    align-content: center;
+}
+
+.login-credentials div label{
+    font-size: 1.5rem;
+    color: rgb(26, 64, 99);
+    padding-bottom:0.75rem;
+    padding-left: 0.4rem;
+    
+}
+.login-credentials div input{
+    width: 400px;
+    height: 3rem;
+    outline: none;
+    border: 0px;
+    font-size: 1rem;
+    padding-left: 1rem;
+    border-radius: 25px;
+    box-shadow: inset 20px 20px 60px #d5dde2, 
+            inset -20px -20px 60px #fcfeff;
+}
+
+
+
+
+
+
+
+
+
+
+
+.login-checkbox {
+    margin: auto;
+    font-size: 1.2rem;
+    text-align: center;
+    padding-bottom: 1rem;
+}
+
+.login-checkbox a{
+    color: rgb(26, 64, 99);
+}
+
+
+
+
+
+
+
+
+
+.login-submit-button {
+    margin-top: 1rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.login-submit-button button{
+    height:50px;
+    width: 200px;
+    border-radius: 25px;
+    font-size: 1rem;
+    text-transform: uppercase;
+    font-weight: bold;
+    background-color: rgb(26, 64, 99);
+    color: white;
+    outline: none;
+    box-shadow: 
+    15px 10px 60px 0 #1d1d1d7c, 
+    -20px -20px 60px 0 #fffefe;
+    border : 0px;
+}
+
+.login-submit-button button:focus{
+    border: 0;
+}
+.login-submit-button button:hover{
+    background-color: rgb(15, 81, 146);
+    color: whitesmoke;
+    transform: scale(1.0);
+    transition: all 0.3s ease-in-out; 
+}
+
+.login-submit-button button:hover::after{
+    content: '';
+    opacity: 1;
+}
+
+
+
+.forgot-password {
+    margin: auto;
+    padding-top: 2rem;
+    text-align: center;
+    color: rgb(26, 64, 99);
+    font-size: 1.1rem;
+}
+
+.forgot-password a{
+    text-decoration: none;
+    color: rgb(26, 64, 99);
+    font-size: 1.1rem;
+}
+
+.forgot-password a span:hover{
+    text-decoration: underline;
+}
+
+@media screen and (max-width:600px){
+    .user-login-form-container {
+        width: 400px;
+        height: 41rem;
+    }
+
+    .log-in-title h2{
+        font-size: 2rem;
+    }
+    .logo-urban-bank-login{
+        width: 120px ;
+    }
+    .logo-urban-bank-login-img{
+        max-width: 100px;
+    }
+
+    .login-credentials div label{
+        font-size: 1.3rem;
+        color: rgb(26, 64, 99);
+        padding-bottom: 0.5rem;
+        padding-left: 0.2rem;
+        
+    }
+
+    .login-credentials div input{
+        width: 300px;
+        height: 2.5rem;
+        padding-left: 15px;
+    }
+
+    .login-checkbox label{
+        font-size: 0.95rem;
+    }
+    .login-submit-button {
+        margin-top: 0.5rem;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .login-submit-button button{
+        height:40px;
+        width: 150px;
+        font-size: 0.95rem;
+    }
+
+    
+    .forgot-password , .forgot-password a span {
+        text-decoration: none;
+        color: rgb(26, 64, 99);
+        font-size: 0.95rem;
+    }
+    
+}
+
+
+
+
+
+/*
+
+  FORGOT-PASSWORD-PAGE
+
+*/
+.user-forgot-password-container {
+    margin: 3em auto 0em auto;
+    background-color: rgba(255, 255, 255, 0.8);
+    border-radius: 25px;
+    box-shadow: 
+    12px 12px 16px 0 rgba(0, 0, 0, 0.25),
+    -8px -8px 12px 0 rgba(255, 255, 255, 0.301);
+    width: 500px;
+    height: 40rem;
+    padding-top: 25px;
+}
+
+.logo-urban-bank-login{
+    width: 140px  ;
+    height: auto;
+    background-color: rgb(26, 64, 99);
+    margin:  0px auto;
+    border-radius: 50%;
+    box-shadow: 
+    12px 12px 16px 0 rgba(0, 0, 0, 0.404),
+    -8px -8px 12px 0 rgba(255, 255, 255, 0.3);
+}
+.logo-urban-bank-login-img{
+    display: flex;
+    margin-left: auto;
+    margin-right: auto;
+    width: auto;
+    max-width: 120px;
+    height: auto;
+    padding: 10px 0px;
+}
+
+.forgot-password-title {
+    padding-top: 1.2rem;
+    text-align: center;
+    font-size: 2.5rem;
+    font-weight: 500;
+    font-family: 'Montserrat', sans-serif;
+    color: rgb(26, 64, 99);
+}
+
+.forgot-password-credentials div{
+    margin: 2rem 3rem;
+    display: flex;
+    flex-direction: column;
+    align-content: center;
+}
+
+.forgot-password-credentials div label{
+    font-size: 1.5rem;
+    color: rgb(26, 64, 99);
+    padding-bottom:0.75rem;
+    padding-left: 0.4rem;
+    
+}
+.forgot-password-credentials div input{
+    width: 400px;
+    height: 3rem;
+    outline: none;
+    border: 0px;
+    font-size: 400;
+    padding-left: 10px;
+    border-radius: 25px;
+    box-shadow: inset 20px 20px 60px #d5dde2, 
+            inset -20px -20px 60px #fcfeff;
+}
+
+.forgot-password-send-button {
+    margin-top: 1rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.forgot-password-send-button button{
+    height:50px;
+    width: 200px;
+    border-radius: 25px;
+    font-size: 1rem;
+    text-transform: uppercase;
+    font-weight: bold;
+    background-color: rgb(26, 64, 99);
+    color: white;
+    outline: none;
+    box-shadow: 
+    15px 10px 60px 0 #1d1d1d7c, 
+    -20px -20px 60px 0 #fffefe;
+    border : 0px;
+}
+
+.forgot-password-send-button button:focus{
+    border: 0;
+}
+.forgot-password-send-button button:hover{
+    background-color: rgb(15, 81, 146);
+    color: whitesmoke;
+    transform: scale(1.0);
+    transition: all 0.3s ease-in-out; 
+}
+
+.forgot-password-send-button button:hover::after{
+    content: '';
+    opacity: 1;
+}
+
+
+@media screen and (max-width:600px){
+    .user-forgot-password-container {
+        width: 400px;
+        height: 36rem;
+    }
+
+    .forgot-password-title h2{
+        font-size: 2rem;
+    }
+    .logo-urban-bank-login{
+        width: 120px ;
+    }
+    .logo-urban-bank-login-img{
+        max-width: 100px;
+    }
+
+    .forgot-password-credentials div label{
+        font-size: 1.3rem;
+        color: rgb(26, 64, 99);
+        padding-bottom: 0.5rem;
+        padding-left: 0.2rem;
+        
+    }
+
+    .forgot-password-credentials div input{
+        width: 300px;
+        height: 2.5rem;
+        padding-left: 15px;
+    }
+    .forgot-password-send-button {
+        margin-top: 0.5rem;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .forgot-password-send-button button{
+        height:40px;
+        width: 150px;
+        font-size: 0.95rem;
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+/*
+
+Vinay Registration Form
+
+*/
+
+
+
+.wrapper{
+    max-width: 500px;
+    width: 100%;
+    margin: 25px auto;
+    background: #fff;
+    padding: 25px;
+    
+
+}
+.wrapper .title{
+  font-size: 24px;
+  font-weight: 700;
+  margin-bottom: 27px;
+  color: rgb(94, 153, 94);
+  text-transform: uppercase;
+  text-align: center;
+}
+.wrapper .form{
+  width: 75%;
+  
+}
+
+.wrapper .form .inpu_field{
+  margin-bottom: 25px;
+  
+  display: flex;
+  align-items: center;
+
+}
+.wrapper .form .inpu_field .label{
+  width: 200px;
+  color: rgb(38, 117, 38);
+  margin-right: 15px;
+  margin-left: 15px;
+  font-size:  30px;
+}
+.wrapper .form .inpu_field .input,
+.wrapper .form .inpu_field .textarea
+{
+  width: 100%;
+  height: 100%;
+  outline: none;
+  border: 1px solid rgb(24, 37, 24);
+  font-size: 15px;
+  margin-right: 15px;
+  margin-left: 80px;
+  padding: 8px 10px;
+  border-radius: 3px;
+  transition: all 0.3s ease;
+}
+.wrapper .form .inpu_field .textarea{
+  resize: none;
+  height: 120px;
+}
+.wrapper .form .inpu_field .custom_select{
+  position: relative;
+  width: 100%;
+  height: 37px;
+}
+.wrapper .form .inpu_field .custom_select select{
+  -webkit-appearance: none;
+  appearance: none;
+  border: 1px solid green;
+  width: 100%;
+  height: 100%;
+  /* margin-right: 20px; */
+  margin-left: 60px;
+  padding: 8px 10px;
+  border-radius: 3px;
+}
+.wrapper .form .inpu_field .custom_select:before{
+  content: "";
+  position: absolute;
+  top: 15px;
+  right: 1%;
+  border: 8px solid;
+  border-color: red transparent transparent;
+  pointer-events: none;
+}
+.wrapper .form .inpu_field  p{
+  font-size: 15px;
+  color: green;
+  text-align: center;
+  display: flex;
+  margin-left: 50px;
+}
+.wrapper .form .inpu_field .check{
+  width: 15px;
+  height: 15px;
+  position: relative;
+  display: block;
+  cursor: pointer;
+}
+.wrapper .form .inpu_field .check input[type="checkbox"]{
+  position: absolute;
+  top: 0;
+  left: 0;
+  opacity: 1;
+
+}
+.wrapper .form .inpu_field .check .checkmark{
+  width: 15px;
+  height: 15px;
+  border: 1px solid green;
+  display: block;
+  position: relative;
+}
+.buttons{
+  width: 100%;
+  margin-left: 50px;
+  margin-right: 50px;
+  padding: 8px 10px;
+  text-align: center;
+  background: green;
+  color: yellow;
+  
+ 
+}
+.wrapper .form .inpu_field:last-child{
+  margin-bottom: 0;
+}
+.wrapper .form .inpu_field .buttons:hover{
+  background: rgb(99, 110, 99);
+}
+@media (max-width: 420px){
+  .wrapper .form .inpu_field{
+    flex-direction: column;
+    align-items: flex-start;
+
+  }
+  .wrapper .form .inpu_field .label{
+    margin-bottom: 5px;
+  }
+  .wrapper .form .inpu_field.terms{
+    flex-direction: row;
+  }
+}
