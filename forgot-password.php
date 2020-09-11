@@ -21,35 +21,14 @@
             <div class="logo">
                 <a href=""><img src="./Assets/Images/Bank_Logo/urban_bank_logo.png" title="Urban Bank" alt="Bank Logo"></a>
             </div>
-            <!-- NavLinks-->
-            <ul class="nav-links">
-                <li>
-                    <a href="./index.php">Home</a>
-                </li>
-                <li>
-                    <a href="#">Services</a>
-                </li>
-                <li>
-                    <a href="#">About Us</a>
-                </li>
-                <li>
-                    <a href="#">Blogs</a>
-                </li>
-                <li>
-                    <a href="#">News</a></li>
-                <li>
-                    <a href="#">Downloads</a>
-                </li>
-                
-                
-            </ul>
-                
-            <!--Burger Menu for navbar-->
-            <div class="burger">
-                <div class="line1"></div>
-                <div class="line2"></div>
-                <div class="line3"></div>
-            </div>
+            <!-- Login and Register Button-->
+            <ul class="login-register-button">
+            <li>
+                <a href="./login.php" >
+                    <button>BACK TO LOGIN</button>
+                </a>
+            </li>
+        </ul> 
         </nav>   
         <!-- End of the Navigation Bar-->
     
@@ -83,7 +62,7 @@
                                 <i class="far fa-envelope" style="color: rgb(26, 64, 99);"></i>
                                 Email-ID
                             </label>
-                            <input id="user_mail" name="user_mail"  type="email" required>
+                            <input id="user_mail" name="user_mail"  type="email" placeholder="Enter your email-id..." required>
                         </div>
                     </div>
     

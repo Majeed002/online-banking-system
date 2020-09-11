@@ -49,16 +49,27 @@ nav{
 }
 
 /*Login and Register button style*/
-.login-register-button li{
+.login-register-button, 
+.admin-login-button{
     display: flex;
     padding-right:20px;
 }
 
-.login-register-button li button{
+.login-register-button li, 
+.admin-login-button li{
+    list-style: none;
+    
+}
+
+
+.login-register-button li button,
+.admin-login-button li button
+{
     width: 150px;
     min-height: 40px;
     font-size: 0.9rem;
     font-family: Arial, Helvetica, sans-serif;
+    text-decoration: none;
     background-color: #fdca0e;
     color:rgb(33, 85, 133);
     font-family: inherit;
@@ -69,11 +80,14 @@ nav{
     box-shadow: none;
     border: 1px;
 }
-.login-register-button button:focus {
+.login-register-button button:focus,
+.admin-login-button button:focus {
     border: 0;
  }
 
-.login-register-button li button:hover{
+.login-register-button li button:hover,
+.admin-login-button li button:hover
+{
     background-image: linear-gradient(to left, rgb(233, 225, 153) 0%, #f0c424 100%);
     z-index: 10px;
     color: white;
@@ -131,12 +145,15 @@ nav{
       right: 0px;
       padding-right: 4vw; 
     }
-    .login-register-button li button{
+    .login-register-button li button,
+    .admin-login-button li button
+    {
         width: 120px;
         min-height: 40px;
         font-size: 0.7rem;
     }
-    .login-register-button li{
+    .login-register-button li,
+    .admin-login-button li{
         display: flex;
         padding-left: 50vw;
         padding-right: 0px;
@@ -152,7 +169,8 @@ nav{
         max-width: 160px;
         padding: 0px 0px 0px 5px;
     }
-    .login-register-button li{
+    .login-register-button li,
+    .admin-login-button li{
         padding-left: 38vw;
     }
 }
@@ -163,7 +181,8 @@ nav{
         padding: 0px 0px 0px 5px;
     }
 
-    .login-register-button li{
+    .login-register-button li,
+    .admin-login-button li{
         padding-left: 25vw;
     }
 }
@@ -474,7 +493,7 @@ nav{
     color: rgb(26, 64, 99);
 }
 
-.login-credentials div{
+.login-credentials div {
     margin: 2rem 3rem;
     display: flex;
     flex-direction: column;
@@ -488,6 +507,17 @@ nav{
     padding-left: 0.4rem;
     
 }
+
+.login-credentials div .error-messages{
+    color: red;
+    font-size: 1rem;
+}
+
+.login-checkbox .error-messages{
+    color: red;
+    font-size: 1rem;
+}
+
 .login-credentials div input{
     width: 400px;
     height: 3rem;
@@ -497,7 +527,7 @@ nav{
     padding-left: 1rem;
     border-radius: 25px;
     box-shadow: inset 20px 20px 60px #d5dde2, 
-            inset -20px -20px 60px #fcfeff;
+                inset -20px -20px 60px #fcfeff;
 }
 
 

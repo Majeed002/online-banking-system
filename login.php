@@ -1,3 +1,4 @@
+<?php include './Includes/UserDashboard-inc/user-login.php' ?>
 <!DOCTYPE html>
 <html lang="en">
     <head>
@@ -15,37 +16,16 @@
     <nav>
         <!-- Logo Image of the navbar-->
         <div class="logo">
-            <a href=""><img src="./Assets/Images/Bank_Logo/urban_bank_logo.png" title="Urban Bank" alt="Bank Logo"></a>
+            <a href="./index.php"><img src="./Assets/Images/Bank_Logo/urban_bank_logo.png" title="Urban Bank" alt="Bank Logo"></a>
         </div>
-        <!-- NavLinks-->
-        <ul class="nav-links">
+       <!-- Online Register Button-->
+       <ul class="admin-login-button">
             <li>
-                <a href="./index.php" >Home</a>
+                <a href="./admin.php" >
+                    <button>ADMIN LOGIN</button>
+                </a>
             </li>
-            <li>
-                <a href="#">Services</a>
-            </li>
-            <li>
-                <a href="#">About Us</a>
-            </li>
-            <li>
-                <a href="#">Blogs</a>
-            </li>
-            <li>
-                <a href="#">News</a></li>
-            <li>
-                <a href="#">Downloads</a>
-            </li>
-            
-            
         </ul>
-            
-        <!--Burger Menu for navbar-->
-        <div class="burger">
-            <div class="line1"></div>
-            <div class="line2"></div>
-            <div class="line3"></div>
-        </div>
     </nav>   
     <!-- End of the Navigation Bar-->
 
@@ -62,34 +42,36 @@
             </div>
 
             
-            <form action="/" method="GET">
+            <form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>" method="POST">
                 <div class="login-credentials">
                      <div>    
                         <label for="username">
                             <i class="far fa-user" style="color: rgb(26, 64, 99);"></i>
-                            Username
+                            Username <span class="error-messages"> <?php echo $usernameErr; ?> </span>
                         </label>
-                        <input id="username" name="username"  type="text" placeholder="Enter your username..." required>
+                        <input id="username" name="username"  type="text" value="<?php $username; ?>" placeholder="Enter your username..." >
                     </div>
 
                         
 
                     <div>
-                        <label for="login_pwd">
+                        <label for="user_login_pwd">
                             <i class="fas fa-key" style="color: rgb(26, 64, 99);"></i>
-                            Password
+                            Password <span class="error-messages"> <?php echo $user_login_pwdErr; ?> </span>
                         </label>
-                        <input id="login_pwd" name="login_pwd"  type="password" placeholder="Enter your password..." required>
+                        <input id="user_login_pwd" name="user_login_pwd" value="<?php $user_login_pwd; ?>" type="password" placeholder="Enter your password..." >
                     </div>
                 </div>
 
                 <div class="login-checkbox">
-                    <input type="checkbox" name="remember-me" id="remember-me" required>
-                    <label for="remember-me"> I agree <a href="">Terms</a> and <a href="">Condition</a>  </label>  
+                    <input type="checkbox" name="tnc" id="tnc" value="Agreed">
+                    <label for="tnc"> I agree <a href="">Terms</a> and <a href="">Condition</a></label>
+                    <br> 
+                    <span class="error-messages"> <?php echo $tncErr; ?> </span> 
                 </div>
 
                  <div class="login-submit-button"> 
-                    <button type="Submit" disabled  >
+                    <button type="Submit">
                     <i class="fas fa-unlock-alt" style="color: whitesmoke;"></i>
                         Log In
                      </button>
