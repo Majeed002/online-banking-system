@@ -69,6 +69,7 @@
             </h2>
         </div>
         <div class="interest-rate-loan-wrapper">
+
             <div class="loan" id="personal-loan-card">
                 <div class="loan-title">
                     <i class="fas fa-wallet" style="color: rgb(122, 92, 63);"></i>
@@ -90,7 +91,7 @@
                 -->  
             </div>
 
-            <div class="loan">
+            <div class="loan" id="home-loan-card">
                 <div class="loan-title">
                     <i class="fas fa-home" style="color: rgb(48, 122, 60);"></i>
                     Home Loan
@@ -108,7 +109,7 @@
                 </div>
             </div>
 
-            <div class="loan">
+            <div class="loan" id="Car-loan-card">
                 <div class="loan-title">
                     <i class="fas fa-car" style="color: rgba(184, 41, 5, 0.938);"></i>
                     Car Loan
@@ -126,7 +127,7 @@
                 </div>
             </div>
 
-            <div class="loan">
+            <div class="loan" id="business-loan-card">
                 <div class="loan-title">
                     <i class="fas fa-chart-line" style="color: rgb(9, 162, 209);"></i>
                     Business Loan
@@ -144,7 +145,7 @@
                 </div>
             </div>
 
-            <div class="loan">
+            <div class="loan" id="gold-loan-card">
                 <div class="loan-title">
                     <i class="fas fa-coins" style="color: rgb(204, 185, 98);"></i>
                     Gold Loan
@@ -162,7 +163,7 @@
                 </div>
             </div>
 
-            <div class="loan">
+            <div class="loan" id="education-loan-card">
                 <div class="loan-title">
                     <i class="fas fa-graduation-cap" style="color: rgb(75, 75, 75);"></i>
                     Education Loan

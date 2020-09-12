@@ -256,12 +256,53 @@ nav{
  }
 
 #personal-loan-card{
-    background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAOEAAADhCAMAAAAJbSJIAAAAclBMVEUAAAD////o6OhhYWH7+/stLS3w8PDX19c2NjYhISHl5eWjo6OGhoaQkJD5+fmMjIyzs7PIyMiamppbW1tOTk4nJycPDw/R0dGqqqpnZ2dBQUG6urre3t5zc3Nubm4iIiJISEgLCwsaGhp9fX2fn59UVFSMjX5jAAADv0lEQVR4nO3d6XaqMBQF4EQZtIDibEtrtcP7v+LF1gFDCB1O1mnO3d9/19p7qUEwg9LSKe4A3qFh+NAwfGgYPjQMHxqGDw3DZ2+YVMVuND6oP28dL/Ly7rsNN3nMHfyb4iz6RsPshTvvj+STLzbccif9ufIrDdPQPp437vsbFtwZf+nB+km9NoyW3Al/7cVW8dJwsuLOR2DkaJiEOYSaLN/Fc0MJ7+BRe0Q9NVxwJyPT+ioqEaNow9TacMMdi5L5A+6j4Zg7FaXM0vCNOxSph3bDiDsTsaTVcM4diVjVasidiNrUbFhxJ6I2NBvecyeiFpsNuQORWxsNU+5A9IyGAT+36GBcENUrdyByc6Nh+Hf2JvOKL+POt8G8Q+TOQ26rZTe8bz/h733NsEoHwbA93O/pN360vCYs7oKx4x+PULgbDrjjEXAWfOJOR8HZcMadjoKzYdL/+r/vP2+Ycqej4Gz4xp2OgrPhgTsdBWfD9p8AAXI3NO8mQ9TTUC033Al/q69hbT8MxS7fbtr/H4ozLKU3rE0T6Q2VKsQ3VPFAesPrn2zcOTzKxDc8VeRO4dVMfMOPG1zuDH69i294HFC5I3j2LL5hPdhwJ/BtIb6hmnAH8G7GHcA7aXPa2p64A3i35w7gnZQp+gAAAAAAAAAAAAAAAAAAAAAAAMFaL/J58bTnjuFNft6MJKrk7Y9Uy2/2IkkfuPOQa63ZzbkTEbPstZJxZyJl3UxG0jTnjq1W5OzyvLMX1Al3MDKdGx5NuZMR6Tj6QNCb6NjwaM+djUbnISRShtN1d0EtY+XPu6PhI3c4EkNHQxlDzdLRcMAdjoTreyjk5APHFo5C9kJ2XA+FbEnevYmjmKMPOi/5Qj6kjq3VAjjj74s6TgEU9CDj2TqcijrbwTxg5UjItfAsbu03WnJHInd7xMpE4lr0UXn5Nt5JeXzRsijKWZUFd1oqAAAAAAAAAAAAAAAAAABAPzlTprqsuQN4N+IO4J2Q2acOYmfdXMibGGa64w7gnRY+mB6Ulji9r2GshCyL6rRUkiaC27wqaeu9TWXdUPbZa4NjQ8lv4kgfG2rBs22zz4Ypdw5/os+GuuAO4stcnxoK2nnhxkpfGmqZB7CljYbJC3caD950o6GeyBtQP9dkXhrqSNquS6e9UK4NpY2o5wWZzYY6FTTeXBZG3zSUs6R2cV3GZzTUUSbgnv+9uSWY2bC2yYP+sK7y2/XCloa1QVXsRuPgbo1Xy9fto9nF3lASNAwfGoYPDcOHhuFDw/ChYfjkN/wHaHc+JHe8S90AAAAASUVORK5CYII=');
+    background-image: url('/Assets/Images/Home-page/wallet-solid.svg');
     background-size: 20rem; 
     background-repeat: no-repeat;
     background-blend-mode: hue;
     background-position: -15px 100px; 
 } 
+
+#home-loan-card{
+    background-image: url('/Assets/Images/Home-page/ir-home-icon.png');
+    background-size: 20rem; 
+    background-repeat: no-repeat;
+    background-blend-mode: hue;
+    background-position: -15px 100px; 
+}
+
+#car-loan-card{
+    background-image: url('/Assets/Images/Home-page/ir-car-icon.png');
+    background-size: 20rem; 
+    background-repeat: no-repeat;
+    background-blend-mode: hue;
+    background-position: -15px 100px; 
+}
+
+#business-loan-card{
+    background-image: url('/Assets/Images/Home-page/ir-business-icon.png');
+    background-size: 20rem; 
+    background-repeat: no-repeat;
+    background-blend-mode: hue;
+    background-position: -15px 100px; 
+}
+
+#gold-loan-card{
+    background-image: url('/Assets/Images/Home-page/ir-gold-icon.png');
+    background-size: 20rem; 
+    background-repeat: no-repeat;
+    background-blend-mode: hue;
+    background-position: -15px 100px; 
+}
+
+#education-loan-card{
+    background-image: url('/Assets/Images/Home-page/ir-education-icon.png');
+    background-size: 20rem; 
+    background-repeat: no-repeat;
+    background-blend-mode: hue;
+    background-position: -15px 100px; 
+}
+
 .interest-rate-container .heading-interest-rate h2{
     font-size: 2.2rem;
     letter-spacing: 0.2px;
