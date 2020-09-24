@@ -22,7 +22,7 @@
                 <a href=""><img src="./Assets/Images/Bank_Logo/urban_bank_logo.png" title="Urban Bank" alt="Bank Logo"></a>
             </div>
             <!-- Login and Register Button-->
-            <ul class="login-register-button">
+            <ul class="user-login-button">
             <li>
                 <a href="./login.php" >
                     <button>BACK TO LOGIN</button>
@@ -35,8 +35,8 @@
         <!--Forgot Password Form-->
             <div class="user-forgot-password-container">
     
-                <div class="logo-urban-bank-login">
-                    <img src="./Assets/Images/Login-Register/logo_urban_bank_login.png" alt="urban-bank" class="logo-urban-bank-login-img">
+                <div class="logo-urban-bank-form">
+                    <img src="./Assets/Images/Login-Register/logo_urban_bank_login.png" alt="urban-bank" class="logo-urban-bank-form-img">
                 </div>
     
                 <div class="forgot-password-title">

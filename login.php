@@ -8,6 +8,7 @@
         <link rel="stylesheet" href="./Assets/Modules/Styles/icons.css">
         <link href="https://fonts.googleapis.com/css2?family=Roboto+Slab&display=swap" rel="stylesheet">
         <link rel="stylesheet" href="./Assets/Modules/Styles/main.css">
+        <script  defer src="./Assets/Modules/Scripts/app.js"></script>
         <link rel="icon" href="./Assets/Images/Bank_Logo/Title_icon.png" type="png">
         <title>User Login | Urban Bank</title>
     </head>
@@ -29,30 +30,28 @@
     </nav>   
     <!-- End of the Navigation Bar-->
 
-    <!--Login and Register Form-->
-    <div class="user-login-register-container">
+    <!--Login Form-->
         <div class="user-login-form-container">
 
-            <div class="logo-urban-bank-login">
-                <img src="./Assets/Images/Login-Register/logo_urban_bank_login.png" alt="urban-bank" class="logo-urban-bank-login-img">
+            <div class="logo-urban-bank-form">
+                <img src="./Assets/Images/Login-Register/logo_urban_bank_login.png" alt="urban-bank" class="logo-urban-bank-form-img">
             </div>
 
             <div class="log-in-title">
                 <h2 class="log-in-title">User Login</h2>
             </div>
-
-            
+                        
             <form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>" method="POST">
+                
                 <div class="login-credentials">
-                     <div>    
+                    <div>    
                         <label for="username">
                             <i class="far fa-user" style="color: rgb(26, 64, 99);"></i>
-                            Username <span class="error-messages"> <?php echo $usernameErr; ?> </span>
+                            Username 
+                            <span class="error-messages"> <?php echo $usernameErr; ?> </span>
                         </label>
                         <input id="username" name="username"  type="text" value="<?php $username; ?>" placeholder="Enter your username..." >
                     </div>
-
-                        
 
                     <div>
                         <label for="user_login_pwd">
@@ -85,21 +84,16 @@
                      <a href="./forgot-password.php">
                         <span>Password?</span>
                     </a>
-                    
-
                 </div>  
-             </form>
+                
+                
+                <div class="ol-register-link">
+                Didn't Registered Online?<a href="./reg.php">Register Online.</a>
+                </div>
+            </form>
             
         </div>
-    </div>
 
-
-
-
-
-
-
-
-    <script  src="./Assets/Modules/Scripts/app.js"></script>
+    
 </body>
 </html>

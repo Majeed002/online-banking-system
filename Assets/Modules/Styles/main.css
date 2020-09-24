@@ -26,7 +26,8 @@ nav{
     width: 100%;
     max-width: 230px;
     height: auto;
-    padding: 5px;
+    padding: 5px 0px;
+    margin-left: 0.75rem;
 }
 /* Nav Links*/
 .nav-links{
@@ -44,26 +45,41 @@ nav{
     letter-spacing: 1px;
     font-family: 'Anton', sans-serif;
     font-weight: 550;
-    font-size: 20px;
+    font-size: 23px;
     text-transform: uppercase;
+    transition: 0.5s;
+}
+
+.nav-links a:hover{
+    color: #f0c424;
+    transition: all 0.3s ease-in-out;
+}
+/* To highlight the current page. */
+.nav-links .current{
+    color: #f0c424;
+    font-size: 25px;
+    transition: all 0.3s ease-in;
 }
 
 /*Login and Register button style*/
 .login-register-button, 
-.admin-login-button{
+.admin-login-button,
+.user-login-button{
     display: flex;
     padding-right:20px;
 }
 
 .login-register-button li, 
-.admin-login-button li{
+.admin-login-button li,
+.user-login-button li{
     list-style: none;
     
 }
 
 
 .login-register-button li button,
-.admin-login-button li button
+.admin-login-button li button,
+.user-login-button li button
 {
     width: 150px;
     min-height: 40px;
@@ -86,7 +102,8 @@ nav{
  }
 
 .login-register-button li button:hover,
-.admin-login-button li button:hover
+.admin-login-button li button:hover,
+.user-login-button li button:hover
 {
     background-image: linear-gradient(to left, rgb(233, 225, 153) 0%, #f0c424 100%);
     z-index: 10px;
@@ -107,6 +124,13 @@ nav{
     border-radius: 2px ;
     box-shadow: inherit;
     transition: all 0.3s ease;
+}
+
+@media screen and (max-width:1110px){
+
+    .logo img{
+        max-width: 185px;
+    }
 }
 
 
@@ -146,16 +170,18 @@ nav{
       padding-right: 4vw; 
     }
     .login-register-button li button,
-    .admin-login-button li button
+    .admin-login-button li button,
+    .user-login-button li button
     {
         width: 120px;
         min-height: 40px;
         font-size: 0.7rem;
     }
     .login-register-button li,
-    .admin-login-button li{
+    .admin-login-button li,
+    .user-login-button li{
         display: flex;
-        padding-left: 50vw;
+        padding-left: 46vw;
         padding-right: 0px;
         background-color: inherit;
     }
@@ -166,24 +192,26 @@ nav{
 
 @media screen and (max-width:778px){
     .logo img{
-        max-width: 160px;
+        max-width: 165px;
         padding: 0px 0px 0px 5px;
     }
     .login-register-button li,
-    .admin-login-button li{
-        padding-left: 38vw;
+    .admin-login-button li,
+    .user-login-button li{
+        padding-left: 32vw;
     }
 }
 @media screen and (max-width:600px){
     
     .logo img{
-        max-width: 150px;
+        max-width: 160px;
         padding: 0px 0px 0px 5px;
     }
 
     .login-register-button li,
-    .admin-login-button li{
-        padding-left: 25vw;
+    .admin-login-button li,
+    .user-login-button li{
+        padding-left: 20vw;
     }
 }
 
@@ -201,7 +229,7 @@ nav{
 
 /* Navlinks Transform animation*/
 .nav-active{
-    transform: translateX(0%);
+    transform: translateX(0%); 
 }
 
 /*Burger Transform */
@@ -256,11 +284,7 @@ nav{
  }
 
 #personal-loan-card{
-    background-image: url('/Assets/Images/Home-page/wallet-solid.svg');
-    background-size: 20rem; 
-    background-repeat: no-repeat;
-    background-blend-mode: hue;
-    background-position: -15px 100px; 
+    background-image: url("/Assets/Images/Home-page/wallet-solid.svg");
 } 
 
 #home-loan-card{
@@ -494,19 +518,20 @@ nav{
 */
 
 .user-login-form-container {
-    margin: 3em auto 0em auto;
+    margin: 2.5em auto 0em auto;
     background-color: rgba(255, 255, 255, 0.8);
     border-radius: 25px;
     box-shadow: 
     12px 12px 16px 0 rgba(0, 0, 0, 0.25),
     -8px -8px 12px 0 rgba(255, 255, 255, 0.301);
     width: 500px;
-    height: 45rem;
-    padding-top: 25px;
+    height: auto;
+    padding-top: 1.5rem;
+    padding-bottom: 1.5rem;
 }
 
-.logo-urban-bank-login{
-    width: 140px  ;
+.logo-urban-bank-form{
+    width: 138px;
     height: auto;
     background-color: rgb(26, 64, 99);
     margin:  0px auto;
@@ -515,27 +540,26 @@ nav{
     12px 12px 16px 0 rgba(0, 0, 0, 0.404),
     -8px -8px 12px 0 rgba(255, 255, 255, 0.3);
 }
-.logo-urban-bank-login-img{
+.logo-urban-bank-form-img{
     display: flex;
     margin-left: auto;
     margin-right: auto;
     width: auto;
     max-width: 120px;
     height: auto;
-    padding: 10px 0px;
 }
 
 .log-in-title{
-    padding-top: 1.2rem;
+    padding-top: 0.75rem;
     text-align: center;
     font-size: 2.5rem;
-    font-weight: 500;
+    font-weight: 550;
     font-family: 'Montserrat', sans-serif;
     color: rgb(26, 64, 99);
 }
 
 .login-credentials div {
-    margin: 2rem 3rem;
+    margin: 1.25rem 3rem;
     display: flex;
     flex-direction: column;
     align-content: center;
@@ -642,7 +666,7 @@ nav{
 
 .forgot-password {
     margin: auto;
-    padding-top: 2rem;
+    padding-top: 2.5rem;
     text-align: center;
     color: rgb(26, 64, 99);
     font-size: 1.1rem;
@@ -654,23 +678,41 @@ nav{
     font-size: 1.1rem;
 }
 
+.forgot-password a span{
+    color: rgb(177, 127, 19);
+}
+
 .forgot-password a span:hover{
     text-decoration: underline;
+}
+
+
+.ol-register-link{
+    margin: auto;
+    padding-top: 1.5rem;
+    text-align: center;
+    color: rgb(26, 64, 99);
+    font-size: 1.1rem;
+}
+
+.ol-register-link a{
+    text-decoration: underline;
+    color: rgb(177, 127, 19);
+    font-size: 1.1rem;
 }
 
 @media screen and (max-width:600px){
     .user-login-form-container {
         width: 400px;
-        height: 41rem;
     }
 
     .log-in-title h2{
         font-size: 2rem;
     }
-    .logo-urban-bank-login{
+    .logo-urban-bank-form{
         width: 120px ;
     }
-    .logo-urban-bank-login-img{
+    .logo-urban-bank-form-img{
         max-width: 100px;
     }
 
@@ -706,14 +748,231 @@ nav{
 
     
     .forgot-password , .forgot-password a span {
-        text-decoration: none;
-        color: rgb(26, 64, 99);
-        font-size: 0.95rem;
+        font-size: 1rem;
+    }
+
+    .ol-register-link ,.ol-register-link a {
+        font-size: 1rem;
     }
     
 }
 
 
+/*
+
+ ONLINE-REGISTRATION-PAGE
+
+*/
+
+.user-ol-register-form-container {
+    margin: 2.5em auto 0em auto;
+    background-color: rgba(255, 255, 255, 0.8);
+    border-radius: 25px;
+    box-shadow: 
+    12px 12px 16px 0 rgba(0, 0, 0, 0.25),
+    -8px -8px 12px 0 rgba(255, 255, 255, 0.301);
+    width: 500px;
+    height: auto;
+    padding-top: 1.5rem;
+    padding-bottom: 1.5rem;
+}
+
+.ol-register-title{
+    padding-top: 0.75rem;
+    text-align: center;
+    font-size: 2.5rem;
+    font-weight: 550;
+    font-family: 'Montserrat', sans-serif;
+    color: rgb(26, 64, 99);
+}
+
+.ol-register-credentials div {
+    margin: 1.25rem 3rem;
+    display: flex;
+    flex-direction: column;
+    align-content: center;
+}
+
+.ol-register-credentials div label{
+    font-size: 1.5rem;
+    color: rgb(26, 64, 99);
+    padding-bottom:0.75rem;
+    padding-left: 0.4rem;
+    
+}
+
+.ol-register-credentials div .error-messages{
+    color: red;
+    font-size: 1rem;
+}
+
+.ol-register-checkbox .error-messages{
+    color: red;
+    font-size: 1rem;
+}
+
+.ol-register-credentials div input{
+    width: 400px;
+    height: 3rem;
+    outline: none;
+    border: 0px;
+    font-size: 1rem;
+    padding-left: 1rem;
+    border-radius: 25px;
+    box-shadow: inset 20px 20px 60px #d5dde2, 
+                inset -20px -20px 60px #fcfeff;
+}
+
+
+
+
+
+
+
+
+
+
+
+.ol-register-checkbox {
+    margin: auto;
+    font-size: 1.2rem;
+    text-align: center;
+    padding-bottom: 1rem;
+}
+
+.ol-register-checkbox a{
+    color: rgb(26, 64, 99);
+}
+
+
+
+
+
+
+
+
+
+.ol-register-button {
+    margin-top: 1rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.ol-register-button button{
+    height:50px;
+    width: 200px;
+    border-radius: 25px;
+    font-size: 1rem;
+    text-transform: uppercase;
+    font-weight: bold;
+    background-color: rgb(26, 64, 99);
+    color: white;
+    outline: none;
+    box-shadow: 
+    15px 10px 60px 0 #1d1d1d7c, 
+    -20px -20px 60px 0 #fffefe;
+    border : 0px;
+}
+
+.ol-register-button button:focus{
+    border: 0;
+}
+.ol-register-button button:hover{
+    background-color: rgb(15, 81, 146);
+    color: whitesmoke;
+    transform: scale(1.0);
+    transition: all 0.3s ease-in-out; 
+}
+
+.ol-register-button button:hover::after{
+    content: '';
+    opacity: 1;
+}
+
+
+
+.forgot-password {
+    margin: auto;
+    padding-top: 2.5rem;
+    text-align: center;
+    color: rgb(26, 64, 99);
+    font-size: 1.1rem;
+}
+
+.forgot-password a{
+    text-decoration: none;
+    color: rgb(26, 64, 99);
+    font-size: 1.1rem;
+}
+
+.forgot-password a span{
+    color: rgb(177, 127, 19);
+}
+
+.forgot-password a span:hover{
+    text-decoration: underline;
+}
+
+
+.register-process-link{
+    margin: auto;
+    padding-top: 1.5rem;
+    text-align: center;
+    color: rgb(26, 64, 99);
+    font-size: 1.1rem;
+}
+
+.register-process-link a{
+    text-decoration: underline;
+    color: rgb(177, 127, 19);
+    font-size: 1.1rem;
+}
+
+@media screen and (max-width:600px){
+    .user-ol-register-form-container {
+        width: 400px;
+    }
+
+    .ol-register-title h2{
+        font-size: 2rem;
+    }
+
+    .ol-register-credentials div label{
+        font-size: 1.3rem;
+        color: rgb(26, 64, 99);
+        padding-bottom: 0.5rem;
+        padding-left: 0.2rem;
+        
+    }
+
+    .ol-register-credentials div input{
+        width: 300px;
+        height: 2.5rem;
+        padding-left: 15px;
+    }
+
+    .ol-register-checkbox label{
+        font-size: 0.95rem;
+    }
+    .ol-register-button {
+        margin-top: 0.5rem;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .ol-register-button button{
+        height:40px;
+        width: 150px;
+        font-size: 0.95rem;
+    }
+
+    .ol-register-link ,.ol-register-link a {
+        font-size: 1rem;
+    }
+    
+}
 
 
 
@@ -730,8 +989,8 @@ nav{
     12px 12px 16px 0 rgba(0, 0, 0, 0.25),
     -8px -8px 12px 0 rgba(255, 255, 255, 0.301);
     width: 500px;
-    height: 40rem;
-    padding-top: 25px;
+    height: auto;
+    padding: 2rem 0rem 2.5rem 0rem;
 }
 
 .logo-urban-bank-login{
@@ -831,7 +1090,7 @@ nav{
 @media screen and (max-width:600px){
     .user-forgot-password-container {
         width: 400px;
-        height: 36rem;
+        height: auto;
     }
 
     .forgot-password-title h2{
@@ -1027,3 +1286,5 @@ Vinay Registration Form
     flex-direction: row;
   }
 }
+
+

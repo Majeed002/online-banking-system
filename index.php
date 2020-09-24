@@ -7,6 +7,7 @@
     <link rel="stylesheet" href="./Assets/Modules/Styles/icons.css">
     <link href="https://fonts.googleapis.com/css2?family=Roboto+Slab&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="./Assets/Modules/Styles/main.css">
+    <script defer src="./Assets/Modules/Scripts/app.js"></script>
     <link rel="icon" href="./Assets/Images/Bank_Logo/Title_icon.png" type="png">
     <title>Urban Bank | Official Website</title>
 </head>
@@ -21,10 +22,10 @@
         <!-- NavLinks-->
         <ul class="nav-links">
             <li>
-                <a href="./index.php" >Home</a>
+                <a class="current" href="./index.php" >Home</a>
             </li>
             <li>
-                <a href="#">Services</a>
+                <a  href="./services.php">Services</a>
             </li>
             <li>
                 <a href="#">About Us</a>
@@ -206,6 +207,6 @@
  -->
     
     
-    <script  src="./Assets/Modules/Scripts/app.js"></script> 
+     
 </body>
 </html>
