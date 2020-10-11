@@ -10,7 +10,7 @@
     <link rel="stylesheet" href="./Assets/Modules/Styles/main.css">
     <script  defer src="./Assets/Modules/Scripts/app.js"></script>
     <link rel="icon" href="./Assets/Images/Bank_Logo/Title_icon.png" type="png">
-    <title>Urban Bank | Official Website</title>
+    <title>Online Register | Urban Bank </title>
 </head>
 
 <body>

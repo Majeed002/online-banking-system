@@ -58,11 +58,11 @@
                             <i class="fas fa-key" style="color: rgb(26, 64, 99);"></i>
                             Password <span class="error-messages"> <?php echo $user_login_pwdErr; ?> </span>
                         </label>
-                        <input id="user_login_pwd" name="user_login_pwd" value="<?php $user_login_pwd; ?>" type="password" placeholder="Enter your password..." >
+                        <input id="admin_login_pwd" name="admin_login_pwd" value="<?php $user_login_pwd; ?>" type="password" placeholder="Enter your password..." >
                     </div>
                 </div>
 
-                 <div class="login-submit-button"> 
+                 <div class="admin-login-submit-button"> 
                     <button type="Submit">
                     <i class="fas fa-unlock-alt" style="color: whitesmoke;"></i>
                         Log In
