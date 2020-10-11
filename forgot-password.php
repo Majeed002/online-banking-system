@@ -62,7 +62,7 @@
                                 <i class="far fa-envelope" style="color: rgb(26, 64, 99);"></i>
                                 Email-ID
                             </label>
-                            <input id="user_mail" name="user_mail"  type="email" placeholder="Enter your email-id..." required>
+                            <input id="user_mail" name="user_mail"  type="email" placeholder="Enter your email id..." required>
                         </div>
                     </div>
     

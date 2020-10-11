@@ -46,30 +46,30 @@
                 
                 <div class="ol-register-credentials">
                     <div>    
-                        <label for="username">
+                        <label for="account_no">
                             <i class="far fa-user" style="color: rgb(26, 64, 99);"></i>
                             Account Number
                             <span class="error-messages"> <?php echo $usernameErr; ?> </span>
                         </label>
-                        <input id="username" name="username"  type="text" value="<?php $username; ?>" placeholder="Enter your username..." >
+                        <input id="account_no" name="account_no"  type="text" value="<?php $username; ?>" placeholder="Enter bank account number..." >
                     </div>
 
                     <div>
-                        <label for="user_login_pwd">
+                        <label for="aadhaar_no">
                             <i class="far fa-id-card style="color: rgb(26, 64, 99);"></i>
                             Aadhaar Number 
                             <span class="error-messages"> <?php echo $user_login_pwdErr; ?> </span>
                         </label>
-                        <input id="user_login_pwd" name="user_login_pwd" value="<?php $user_login_pwd; ?>" type="password" placeholder="Enter your password..." >
+                        <input id="aadhaar_no" name="aadhaar_no" value="<?php $user_login_pwd; ?>" type="password" placeholder="Enter your aadhaar number..." >
                     </div>
 
                     <div>    
-                        <label for="username">
+                        <label for="dob">
                             <i class="far fa-calendar-alt" style="color: rgb(26, 64, 99);"></i>
                             Date of Birth 
                             <span class="error-messages"> <?php echo $usernameErr; ?> </span>
                         </label>
-                        <input id="username" name="username"  type="date" value="<?php $username; ?>" placeholder="Enter your username..." >
+                        <input id="dob" name="dob"  type="date" value="<?php $username; ?>" placeholder="Enter your Birthdate..." >
                     </div>
                 </div>
 

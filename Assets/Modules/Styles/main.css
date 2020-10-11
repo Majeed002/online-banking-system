@@ -1041,8 +1041,8 @@ nav{
     height: 3rem;
     outline: none;
     border: 0px;
-    font-size: 400;
-    padding-left: 10px;
+    font-size: 1rem;
+    padding-left: 1rem;
     border-radius: 25px;
     box-shadow: inset 20px 20px 60px #d5dde2, 
             inset -20px -20px 60px #fcfeff;
@@ -1130,161 +1130,162 @@ nav{
     }
 }
 
-
-
-
-
-
-
-
-
-
-
-
 /*
 
-Vinay Registration Form
+  FORGOT-USERNAME-PAGE
 
 */
-
-
-
-.wrapper{
-    max-width: 500px;
-    width: 100%;
-    margin: 25px auto;
-    background: #fff;
-    padding: 25px;
-    
-
-}
-.wrapper .title{
-  font-size: 24px;
-  font-weight: 700;
-  margin-bottom: 27px;
-  color: rgb(94, 153, 94);
-  text-transform: uppercase;
-  text-align: center;
-}
-.wrapper .form{
-  width: 75%;
-  
+.user-forgot-username-container {
+    margin: 3em auto 0em auto;
+    background-color: rgba(255, 255, 255, 0.8);
+    border-radius: 25px;
+    box-shadow: 
+    12px 12px 16px 0 rgba(0, 0, 0, 0.25),
+    -8px -8px 12px 0 rgba(255, 255, 255, 0.301);
+    width: 500px;
+    height: auto;
+    padding: 2rem 0rem 2.5rem 0rem;
 }
 
-.wrapper .form .inpu_field{
-  margin-bottom: 25px;
-  
-  display: flex;
-  align-items: center;
+.logo-urban-bank-login{
+    width: 140px  ;
+    height: auto;
+    background-color: rgb(26, 64, 99);
+    margin:  0px auto;
+    border-radius: 50%;
+    box-shadow: 
+    12px 12px 16px 0 rgba(0, 0, 0, 0.404),
+    -8px -8px 12px 0 rgba(255, 255, 255, 0.3);
+}
+.logo-urban-bank-login-img{
+    display: flex;
+    margin-left: auto;
+    margin-right: auto;
+    width: auto;
+    max-width: 120px;
+    height: auto;
+    padding: 10px 0px;
+}
 
+.forgot-username-title {
+    padding-top: 1.2rem;
+    text-align: center;
+    font-size: 2.5rem;
+    font-weight: 500;
+    font-family: 'Montserrat', sans-serif;
+    color: rgb(26, 64, 99);
 }
-.wrapper .form .inpu_field .label{
-  width: 200px;
-  color: rgb(38, 117, 38);
-  margin-right: 15px;
-  margin-left: 15px;
-  font-size:  30px;
-}
-.wrapper .form .inpu_field .input,
-.wrapper .form .inpu_field .textarea
-{
-  width: 100%;
-  height: 100%;
-  outline: none;
-  border: 1px solid rgb(24, 37, 24);
-  font-size: 15px;
-  margin-right: 15px;
-  margin-left: 80px;
-  padding: 8px 10px;
-  border-radius: 3px;
-  transition: all 0.3s ease;
-}
-.wrapper .form .inpu_field .textarea{
-  resize: none;
-  height: 120px;
-}
-.wrapper .form .inpu_field .custom_select{
-  position: relative;
-  width: 100%;
-  height: 37px;
-}
-.wrapper .form .inpu_field .custom_select select{
-  -webkit-appearance: none;
-  appearance: none;
-  border: 1px solid green;
-  width: 100%;
-  height: 100%;
-  /* margin-right: 20px; */
-  margin-left: 60px;
-  padding: 8px 10px;
-  border-radius: 3px;
-}
-.wrapper .form .inpu_field .custom_select:before{
-  content: "";
-  position: absolute;
-  top: 15px;
-  right: 1%;
-  border: 8px solid;
-  border-color: red transparent transparent;
-  pointer-events: none;
-}
-.wrapper .form .inpu_field  p{
-  font-size: 15px;
-  color: green;
-  text-align: center;
-  display: flex;
-  margin-left: 50px;
-}
-.wrapper .form .inpu_field .check{
-  width: 15px;
-  height: 15px;
-  position: relative;
-  display: block;
-  cursor: pointer;
-}
-.wrapper .form .inpu_field .check input[type="checkbox"]{
-  position: absolute;
-  top: 0;
-  left: 0;
-  opacity: 1;
 
-}
-.wrapper .form .inpu_field .check .checkmark{
-  width: 15px;
-  height: 15px;
-  border: 1px solid green;
-  display: block;
-  position: relative;
-}
-.buttons{
-  width: 100%;
-  margin-left: 50px;
-  margin-right: 50px;
-  padding: 8px 10px;
-  text-align: center;
-  background: green;
-  color: yellow;
-  
- 
-}
-.wrapper .form .inpu_field:last-child{
-  margin-bottom: 0;
-}
-.wrapper .form .inpu_field .buttons:hover{
-  background: rgb(99, 110, 99);
-}
-@media (max-width: 420px){
-  .wrapper .form .inpu_field{
+.forgot-username-credentials div{
+    margin: 2rem 3rem;
+    display: flex;
     flex-direction: column;
-    align-items: flex-start;
-
-  }
-  .wrapper .form .inpu_field .label{
-    margin-bottom: 5px;
-  }
-  .wrapper .form .inpu_field.terms{
-    flex-direction: row;
-  }
+    align-content: center;
 }
+
+.forgot-username-credentials div label{
+    font-size: 1.5rem;
+    color: rgb(26, 64, 99);
+    padding-bottom:0.75rem;
+    padding-left: 0.5rem;
+    
+}
+.forgot-username-credentials div input{
+    width: 400px;
+    height: 3rem;
+    outline: none;
+    border: 0px;
+    font-size: 1rem;
+    padding-left: 1rem;
+    border-radius: 25px;
+    box-shadow: inset 20px 20px 60px #d5dde2, 
+            inset -20px -20px 60px #fcfeff;
+}
+
+.forgot-username-send-button {
+    margin-top: 1rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.forgot-username-send-button button{
+    height:50px;
+    width: 200px;
+    border-radius: 25px;
+    font-size: 1rem;
+    text-transform: uppercase;
+    font-weight: bold;
+    background-color: rgb(26, 64, 99);
+    color: white;
+    outline: none;
+    box-shadow: 
+    15px 10px 60px 0 #1d1d1d7c, 
+    -20px -20px 60px 0 #fffefe;
+    border : 0px;
+}
+
+.forgot-username-send-button button:focus{
+    border: 0;
+}
+.forgot-username-send-button button:hover{
+    background-color: rgb(15, 81, 146);
+    color: whitesmoke;
+    transform: scale(1.0);
+    transition: all 0.3s ease-in-out; 
+}
+
+.forgot-username-send-button button:hover::after{
+    content: '';
+    opacity: 1;
+}
+
+
+@media screen and (max-width:600px){
+    .user-forgot-username-container {
+        width: 400px;
+        height: auto;
+    }
+
+    .forgot-username-title h2{
+        font-size: 2rem;
+    }
+    .logo-urban-bank-login{
+        width: 120px ;
+    }
+    .logo-urban-bank-login-img{
+        max-width: 100px;
+    }
+
+    .forgot-username-credentials div label{
+        font-size: 1.3rem;
+        color: rgb(26, 64, 99);
+        padding-bottom: 0.5rem;
+        padding-left: 0.2rem;
+        
+    }
+
+    .forgot-username-credentials div input{
+        width: 300px;
+        height: 2.5rem;
+        padding-left: 15px;
+    }
+    .forgot-username-send-button {
+        margin-top: 0.5rem;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .forgot-username-send-button button{
+        height:40px;
+        width: 150px;
+        font-size: 0.95rem;
+    }
+}
+
+
+
+
 
 

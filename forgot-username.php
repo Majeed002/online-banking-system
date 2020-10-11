@@ -33,30 +33,30 @@
         <!-- End of the Navigation Bar-->
     
         <!--Forgot Password Form-->
-            <div class="user-forgot-password-container">
+            <div class="user-forgot-username-container">
     
                 <div class="logo-urban-bank-form">
                     <img src="./Assets/Images/Login-Register/logo_urban_bank_login.png" alt="urban-bank" class="logo-urban-bank-form-img">
                 </div>
     
-                <div class="forgot-password-title">
-                    <h2 class="forgot-password-title">Reset Password</h2>
+                <div class="forgot-username-title">
+                    <h2 class="forgot-username-title">Reset Username</h2>
                 </div>
     
                 
                 <form action="/" method="GET">
-                    <div class="forgot-password-credentials">  
+                    <div class="forgot-username-credentials">  
     
                         <div>
                             <label for="user_mail">
                                 <i class="far fa-envelope" style="color: rgb(26, 64, 99);"></i>
                                 Email-ID
                             </label>
-                            <input id="user_mail" name="user_mail"  type="email" placeholder="Enter your email-id..." required>
+                            <input id="user_mail" name="user_mail"  type="email" placeholder="Enter your email id..." required>
                         </div>
                     </div>
     
-                     <div class="forgot-password-send-button"> 
+                     <div class="forgot-username-send-button"> 
                         <button type="Submit">
                         <i class="far fa-paper-plane" style="color: whitesmoke;"></i>
                             Send to mail

@@ -22,8 +22,8 @@
        <!-- Online Register Button-->
        <ul class="admin-login-button">
             <li>
-                <a href="./admin-login.php" >
-                    <button>ADMIN LOGIN</button>
+                <a href="./login.php" >
+                    <button>USER LOGIN</button>
                 </a>
             </li>
         </ul>
@@ -31,42 +31,35 @@
     <!-- End of the Navigation Bar-->
 
     <!--Login Form-->
-        <div class="user-login-form-container">
+        <div class="admin-login-form-container">
 
             <div class="logo-urban-bank-form">
                 <img src="./Assets/Images/Login-Register/logo_urban_bank_login.png" alt="urban-bank" class="logo-urban-bank-form-img">
             </div>
 
             <div class="log-in-title">
-                <h2 class="log-in-title">User Login</h2>
+                <h2 class="log-in-title">Admin Login</h2>
             </div>
                         
             <form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>" method="POST">
                 
-                <div class="login-credentials">
+                <div class="admin-login-credentials">
                     <div>    
-                        <label for="username">
-                            <i class="far fa-user" style="color: rgb(26, 64, 99);"></i>
-                            Username 
+                        <label for="admin_mail">
+                            <i class="far fa-envelope" style="color: rgb(26, 64, 99);"></i>
+                            Email-ID 
                             <span class="error-messages"> <?php echo $usernameErr; ?> </span>
                         </label>
-                        <input id="username" name="username"  type="text" value="<?php $username; ?>" placeholder="Enter your username..." >
+                        <input id="admin_mail" name="admin_mail"  type="text" value="<?php $username; ?>" placeholder="Enter your email-id..." >
                     </div>
 
                     <div>
-                        <label for="user_login_pwd">
+                        <label for="admin_login_pwd">
                             <i class="fas fa-key" style="color: rgb(26, 64, 99);"></i>
                             Password <span class="error-messages"> <?php echo $user_login_pwdErr; ?> </span>
                         </label>
                         <input id="user_login_pwd" name="user_login_pwd" value="<?php $user_login_pwd; ?>" type="password" placeholder="Enter your password..." >
                     </div>
-                </div>
-
-                <div class="login-checkbox">
-                    <input type="checkbox" name="tnc" id="tnc" value="Agreed">
-                    <label for="tnc"> I agree <a href="">Terms</a> and <a href="">Condition</a></label>
-                    <br> 
-                    <span class="error-messages"> <?php echo $tncErr; ?> </span> 
                 </div>
 
                  <div class="login-submit-button"> 
@@ -75,21 +68,13 @@
                         Log In
                      </button>
                 </div>
+
                 <div class="forgot-password">
                      Forgot 
-                     <a href="./forgot-username.php">
-                        <span>Username</span>
-                    </a> 
-                     or 
                      <a href="./forgot-password.php">
                         <span>Password?</span>
                     </a>
                 </div>  
-                
-                
-                <div class="ol-register-link">
-                Didn't Registered Online?<a href="./ol-registration.php">Register Online.</a>
-                </div>
             </form>
             
         </div>
