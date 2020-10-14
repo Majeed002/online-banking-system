@@ -12,6 +12,8 @@
     <title>Urban Bank | Official Website</title>
 </head>
 <body>
+<div id="services-container">
+    <div id="services-main">
     <!-- Navigation Bar  of Website-->  
     <nav>
         <!-- Logo Image of the navbar-->
@@ -56,8 +58,26 @@
         </div>
     </nav>   
     <!-- End of the Navigation Bar-->
-    <h1 style="height:200vh;">Services</h1>
+    
+    </div>   
+ </div>
 
+<footer id="main-footer">
+        <div class="contact-follow-container">
+            
+            <div class="contact-us-container">
+                <div class="contact-us-title">
+                    CONTACT US
+                </div>
+            </div>
+            
+            <div class="follow-us-container">
+                <div class="follow-us-title">
+                    FOLLOW US
+                </div>
+            </div>
+        </div> 
+    </footer>
 
 </body>
 </html>
