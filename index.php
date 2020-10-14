@@ -13,6 +13,8 @@
 </head>
 
 <body>
+<div id="homepage-container">
+    <div id="homepage-main">
     <!-- Navigation Bar  of Website-->  
     <nav>
         <!-- Logo Image of the navbar-->
@@ -200,13 +202,27 @@
     </button>
     -->
 
- <!--
-<footer class="main-footer">
-        &copy; 2020 Urban Bank | All Right Reserved  
+
+    
+ </div>   
+ </div>
+
+ <footer id="main-footer">
+        <div class="contact-follow-container">
+            
+            <div class="contact-us-container">
+                <div class="contact-us-title">
+                    CONTACT US
+                </div>
+            </div>
+            
+            <div class="follow-us-container">
+                <div class="follow-us-title">
+                    FOLLOW US
+                </div>
+            </div>
+        </div> 
     </footer>
- -->
-    
-    
      
 </body>
 </html>
