@@ -1,4 +1,4 @@
-<?php include './Includes/UserDashboard-inc/user-login.php' ?>
+<?php include './Includes/UserDashboard-inc/ol-registration-inc.php' ?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -49,28 +49,29 @@
                         <label for="account_no">
                             <i class="far fa-user" style="color: rgb(26, 64, 99);"></i>
                             Account Number
-                            <span class="error-messages"> <?php echo $usernameErr; ?> </span>
+                            <span class="error-messages"> <br> <?php echo $account_noErr; ?> </span>
                         </label>
-                        <input id="account_no" name="account_no"  type="text" value="<?php $username; ?>" placeholder="Enter bank account number..." >
+                        <input id="account_no" name="account_no"  type="text" value="<?php $account_no; ?>" placeholder="Enter bank account number..." >
                     </div>
 
                     <div>
                         <label for="aadhaar_no">
                             <i class="far fa-id-card style="color: rgb(26, 64, 99);"></i>
                             Aadhaar Number 
-                            <span class="error-messages"> <?php echo $user_login_pwdErr; ?> </span>
+                            <span class="error-messages"> <br><?php echo $aadhaar_noErr; ?> </span>
                         </label>
-                        <input id="aadhaar_no" name="aadhaar_no" value="<?php $user_login_pwd; ?>" type="password" placeholder="Enter your aadhaar number..." >
+                        <input id="aadhaar_no" name="aadhaar_no" value="<?php $aadhaar_no; ?>" type="text" placeholder="Enter your aadhaar number..." >
                     </div>
-
+<!--
                     <div>    
                         <label for="dob">
                             <i class="far fa-calendar-alt" style="color: rgb(26, 64, 99);"></i>
                             Date of Birth 
-                            <span class="error-messages"> <?php echo $usernameErr; ?> </span>
+                            <span class="error-messages"> <?php echo $dob; ?> </span>
                         </label>
-                        <input id="dob" name="dob"  type="date" value="<?php $username; ?>" placeholder="Enter your Birthdate..." >
+                        <input id="dob" name="dob"  type="date" value="<?php $dobErr; ?>" placeholder="Enter your Birthdate..." >
                     </div>
+-->
                 </div>
 
                 <div class="ol-register-checkbox">
