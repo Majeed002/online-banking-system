@@ -1,4 +1,4 @@
-<?php include './Includes/UserDashboard-inc/user-login.php' ?>
+<?php include './Includes/AdminDashBoard-inc/admin-login-inc.php' ?>
 <!DOCTYPE html>
 <html lang="en">
     <head>
@@ -10,7 +10,7 @@
         <link rel="stylesheet" href="./Assets/Modules/Styles/main.css">
         <script  defer src="./Assets/Modules/Scripts/app.js"></script>
         <link rel="icon" href="./Assets/Images/Bank_Logo/Title_icon.png" type="png">
-        <title>User Login | Urban Bank</title>
+        <title>Admin Login | Urban Bank</title>
     </head>
 <body>
     <!-- Navigation Bar  of Website-->  
@@ -20,9 +20,9 @@
             <a href="./index.php"><img src="./Assets/Images/Bank_Logo/urban_bank_logo.png" title="Urban Bank" alt="Bank Logo"></a>
         </div>
        <!-- Online Register Button-->
-       <ul class="admin-login-button">
+       <ul class="user-login-button">
             <li>
-                <a href="./login.php" >
+                <a href="./user-login.php" >
                     <button>USER LOGIN</button>
                 </a>
             </li>
@@ -48,17 +48,17 @@
                         <label for="admin_mail">
                             <i class="far fa-envelope" style="color: rgb(26, 64, 99);"></i>
                             Email-ID 
-                            <span class="error-messages"> <?php echo $usernameErr; ?> </span>
+                            <span class="error-messages"> <br> <?php echo $admin_mailErr; ?> </span>
                         </label>
-                        <input id="admin_mail" name="admin_mail"  type="text" value="<?php $username; ?>" placeholder="Enter your email-id..." >
+                        <input id="admin_mail" name="admin_mail"  type="text" value="<?php $admin_mail; ?>" placeholder="Enter your email-id..." >
                     </div>
 
                     <div>
                         <label for="admin_login_pwd">
                             <i class="fas fa-key" style="color: rgb(26, 64, 99);"></i>
-                            Password <span class="error-messages"> <?php echo $user_login_pwdErr; ?> </span>
+                            Password <span class="error-messages"> <br> <?php echo $admin_login_pwdErr; ?> </span>
                         </label>
-                        <input id="admin_login_pwd" name="admin_login_pwd" value="<?php $user_login_pwd; ?>" type="password" placeholder="Enter your password..." >
+                        <input id="admin_login_pwd" name="admin_login_pwd" value="<?php $admin_login_pwd; ?>" type="password" placeholder="Enter your password..." >
                     </div>
                 </div>
 
@@ -70,8 +70,8 @@
                 </div>
 
                 <div class="forgot-password">
-                     Forgot 
-                     <a href="./forgot-password.php">
+                     Forgot your 
+                     <a href="./admin-forgot-password.php">
                         <span>Password?</span>
                     </a>
                 </div>  

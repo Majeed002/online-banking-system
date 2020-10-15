@@ -1,4 +1,4 @@
-<?php include './Includes/UserDashBoard-inc/forgot-username-inc.php' ?>
+<?php include './Includes/AdminDashBoard-inc/admin-forgot-password-inc.php' ?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -13,7 +13,7 @@
             <link href="https://fonts.googleapis.com/css2?family=Roboto+Slab&display=swap" rel="stylesheet">
             <link rel="stylesheet" href="./Assets/Modules/Styles/main.css">
             <link rel="icon" href="./Assets/Images/Bank_Logo/Title_icon.png" type="png">
-            <title>Reset Username | Urban Bank</title>
+            <title>Admin Reset Password | Urban Bank</title>
         </head>
     <body>
         <!-- Navigation Bar  of Website-->  
@@ -23,9 +23,9 @@
                 <a href=""><img src="./Assets/Images/Bank_Logo/urban_bank_logo.png" title="Urban Bank" alt="Bank Logo"></a>
             </div>
             <!-- Login and Register Button-->
-            <ul class="user-login-button">
+            <ul class="admin-login-button">
             <li>
-                <a href="./user-login.php" >
+                <a href="./admin-login.php" >
                     <button>BACK TO LOGIN</button>
                 </a>
             </li>
@@ -34,31 +34,33 @@
         <!-- End of the Navigation Bar-->
     
         <!--Forgot Password Form-->
-            <div class="user-forgot-username-container">
+            <div class="admin-forgot-password-container">
     
                 <div class="logo-urban-bank-form">
                     <img src="./Assets/Images/Login-Register/logo_urban_bank_login.png" alt="urban-bank" class="logo-urban-bank-form-img">
                 </div>
     
-                <div class="forgot-username-title">
-                    <h2 class="forgot-username-title">Reset Username</h2>
+                <div class="admin-forgot-password-title">
+                    <h2 class="admin-forgot-password-title">Reset Password</h2>
                 </div>
     
                 
                 <form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>" method="POST">
-                    <div class="forgot-username-credentials">  
-
+                    <div class="admin-forgot-password-credentials">
+    
+                            
+    
                         <div>
-                            <label for="user_mail">
+                            <label for="admin_mail">
                                 <i class="far fa-envelope" style="color: rgb(26, 64, 99);"></i>
                                 Email-ID
-                                <span class="error-messages"> <br> <?php echo $user_mailErr; ?> </span>
+                                <span class="error-messages"> <br> <?php echo $admin_mailErr; ?> </span>
                             </label>
-                            <input id="user_mail" name="user_mail"  type="text" placeholder="Enter your email id...">
+                            <input id="admin_mail" name="admin_mail"  type="text" placeholder="Enter your email id...">
                         </div>
                     </div>
     
-                     <div class="forgot-username-send-button"> 
+                     <div class="admin-forgot-password-send-button"> 
                         <button type="Submit">
                         <i class="far fa-paper-plane" style="color: whitesmoke;"></i>
                             Send to mail

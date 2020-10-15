@@ -1,6 +1,6 @@
 <?php
- $usernameErr = $user_login_pwdErr = $tnc = "";
- $username = $user_login_pwd = $tncErr = "";
+ $usernameErr = $user_login_pwdErr = $tncErr = "";
+ $username = $user_login_pwd = $tnc = "";
 if ($_SERVER['REQUEST_METHOD'] == 'POST'){
     if (empty($_POST["username"])){
         $usernameErr = "*Username is required!"; 

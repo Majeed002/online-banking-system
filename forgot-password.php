@@ -1,3 +1,4 @@
+<?php include './Includes/UserDashBoard-inc/forgot-password-inc.php' ?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -12,7 +13,7 @@
             <link href="https://fonts.googleapis.com/css2?family=Roboto+Slab&display=swap" rel="stylesheet">
             <link rel="stylesheet" href="./Assets/Modules/Styles/main.css">
             <link rel="icon" href="./Assets/Images/Bank_Logo/Title_icon.png" type="png">
-            <title>User Login | Urban Bank</title>
+            <title>Reset Password | Urban Bank</title>
         </head>
     <body>
         <!-- Navigation Bar  of Website-->  
@@ -24,7 +25,7 @@
             <!-- Login and Register Button-->
             <ul class="user-login-button">
             <li>
-                <a href="./login.php" >
+                <a href="./user-login.php" >
                     <button>BACK TO LOGIN</button>
                 </a>
             </li>
@@ -44,15 +45,16 @@
                 </div>
     
                 
-                <form action="/" method="GET">
+                <form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>" method="POST">
                     <div class="forgot-password-credentials">
                         <div>
                          
                             <label for="username">
                                 <i class="far fa-user" style="color: rgb(26, 64, 99);"></i>
                                 Username
+                                <span class="error-messages"> <br> <?php echo $usernameErr; ?> </span>
                             </label>
-                            <input id="username" name="username"  type="text" placeholder="Enter your username..." required>
+                            <input id="username" name="username"  type="text" placeholder="Enter your username..." >
                         </div>
     
                             
@@ -61,8 +63,9 @@
                             <label for="user_mail">
                                 <i class="far fa-envelope" style="color: rgb(26, 64, 99);"></i>
                                 Email-ID
+                                <span class="error-messages"> <br> <?php echo $user_mailErr; ?> </span>
                             </label>
-                            <input id="user_mail" name="user_mail"  type="email" placeholder="Enter your email id..." required>
+                            <input id="user_mail" name="user_mail"  type="text" placeholder="Enter your email id...">
                         </div>
                     </div>
     
