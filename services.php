@@ -45,7 +45,7 @@
         <!-- Login and Register Button-->
             <ul class="login-register-button">
             <li>
-                <a href="./login.php" >
+                <a href="./user-login.php" >
                     <button>LOGIN/REGISTER</button>
                 </a>
             </li>

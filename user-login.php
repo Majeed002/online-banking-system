@@ -1,4 +1,4 @@
-<?php include './Includes/UserDashboard-inc/user-login.php' ?>
+<?php include './Includes/UserDashboard-inc/user-login-inc.php' ?>
 <!DOCTYPE html>
 <html lang="en">
     <head>
@@ -48,7 +48,7 @@
                         <label for="username">
                             <i class="far fa-user" style="color: rgb(26, 64, 99);"></i>
                             Username 
-                            <span class="error-messages"> <?php echo $usernameErr; ?> </span>
+                            <span class="error-messages"> <br> <?php echo $usernameErr; ?> </span>
                         </label>
                         <input id="username" name="username"  type="text" value="<?php $username; ?>" placeholder="Enter your username..." >
                     </div>
@@ -56,7 +56,7 @@
                     <div>
                         <label for="user_login_pwd">
                             <i class="fas fa-key" style="color: rgb(26, 64, 99);"></i>
-                            Password <span class="error-messages"> <?php echo $user_login_pwdErr; ?> </span>
+                            Password <span class="error-messages"> <br> <?php echo $user_login_pwdErr; ?> </span>
                         </label>
                         <input id="user_login_pwd" name="user_login_pwd" value="<?php $user_login_pwd; ?>" type="password" placeholder="Enter your password..." >
                     </div>
