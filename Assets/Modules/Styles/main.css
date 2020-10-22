@@ -21,7 +21,7 @@ body{
 #homepage-main,
 #services-main{
     overflow: auto;
-    padding-bottom: 30vh;
+    padding-bottom: 50vh;
 
 }
 
@@ -298,47 +298,51 @@ nav{
  }
 
 #personal-loan-card{
-    background-image: url("/Assets/Images/Home-page/wallet-solid.svg");
+    background-image: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAOEAAADhCAMAAAAJbSJIAAAAclBMVEUAAAD////o6OhhYWH7+/stLS3w8PDX19c2NjYhISHl5eWjo6OGhoaQkJD5+fmMjIyzs7PIyMiamppbW1tOTk4nJycPDw/R0dGqqqpnZ2dBQUG6urre3t5zc3Nubm4iIiJISEgLCwsaGhp9fX2fn59UVFSMjX5jAAADv0lEQVR4nO3d6XaqMBQF4EQZtIDibEtrtcP7v+LF1gFDCB1O1mnO3d9/19p7qUEwg9LSKe4A3qFh+NAwfGgYPjQMHxqGDw3DZ2+YVMVuND6oP28dL/Ly7rsNN3nMHfyb4iz6RsPshTvvj+STLzbccif9ufIrDdPQPp437vsbFtwZf+nB+km9NoyW3Al/7cVW8dJwsuLOR2DkaJiEOYSaLN/Fc0MJ7+BRe0Q9NVxwJyPT+ioqEaNow9TacMMdi5L5A+6j4Zg7FaXM0vCNOxSph3bDiDsTsaTVcM4diVjVasidiNrUbFhxJ6I2NBvecyeiFpsNuQORWxsNU+5A9IyGAT+36GBcENUrdyByc6Nh+Hf2JvOKL+POt8G8Q+TOQ26rZTe8bz/h733NsEoHwbA93O/pN360vCYs7oKx4x+PULgbDrjjEXAWfOJOR8HZcMadjoKzYdL/+r/vP2+Ycqej4Gz4xp2OgrPhgTsdBWfD9p8AAXI3NO8mQ9TTUC033Al/q69hbT8MxS7fbtr/H4ozLKU3rE0T6Q2VKsQ3VPFAesPrn2zcOTzKxDc8VeRO4dVMfMOPG1zuDH69i294HFC5I3j2LL5hPdhwJ/BtIb6hmnAH8G7GHcA7aXPa2p64A3i35w7gnZQp+gAAAAAAAAAAAAAAAAAAAAAAAMFaL/J58bTnjuFNft6MJKrk7Y9Uy2/2IkkfuPOQa63ZzbkTEbPstZJxZyJl3UxG0jTnjq1W5OzyvLMX1Al3MDKdGx5NuZMR6Tj6QNCb6NjwaM+djUbnISRShtN1d0EtY+XPu6PhI3c4EkNHQxlDzdLRcMAdjoTreyjk5APHFo5C9kJ2XA+FbEnevYmjmKMPOi/5Qj6kjq3VAjjj74s6TgEU9CDj2TqcijrbwTxg5UjItfAsbu03WnJHInd7xMpE4lr0UXn5Nt5JeXzRsijKWZUFd1oqAAAAAAAAAAAAAAAAAABAPzlTprqsuQN4N+IO4J2Q2acOYmfdXMibGGa64w7gnRY+mB6Ulji9r2GshCyL6rRUkiaC27wqaeu9TWXdUPbZa4NjQ8lv4kgfG2rBs22zz4Ypdw5/os+GuuAO4stcnxoK2nnhxkpfGmqZB7CljYbJC3caD950o6GeyBtQP9dkXhrqSNquS6e9UK4NpY2o5wWZzYY6FTTeXBZG3zSUs6R2cV3GZzTUUSbgnv+9uSWY2bC2yYP+sK7y2/XCloa1QVXsRuPgbo1Xy9fto9nF3lASNAwfGoYPDcOHhuFDw/ChYfjkN/wHaHc+JHe8S90AAAAASUVORK5CYII=");
+    background-size: 20rem; 
+    background-repeat: no-repeat;
+    background-blend-mode: hue;
+    background-position: -20px 110px;
 } 
 
 #home-loan-card{
-    background-image: url('/Assets/Images/Home-page/ir-home-icon.png');
-    background-size: 20rem; 
+    background-image: url("https://upload.wikimedia.org/wikipedia/commons/thumb/2/22/Home_font_awesome.svg/1200px-Home_font_awesome.svg.png");
+    background-size: 24rem; 
     background-repeat: no-repeat;
     background-blend-mode: hue;
-    background-position: -15px 100px; 
+    background-position: -100px 70px;
 }
 
 #car-loan-card{
-    background-image: url('/Assets/Images/Home-page/ir-car-icon.png');
-    background-size: 20rem; 
+    background-image: url("https://upload.wikimedia.org/wikipedia/commons/thumb/2/24/Font_Awesome_5_solid_car-alt.svg/512px-Font_Awesome_5_solid_car-alt.svg.png");
+    background-size: 18rem; 
     background-repeat: no-repeat;
     background-blend-mode: hue;
-    background-position: -15px 100px; 
+    background-position: -25px 100px;
 }
 
 #business-loan-card{
-    background-image: url('/Assets/Images/Home-page/ir-business-icon.png');
+    background-image: url("https://upload.wikimedia.org/wikipedia/commons/thumb/e/ed/Font_Awesome_5_solid_chart-line.svg/600px-Font_Awesome_5_solid_chart-line.svg.png");
     background-size: 20rem; 
     background-repeat: no-repeat;
     background-blend-mode: hue;
-    background-position: -15px 100px; 
+    background-position: -5px 80px; 
 }
 
 #gold-loan-card{
-    background-image: url('/Assets/Images/Home-page/ir-gold-icon.png');
+    background-image: url("https://upload.wikimedia.org/wikipedia/commons/thumb/8/87/Font_Awesome_5_solid_coins.svg/512px-Font_Awesome_5_solid_coins.svg.png");
     background-size: 20rem; 
     background-repeat: no-repeat;
     background-blend-mode: hue;
-    background-position: -15px 100px; 
+    background-position: -20px 110px; 
 }
 
 #education-loan-card{
-    background-image: url('/Assets/Images/Home-page/ir-education-icon.png');
-    background-size: 20rem; 
+    background-image: url("https://upload.wikimedia.org/wikipedia/commons/thumb/c/cd/Font_Awesome_5_solid_graduation-cap.svg/1279px-Font_Awesome_5_solid_graduation-cap.svg.png");
+    background-size: 23rem; 
     background-repeat: no-repeat;
     background-blend-mode: hue;
-    background-position: -15px 100px; 
+    background-position: -40px 120px; 
 }
 
 .interest-rate-container .heading-interest-rate h2{
@@ -453,7 +457,7 @@ nav{
 
 
 
-@media (max-width:1598px) and (min-width:1025px){
+@media (max-width:1632px) and (min-width:1025px){
     .interest-rate-loan-wrapper{
         grid-template-columns: repeat(auto-fit, minmax(360px, 1fr));
         padding: 0em 1em;
@@ -468,22 +472,28 @@ nav{
     }
 }
 
-@media screen and (max-width:778px){
+@media screen and (max-width:860px){
     
     .interest-rate-loan-wrapper{
-        grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+        grid-template-columns: repeat(auto-fit, (minmax(260px, 1fr)));
         padding: 0em 1em;
+    }
+    #loan-title{
+        font-size: 2.2rem;
+        font-weight: 500;
+    }
+}
+@media screen and (max-width:768px){
+    
+    .interest-rate-loan-wrapper{
+        grid-template-columns: repeat(auto-fit, (minmax(300px, 1fr)));
+        padding: 0em 1em;
+    }
+    #loan-title{
+        font-size: 2.2rem;
     }
 }
 
-
-@media screen and (max-width:600px){
-    
-    .interest-rate-loan-wrapper{
-        grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-        padding: 0em 1em;
-    }
-}
 
 
 
@@ -492,54 +502,300 @@ nav{
 #main-footer{
     position: relative;
     background-color: rgb(26, 64, 99);
-    height: 30vh;
-    margin-top: -30vh;
+    height: auto;
+    margin-top: -50vh;
     clear: both;
     padding: 1.3rem 1.5rem;
 }
-
+/* Contact and Follow COntainer*/
 .contact-follow-container{
     display: flex;
-    flex-wrap: wrap;
-    flex-flow: row;
+    column-gap: 30vw;
+    padding: 0.25rem 1rem;
+    border-bottom: 1px solid rgba(245, 245, 245, 0.699);
 }
 
 
-.contact-us-container , 
-.follow-us-container{
+.contact-us-container > .contact-us-title, 
+.follow-us-container > .follow-us-title {
+    color: whitesmoke;
+    font-size: 1.25rem;
+    border-left: 0.3rem solid #fdca0e;
+    padding-left: 0.3rem;
+}
+
+
+.contact-us-details{
     color: whitesmoke;
     font-size: 1.2rem;
-    border-left: 0.2rem solid whitesmoke;
-    padding-left: 0.2rem;
+    margin: 0.75rem 0rem;
+}
+.contact-us-details > span{
+    padding-right: 1rem;
+}
+.social-icons {
+    margin: 0.75rem 0rem;
+    color: whitesmoke;
+}
+.social-icons > i{
+    padding-right: 0.5rem;
+}
+
+.fa-twitter:hover{
+    color: #1DA1F2;
+    transition: all 0.3s ease-in;
+}
+
+.fa-linkedin-in:hover{
+    color: #0e76a8;
+    transition: all 0.3s ease-in;
+}
+
+.fa-facebook-f:hover{
+    color: #1778f2;
+    transition: all 0.3s ease-in;
+}
+
+.fa-instagram:hover{
+    color: #d6249f;
+    transition: all 0.3s ease-in;
+}
+
+
+@media (max-width:1598px) and (min-width:1375px){
+    .contact-follow-container{
+        column-gap: 17vw;
+    }
+}
+@media (max-width:1374px) and (min-width:1200px){
+    .contact-follow-container{
+        column-gap: 5vw;
+    }
+}
+
+@media screen and (max-width:1200px){
+    .contact-follow-container{
+        display: flex;
+        flex-direction: column;
+    }
+
+    .contact-us-details{
+        display: flex;
+        flex-direction: column;
+        font-size: 1.05rem;
+    }
 }
 
 
 
+/*Footer Body Container*/
+.footer-body-container{
+    display: grid;
+    grid-template-columns: repeat(3,60% 20% 20%);
+    margin: 0.75rem 0rem;
+    padding: 0.5rem 0.75rem;
+    border-bottom: 1px solid rgba(245, 245, 245, 0.699);
+}
+
+.quick-links-container{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+}
 
 
+.quick-links-container li{
+    list-style: none;
+}
+.quick-links-title{
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #fdca0e;
+    padding-bottom: .75rem;
+}
+
+.quick-links-content{
+    font-size: 1.05rem;
+    font-weight: 500;
+    color: whitesmoke;
+    padding-bottom: .5rem;
+}
+
+.quick-links-content:hover{
+    color: #fdca0e;
+    transition: all 0.3s ease-in;
+}
+.get-app-container{
+    display: flex;
+    flex-direction: column;
+    font-size: 1.45rem;
+    font-weight: bold;
+    color: #fdca0e;
+}
+.get-app-container img:nth-child(odd){
+    max-width: 150px;
+    height: 3.5rem;
+    margin-top: 1rem;
+    margin-left: 2.5rem;
+}
+.get-app-container img:nth-child(even){
+    max-width: 150px;
+    height: 3.55rem;
+    margin-top: 1rem;
+    margin-left: 2.5rem;
+}
+
+.newsletter-container{
+    display: flex;
+    row-gap: 1rem;
+    flex-direction: column;
+    font-size: 1.45rem;
+    font-weight: bold;
+    color: #fdca0e;
+}
+
+.newsletter-container span{
+    font-size: 1.2rem;
+    font-weight: normal;
+    color: whitesmoke;
+}
+
+.newsletter-container .subscribe-form label{
+    color: whitesmoke;
+    display: inline-block;
+    vertical-align: middle;
+}
+.newsletter-container .subscribe-form input{
+    display: inline-block;
+    vertical-align: middle;
+    width: 15rem;
+    height: 2rem;
+    outline: none;
+    border: 0px;
+    margin: 0rem 0rem 0rem .5rem;
+    font-size: 0.85rem;
+    padding-left: 1rem;
+    border-radius: 26px;
+    box-shadow: inset 20px 20px 60px #d5dde2, 
+                inset -20px -20px 60px #fcfeff;
+}
+
+.newsletter-container .subscribe-button{
+    align-self: center;
+    justify-content: center;
+    display: flex;
+    width: 18rem;
+}
+
+.newsletter-container .subscribe-button button{
+    margin: 1rem auto auto auto;
+    height:2rem;
+    width: 10rem;
+    font-size: 1rem;
+    text-transform: uppercase;
+    font-weight: bold;
+    background-color: #fdca0e;
+    color: rgb(26, 64, 99);
+    outline: none;
+    border : 0px;
+    align-self: center;
+}
+
+.subscribe-button button:hover{
+    background-image: linear-gradient(to left, rgb(233, 225, 153) 0%, #f0c424 100%);
+    z-index: 10px;
+    
+}
+.footer-bottom-container{
+    margin: 1.45rem auto 0rem auto;
+    font-size: 1.05rem;
+    color: whitesmoke;
+    text-align: center;
+}
 
 
+@media (max-width:1598px) and (min-width:1240px){
+    .footer-body-container{
+        grid-template-columns: repeat(3, 50% 25% 25%);
+    }
+}
+@media (max-width:1240px) and (min-width:830px){
+    .footer-body-container{
+        grid-template-columns: 60% 40%;
+    }
+    .quick-links-container{
+        grid-row: 1 / 3;
+        grid-template-columns: repeat(2, 1fr);
+    }
 
+}
+@media (max-width:830px) and (min-width:768px){
+    .footer-body-container{
+        grid-template-columns: 50% 50%;
+        padding: 0em auto;
+        align-content: center;
+        gap: 2rem;
+    }
+    .quick-links-container{
+        grid-column: 1 / span 2;
+    }
+    .get-app-container , .newsletter-container{
+        margin-bottom: 1rem;
+    }
 
+}
 
+@media screen and (max-width:768px){
+    .footer-body-container{
+        grid-template-columns: 50% 50%;
+        padding: 0em auto;
+        align-content: center;
+        gap: 2rem;
+    }
+    .quick-links-container{
+        grid-column: 1 / span 2;
+        grid-template-columns: repeat(2,1fr);
+    }
+    .get-app-container , .newsletter-container{
+        margin-bottom: 1rem;
+    }
+}
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+@media screen and (max-width:668px){
+    .footer-body-container{
+        grid-template-columns: 40% ;
+        padding: 0em auto;
+        align-content: center;
+        gap: 2rem;
+    }
+    .quick-links-container{
+        grid-template-columns: repeat(2, 1fr);
+    }
+    .get-app-container , .newsletter-container{
+        margin-bottom: 1rem;
+    }
+    .newsletter-container .subscribe-form input{
+        width: 12rem;
+    }
+    .newsletter-container .subscribe-button{
+        align-self: left;
+        justify-content: left;
+        width: 15rem;
+    }
+    .get-app-container img:nth-child(odd){
+        margin-left: 1.5rem;
+    }
+    .get-app-container img:nth-child(even){
+        margin-left: 1.5rem;
+    }
+}
+@media screen and (max-width:668px){
+    .get-app-container img:nth-child(odd){
+        margin-left: 0.25rem;
+    }
+    .get-app-container img:nth-child(even){
+        margin-left: 0.25rem;
+    }
+}
 
 
 
