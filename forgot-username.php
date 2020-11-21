@@ -11,6 +11,7 @@
             <meta http-equiv="X-UA-Compatible" content="IE">
             <link rel="stylesheet" href="./Assets/Modules/Styles/icons.css">
             <link href="https://fonts.googleapis.com/css2?family=Roboto+Slab&display=swap" rel="stylesheet">
+            <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css">
             <link rel="stylesheet" href="./Assets/Modules/Styles/main.css">
             <link rel="icon" href="./Assets/Images/Bank_Logo/Title_icon.png" type="png">
             <title>Reset Username | Urban Bank</title>
@@ -20,7 +21,7 @@
         <nav>
             <!-- Logo Image of the navbar-->
             <div class="logo">
-                <a href=""><img src="./Assets/Images/Bank_Logo/urban_bank_logo.png" title="Urban Bank" alt="Bank Logo"></a>
+                <a href="./index.php"><img src="./Assets/Images/Bank_Logo/urban_bank_logo.png" title="Urban Bank" alt="Bank Logo"></a>
             </div>
             <!-- Login and Register Button-->
             <ul class="user-login-button">

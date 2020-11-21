@@ -1,5 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Anton&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Balsamiq+Sans&family=Roboto+Condensed:wght@300&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
 /* intial spacing */
 *{
     margin: 0px;
@@ -272,33 +273,199 @@ nav{
  */
 
 /* Image-slider*/
+
 .img-slider{
-    width:100%;
-    height:88vh;
+	height: 88vh;
+	overflow:hidden;
+    position: relative;
+    box-shadow: 0px 10px 10px 0px rgb(189, 189, 189);
 }
 
-.img-slider img{
-    width: 100%;
-    max-width: 100vw;
-    height: 100%;
+.img-slider .slide{
+	position: absolute;
+	left:0;
+	top:0;
+	width: 100%;
+	height: 100%;
+	background-size: cover;
+	background-position: center;
+	z-index:1; 
+	display:none;
+	padding:0 15px;
+	animation: slide 2s ease;
 }
-@media screen and (max-width:778px){
-    .img-slider{
-        height: 55vh;
-    }
+.img-slider .slide.active{
+	display: flex;
 }
-@media screen and (max-width:600px){
-    .img-slider{
-        height: 55vh;
-    }
+@keyframes slide{
+	0%{
+		transform:scale(1.1);
+	}
+	100%{
+		transform: scale(1);
+	}
+}
+.container{
+	max-width: 1170px;
+	margin:auto;
+	
 }
 
+.img-slider .container{
+	 flex-grow: 1;
+}
+.img-slider .caption{
+	width:50%;
+}
+.img-slider .caption h1{
+	font-size:42px;
+	margin:0;
+	
+}
+.img-slider .slide.active .caption h1{
+	opacity:0;
+	animation: captionText .5s ease forwards;
+	animation-delay:1s;
+	color: rgb(26, 64, 99);
+	font-size: 3rem;
+}
+.img-slider .caption p{
+	font-size: 18px;
+	margin:15px 0 30px;
+	font-weight: 600;
+}
+.img-slider .slide.active .caption p{
+	opacity:0;
+	animation: captionText .5s ease forwards;
+	animation-delay:1.2s;
+	color: rgb(26, 64, 99);
+}
+
+.img-slider .caption a{
+ display: inline-block;
+ padding:10px 30px;
+ background-color: rgb(26, 64, 99);
+ text-decoration: none;
+ color:#fdca0e;
+ margin-right: 1rem;
+ margin-top: 0.5rem;
+}
+
+.img-slider .caption a:hover{
+	background-color: #fdca0e;
+	color: rgb(26, 64, 99);
+}
+
+.img-slider .slide.active .caption a{
+	opacity:0;
+	animation: captionText .5s ease forwards;
+	animation-delay:1.4s;
+}
+
+@keyframes captionText{
+	0%{
+		opacity:0; transform: translateX(-100px);
+	}
+	100%{
+	 opacity:1; transform: translateX(0px);	
+	}
+}
+
+.img-slider .controls .prev,
+.img-slider .controls .next{
+ position: absolute;
+ z-index:2;
+ top:50%;
+ height:40px;
+ width: 40px;
+ margin-top: 0px;
+ border-radius: 50%;
+ color:#ffffff;
+ background-color: rgb(26, 64, 99);
+ text-align: center;
+ line-height: 40px;
+ font-size:20px;
+ cursor:pointer;
+ transition: all .5s ease;
+}
+
+.img-slider .controls .prev{
+	margin-left: 0.5rem;
+}
+
+.img-slider .controls .next{
+	margin-right: 0.5rem;
+}
+.img-slider .controls .prev:hover,
+.img-slider .controls .next:hover{
+	background-color: #fdca0e;
+}
+.img-slider .controls .prev{
+ left:0;
+}
+.img-slider .controls .next{
+ right:0;
+}
+
+.img-slider .indicator{
+	position: absolute;
+	left:50%;
+	bottom:30px;
+	z-index: 2;
+	transform: translateX(-50%);
+	cursor: default;
+}
+
+.img-slider .indicator div{
+	display: inline-block;
+	width: 1rem;
+	height: 1rem;
+	color:#fdca0e;
+	background-color: #fdca0e;
+	border-radius:50%;
+	text-align: center;
+	line-height: 1rem;
+	margin:0 3px;
+}
+
+.img-slider .indicator div.active{
+ background-color: rgb(26, 64, 99);
+ color: rgb(26, 64, 99);
+}
+
+/*responsive*/
+@media(max-width: 1024px){
+	
+	.img-slider{
+		height: 65vh;
+    }
+    
+    .controls{
+        display: none;
+    }
+	
+}
+@media(max-width: 767px){
+	.controls{
+		display: none;
+	}
+	.img-slider{
+		height: 55vh;
+	}
+	
+	.img-slider .slide.active .caption .slide1{
+		color:rgb(11, 32, 51);
+	}
+}
+
+
+/*interest rate home page*/
 .interest-rate-container{
     height: auto;
  }
 
 #personal-loan-card{
-    background-image: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAOEAAADhCAMAAAAJbSJIAAAAclBMVEUAAAD////o6OhhYWH7+/stLS3w8PDX19c2NjYhISHl5eWjo6OGhoaQkJD5+fmMjIyzs7PIyMiamppbW1tOTk4nJycPDw/R0dGqqqpnZ2dBQUG6urre3t5zc3Nubm4iIiJISEgLCwsaGhp9fX2fn59UVFSMjX5jAAADv0lEQVR4nO3d6XaqMBQF4EQZtIDibEtrtcP7v+LF1gFDCB1O1mnO3d9/19p7qUEwg9LSKe4A3qFh+NAwfGgYPjQMHxqGDw3DZ2+YVMVuND6oP28dL/Ly7rsNN3nMHfyb4iz6RsPshTvvj+STLzbccif9ufIrDdPQPp437vsbFtwZf+nB+km9NoyW3Al/7cVW8dJwsuLOR2DkaJiEOYSaLN/Fc0MJ7+BRe0Q9NVxwJyPT+ioqEaNow9TacMMdi5L5A+6j4Zg7FaXM0vCNOxSph3bDiDsTsaTVcM4diVjVasidiNrUbFhxJ6I2NBvecyeiFpsNuQORWxsNU+5A9IyGAT+36GBcENUrdyByc6Nh+Hf2JvOKL+POt8G8Q+TOQ26rZTe8bz/h733NsEoHwbA93O/pN360vCYs7oKx4x+PULgbDrjjEXAWfOJOR8HZcMadjoKzYdL/+r/vP2+Ycqej4Gz4xp2OgrPhgTsdBWfD9p8AAXI3NO8mQ9TTUC033Al/q69hbT8MxS7fbtr/H4ozLKU3rE0T6Q2VKsQ3VPFAesPrn2zcOTzKxDc8VeRO4dVMfMOPG1zuDH69i294HFC5I3j2LL5hPdhwJ/BtIb6hmnAH8G7GHcA7aXPa2p64A3i35w7gnZQp+gAAAAAAAAAAAAAAAAAAAAAAAMFaL/J58bTnjuFNft6MJKrk7Y9Uy2/2IkkfuPOQa63ZzbkTEbPstZJxZyJl3UxG0jTnjq1W5OzyvLMX1Al3MDKdGx5NuZMR6Tj6QNCb6NjwaM+djUbnISRShtN1d0EtY+XPu6PhI3c4EkNHQxlDzdLRcMAdjoTreyjk5APHFo5C9kJ2XA+FbEnevYmjmKMPOi/5Qj6kjq3VAjjj74s6TgEU9CDj2TqcijrbwTxg5UjItfAsbu03WnJHInd7xMpE4lr0UXn5Nt5JeXzRsijKWZUFd1oqAAAAAAAAAAAAAAAAAABAPzlTprqsuQN4N+IO4J2Q2acOYmfdXMibGGa64w7gnRY+mB6Ulji9r2GshCyL6rRUkiaC27wqaeu9TWXdUPbZa4NjQ8lv4kgfG2rBs22zz4Ypdw5/os+GuuAO4stcnxoK2nnhxkpfGmqZB7CljYbJC3caD950o6GeyBtQP9dkXhrqSNquS6e9UK4NpY2o5wWZzYY6FTTeXBZG3zSUs6R2cV3GZzTUUSbgnv+9uSWY2bC2yYP+sK7y2/XCloa1QVXsRuPgbo1Xy9fto9nF3lASNAwfGoYPDcOHhuFDw/ChYfjkN/wHaHc+JHe8S90AAAAASUVORK5CYII=");
+    background-image: url("https://upload.wikimedia.org/wikipedia/commons/thumb/3/3f/Font_Awesome_5_solid_wallet.svg/512px-Font_Awesome_5_solid_wallet.svg.png");
     background-size: 20rem; 
     background-repeat: no-repeat;
     background-blend-mode: hue;
@@ -345,12 +512,26 @@ nav{
     background-position: -40px 120px; 
 }
 
+#personal-loan-card:hover,
+#home-loan-card:hover,
+#car-loan-card:hover,
+#business-loan-card:hover,
+#gold-loan-card:hover,
+#education-loan-card:hover{
+    background-blend-mode: lighten;
+}
+.loan:hover{
+    background-color: #f0c424b6;
+    color: rgb(11, 32, 51);
+    transition: all 0.5s ease-in;
+}
+
 .interest-rate-container .heading-interest-rate h2{
     font-size: 2.2rem;
     letter-spacing: 0.2px;
     color: rgb(26, 64, 99);
     text-align: center;
-    padding-top: 25px;
+    margin: 2rem 0rem;
     text-transform: uppercase;
     text-decoration-color: lightsalmon;
 }
@@ -401,6 +582,7 @@ nav{
     padding-top: 0.1rem;
     margin-bottom: 20px;
     font-size: 1rem;
+    font-weight: 600;
 }
 
 .interest-rate-container .loan .interest-rate-tc{
@@ -493,6 +675,157 @@ nav{
         font-size: 2.2rem;
     }
 }
+
+/* Handpicked Offers */
+.handpicked-offer-container{
+    height: auto;
+ }
+
+.handpicked-offer-container .heading-handpicked-offer h2{
+    font-size: 2.2rem;
+    letter-spacing: 0.2px;
+    color: rgb(26, 64, 99);
+    text-align: center;
+    margin: 2rem 40rem;
+    text-transform: uppercase;
+    text-decoration-color: lightsalmon;
+    padding: 0.5rem 1rem;
+    border-bottom: 2px solid rgb(26, 64, 99);
+}
+
+.handpicked-offer-wrapper{
+    display: grid;
+    margin: 20px;
+    grid-gap: 3rem;
+    color: rgb(26, 64, 99);
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    padding: 0em 4em;
+}
+
+.handpicked-offer-wrapper > div{  
+  background-color: rgba(245, 245, 245, 0.842);
+  height: 60vh;
+  width: auto;
+  border-radius: 25px;
+  overflow: hidden;
+}
+
+.handpicked-offer-wrapper > div:hover{
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19),
+    0 8px 20px 0 rgba(0, 0, 0, 0.19);
+    transform: scale(1.02);
+    transition: all 0.3s ease-in-out;
+}
+
+.offer img{
+    max-width: 100%;
+    width: 100%;
+    height: 25vh;
+    align-self: center;
+}
+
+.offer .handpicked-offer-card-info h3{
+    margin: 2rem 3rem 0rem 2rem ;
+    font-size: 2.25rem;
+    font-family: 'Roboto', sans-serif;
+}
+
+.offer .handpicked-offer-card-info h4{
+    margin: 1rem 3rem 0rem 2rem ;
+    font-size: 1.15rem;
+    font-family: 'Roboto', sans-serif;
+    color: rgb(15, 81, 146);
+}
+
+.offer .handpicked-offer-card-info a{
+    color: gray;
+    font-size: 0.95rem;
+    text-decoration: none;
+}
+
+.offer .handpicked-offer-card-info a:hover{
+    color: rgb(15, 81, 146);
+}
+
+.button-handpicked-offer-card {
+    margin-top: 1.5rem;
+    margin-bottom: 2rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.button-handpicked-offer-card button{
+    height:50px;
+    width: 150px;
+    border: 3px solid rgb(26, 64, 99);
+    border-radius: 25px;
+    font-size: 1rem;
+    text-transform: uppercase;
+    font-weight: bold;
+    background-color: inherit;
+    background-color: whitesmoke;
+    color: rgb(26, 64, 99);
+    border: 3px solid rgb(26, 64, 99);
+    outline: none;
+    box-shadow: none;
+    text-decoration: none;
+}
+
+
+.button-handpicked-offer-card button:hover{
+    background-color: rgb(26, 64, 99);
+    color: whitesmoke;
+    transform: scale(1.0);
+    transition: all 0.3s ease-in-out;   
+}
+
+.button-handpicked-offer {
+    margin-top: 3rem;
+    margin-bottom: 2rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.button-handpicked-offer button{
+    height:50px;
+    width: 200px;
+    border: 3px solid rgb(26, 64, 99);
+    border-radius: 25px;
+    font-size: 1rem;
+    text-transform: uppercase;
+    font-weight: bold;
+    background-color: inherit;
+    
+    background-color: rgb(26, 64, 99);
+    color: whitesmoke;
+    outline: none;
+    box-shadow: none;
+    text-decoration: none;
+}
+
+
+.button-handpicked-offer button:hover{
+    border: 3px solid rgb(26, 64, 99);
+    background-color: inherit;
+    color: rgb(26, 64, 99);
+    transform: scale(1.0);
+    transition: all 0.3s ease-in-out;   
+}
+
+.handpicked-offer-wrapper .button-handpicked-offer button:hover::after{
+    content: '';
+    opacity: 1;
+}
+
+
+
+
+
+
+
+
 
 
 
@@ -1886,8 +2219,13 @@ nav{
     }
 }
 
-
-
-
+.service-title,
+.about-us-title{
+    font-size: 2.5rem;
+    margin: 2rem 2rem;
+    font-weight: 600;
+    padding-left: 0.625rem;
+    border-left: 0.5rem solid rgb(26, 64, 99) ;
+}
 
 

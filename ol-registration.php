@@ -7,6 +7,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE">
     <link rel="stylesheet" href="./Assets/Modules/Styles/icons.css">
     <link href="https://fonts.googleapis.com/css2?family=Roboto+Slab&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css">
     <link rel="stylesheet" href="./Assets/Modules/Styles/main.css">
     <script  defer src="./Assets/Modules/Scripts/app.js"></script>
     <link rel="icon" href="./Assets/Images/Bank_Logo/Title_icon.png" type="png">

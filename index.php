@@ -20,7 +20,7 @@
     <nav>
         <!-- Logo Image of the navbar-->
         <div class="logo">
-            <a href=""><img src="./Assets/Images/Bank_Logo/urban_bank_logo.png" title="Urban Bank" alt="Bank Logo"></a>
+            <a href="./index.php"><img src="./Assets/Images/Bank_Logo/urban_bank_logo.png" title="Urban Bank" alt="Bank Logo"></a>
         </div>
         <!-- NavLinks-->
         <ul class="nav-links">
@@ -31,7 +31,7 @@
                 <a  href="./services.php">Services</a>
             </li>
             <li>
-                <a href="#">About Us</a>
+                <a href="./about-us.php">About Us</a>
             </li>
             <li>
                 <a href="#">Blogs</a>
@@ -59,8 +59,50 @@
     </nav>   
     <!-- End of the Navigation Bar-->
     
-    <div class="img-slider">   
+    <!--Home Page Image Slider-->
+    <section class="img-slider">
+     <div class="slider">
+        <div class="slide active" style="background-image: url('./Assets/Images/Home-page/img_slider_1.png')">
+            <div class="container">
+                <div class="caption">
+                    <h1 class="slide1">Urban Bank App</h1>
+                    <p class="slide1">Download the App now for instant banking</p>
+                    <a href="">For Android</a>
+                    <a href="">For IOS</a>
+                </div>
+            </div>
+        </div>
+        <div class="slide" style="background-image: url('./Assets/Images/Home-page/img_slider_2.png')">
+            <div class="container">
+                <div class="caption">
+                    <h1>Urban Bank Loans</h1>
+                    <p>View interest rate and eligibility for applying loans</p>
+                    <a href="">Check Now!</a>
+                </div>
+            </div>
+        </div>
+        <div class="slide" style="background-image: url('./Assets/Images/Home-page/img_slider_3.png')">
+            <div class="container">
+                <div class="caption">
+                    <h1>Avail Offers</h1>
+                    <p>Get upto 10-50% off on shoping through credit card </p>
+                    <a href="">View All!</a>
+                </div>
+            </div>
+        </div>
+     </div>
+   
+    <!-- controls  -->
+    <div class="controls">
+        <div class="prev"><i class="fas fa-arrow-left"></i></div>
+        <div class="next"><i class="fas fa-arrow-right"></i></div>
     </div>
+
+    <!-- indicators -->
+    <div class="indicator">
+    </div>
+
+  </section>
 
 
 
@@ -74,7 +116,7 @@
 
             <div class="loan" id="personal-loan-card">
                 <div class="loan-title" id="loan-title">
-                    <i class="fas fa-wallet" style="color: rgb(122, 92, 63);"></i>
+                    <i class="fas fa-wallet loan-icon" style="color: rgb(122, 92, 63); , hover"></i>
                     Personal Loan
                 </div>
                 <div class="interest-rate-percentage">
@@ -88,9 +130,6 @@
                    *T&C Apply
                    </a> 
                 </div>
-                <!--
-                     <i class="fas fa-wallet fa-10x bg-img" style="color: rgba(211, 211, 211, 0.774);"></i>
-                -->  
             </div>
 
             <div class="loan" id="home-loan-card">
@@ -194,13 +233,136 @@
            
         </div>
     </div>
-    
-    <!--
-    <button class="to-top">
-        <a href="#" class="top-top"></a>
-    </button>
-    -->
 
+
+<!--Handpicked Offer-->
+
+    <div class="handpicked-offer-container">
+        <div class="heading-handpicked-offer">
+            <h2>
+                Handpicked Offer 
+            </h2>
+        </div>
+        
+        <div class="handpicked-offer-wrapper">
+
+            <div class="offer" id="first-handpicked-offer-card">
+                
+                <img src="./Assets/Images/Home-page/amazon-img.jpg" alt="" srcset="">
+                
+                <div class="handpicked-offer-card-info">
+                    <h3>
+                        Get Instant 10% Discount at Amazon.in
+                    </h3>
+                    <h4>
+                        Pay using UB Credit or Debit Card
+                        <br>
+                        <a href="#"> T&C Applied</a>
+                    </h4>
+                    
+                    <div class="button-handpicked-offer-card">
+                        <a class="btn-handpicked-offer-card" href="#" target="_blank">
+                        <button  class="btn-handpicked-offer-card"type="button" >
+                            <span>Know More</span>
+                        </button>
+                        </a>
+                    
+                    </div>
+                    
+                </div>
+
+            </div>
+
+            <div class="offer" id="first-handpicked-offer-card">
+                
+                <img src="./Assets/Images/Home-page/grofers-img.png" alt="" srcset="">
+                
+                <div class="handpicked-offer-card-info">
+                    <h3>
+                        Get upto Rs.750 Cashback at Grofers
+                    </h3>
+                    <h4>
+                        Pay using UB Credit Card<br>
+                        <a href="#"> T&C Applied</a>
+                    </h4>
+
+                    <div class="button-handpicked-offer-card">
+                        <a class="btn-handpicked-offer-card" href="#" target="_blank">
+                        <button  class="btn-handpicked-offer-card"type="button" >
+                            <span>Know More</span>
+                        </button>
+                        </a>
+                    
+                    </div>
+                    
+                </div>
+            </div>
+
+            <div class="offer" id="first-handpicked-offer-card">
+            
+                <img src="./Assets/Images/Home-page/adidas-img.jpg" alt="" srcset="">
+            
+                <div class="handpicked-offer-card-info">
+                    <h3>
+                        Get Flat 5% Discount at Adidas Store
+                    </h3>
+                    <h4>
+                        Pay using UB Credit or Debit Card
+                        <br>
+                        <a href="#"> T&C Applied</a>
+                    </h4>
+
+                    <div class="button-handpicked-offer-card">
+                        <a class="btn-handpicked-offer-card" href="#" target="_blank">
+                        <button  class="btn-handpicked-offer-card"type="button" >
+                            <span>Know More</span>
+                        </button>
+                        </a>
+                    
+                    </div>
+
+                </div>
+            </div>
+            
+            <div class="offer" id="first-handpicked-offer-card">
+            
+                <img src="./Assets/Images/Home-page/samsung-img.jpg" alt="" srcset="">
+                <div class="handpicked-offer-card-info">
+                    <h3>
+                        Get Instant 15% Discount on Samsung Galaxy
+                         
+                    </h3>
+                    <h4>
+                        Pay using UB Credit Card
+                        <br>
+                        <a href="#"> T&C Applied</a>
+                    </h4>
+                    
+                    <div class="button-handpicked-offer-card">
+                        <a class="btn-handpicked-offer-card" href="#" target="_blank">
+                        <button  class="btn-handpicked-offer-card"type="button" >
+                            <span>Know More</span>
+                        </button>
+                        </a>
+                    
+                    </div>
+            
+            </div> 
+        
+        </div>
+            
+            
+        </div>
+        <div class="button-handpicked-offer">
+            
+            <a class="btn-handpicked-offer" href="#" target="_blank">
+                <button  class="btn-handpicked-offer"type="button" >
+                    <span>View All Offers</span>
+                </button>
+            </a>
+           
+        </div>
+    </div>
 
     
  </div>   

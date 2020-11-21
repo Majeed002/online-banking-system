@@ -27,10 +27,10 @@
                 <a href="./index.php" >Home</a>
             </li>
             <li>
-                <a class="current" href="./services.php">Services</a>
+                <a  href="./services.php">Services</a>
             </li>
             <li>
-                <a href="./about-us.php">About Us</a>
+                <a class="current" href="./about-us.php">About Us</a>
             </li>
             <li>
                 <a href="#">Blogs</a>
@@ -58,7 +58,12 @@
     </nav>   
     <!-- End of the Navigation Bar-->
     
-    <div class="service-title">Services</div>
+    <div class="about-us-title">About Us</div>
+
+
+
+
+
     </div>   
  </div>
 
