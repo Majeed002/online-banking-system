@@ -543,6 +543,7 @@ nav{
     margin: 2rem 0rem;
     text-transform: uppercase;
     text-decoration-color: lightsalmon;
+    padding: 0.5rem 1rem;
 }
 
 .interest-rate-loan-wrapper{
@@ -696,11 +697,9 @@ nav{
     letter-spacing: 0.2px;
     color: rgb(26, 64, 99);
     text-align: center;
-    margin: 2rem 40rem;
     text-transform: uppercase;
     text-decoration-color: lightsalmon;
     padding: 0.5rem 1rem;
-    border-bottom: 2px solid rgb(26, 64, 99);
 }
 
 .handpicked-offer-wrapper{
@@ -2246,6 +2245,7 @@ nav{
     font-weight: 600;
     padding-left: 0.625rem;
     border-left: 0.5rem solid rgb(26, 64, 99) ;
+    color: rgb(26, 64, 99);
 }
 
 
