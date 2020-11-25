@@ -15,12 +15,18 @@ body{
 }
 /* Homepage Container*/
 #homepage-container,
-#services-container{
+#services-container,
+#about-us-container,
+#services-container,
+#form-container{
     min-height: 100%;
 }
 
 #homepage-main,
-#services-main{
+#services-main,
+#about-us-main,
+#services-main,
+#form-main{
     overflow: auto;
     padding-bottom: 50vh;
 
@@ -88,6 +94,7 @@ nav{
 .admin-login-button li,
 .user-login-button li{
     list-style: none;
+    font-family: 'Roboto', sans-serif;
     
 }
 
@@ -99,7 +106,7 @@ nav{
     width: 150px;
     min-height: 40px;
     font-size: 0.9rem;
-    font-family: Arial, Helvetica, sans-serif;
+    
     text-decoration: none;
     background-color: #fdca0e;
     color:rgb(33, 85, 133);
@@ -279,6 +286,7 @@ nav{
 	overflow:hidden;
     position: relative;
     box-shadow: 0px 10px 10px 0px rgb(189, 189, 189);
+    font-family: 'Roboto',sans-serif;
 }
 
 .img-slider .slide{
@@ -462,6 +470,7 @@ nav{
 /*interest rate home page*/
 .interest-rate-container{
     height: auto;
+    font-family: 'Roboto',sans-serif;
  }
 
 #personal-loan-card{
@@ -679,6 +688,7 @@ nav{
 /* Handpicked Offers */
 .handpicked-offer-container{
     height: auto;
+    font-family: 'Roboto',sans-serif;
  }
 
 .handpicked-offer-container .heading-handpicked-offer h2{
@@ -839,6 +849,7 @@ nav{
     margin-top: -50vh;
     clear: both;
     padding: 1.3rem 1.5rem;
+    font-family: 'Roboto',sans-serif;
 }
 /* Contact and Follow COntainer*/
 .contact-follow-container{
@@ -1142,16 +1153,18 @@ nav{
 */
 
 .user-login-form-container {
-    margin: 2.5em auto 0em auto;
+    margin: 2.5em auto 3rem auto;
     background-color: rgba(255, 255, 255, 0.8);
     border-radius: 25px;
     box-shadow: 
     12px 12px 16px 0 rgba(0, 0, 0, 0.25),
     -8px -8px 12px 0 rgba(255, 255, 255, 0.301);
+    font-family: 'Roboto', sans-serif;
     width: 500px;
     height: auto;
     padding-top: 1.5rem;
     padding-bottom: 1.5rem;
+
 }
 
 .logo-urban-bank-form{
@@ -1201,6 +1214,7 @@ nav{
 .error-messages{
     color: red;
     font-size: 1rem;
+    font-family: 'Roboto', sans-serif;
 }
 
 .error-messages{
@@ -1389,9 +1403,10 @@ nav{
 */
 
 .user-ol-register-form-container {
-    margin: 2.5em auto 0em auto;
+    margin: 2.5em auto 3rem auto;
     background-color: rgba(255, 255, 255, 0.8);
     border-radius: 25px;
+    font-family: 'Roboto', sans-serif;
     box-shadow: 
     12px 12px 16px 0 rgba(0, 0, 0, 0.25),
     -8px -8px 12px 0 rgba(255, 255, 255, 0.301);
@@ -1595,9 +1610,10 @@ nav{
 */
 
 .admin-login-form-container {
-    margin: 2.5em auto 0em auto;
+    margin: 2.5em auto 3rem auto;
     background-color: rgba(255, 255, 255, 0.8);
     border-radius: 25px;
+    font-family: 'Roboto', sans-serif;
     box-shadow: 
     12px 12px 16px 0 rgba(0, 0, 0, 0.25),
     -8px -8px 12px 0 rgba(255, 255, 255, 0.301);
@@ -1788,9 +1804,10 @@ nav{
 
 */
 .user-forgot-password-container {
-    margin: 3em auto 0em auto;
+    margin: 3em auto 3rem auto;
     background-color: rgba(255, 255, 255, 0.8);
     border-radius: 25px;
+    font-family: 'Roboto', sans-serif;
     box-shadow: 
     12px 12px 16px 0 rgba(0, 0, 0, 0.25),
     -8px -8px 12px 0 rgba(255, 255, 255, 0.301);
@@ -1941,9 +1958,10 @@ nav{
 
 */
 .admin-forgot-password-container {
-    margin: 3em auto 0em auto;
+    margin: 3em auto 3rem auto;
     background-color: rgba(255, 255, 255, 0.8);
     border-radius: 25px;
+    font-family: 'Roboto', sans-serif;
     box-shadow: 
     12px 12px 16px 0 rgba(0, 0, 0, 0.25),
     -8px -8px 12px 0 rgba(255, 255, 255, 0.301);
@@ -2071,9 +2089,10 @@ nav{
 
 */
 .user-forgot-username-container {
-    margin: 3em auto 0em auto;
+    margin: 3em auto 3rem auto;
     background-color: rgba(255, 255, 255, 0.8);
     border-radius: 25px;
+    font-family: 'Roboto', sans-serif;
     box-shadow: 
     12px 12px 16px 0 rgba(0, 0, 0, 0.25),
     -8px -8px 12px 0 rgba(255, 255, 255, 0.301);
@@ -2222,6 +2241,7 @@ nav{
 .service-title,
 .about-us-title{
     font-size: 2.5rem;
+    font-family: 'Roboto', sans-serif;
     margin: 2rem 2rem;
     font-weight: 600;
     padding-left: 0.625rem;

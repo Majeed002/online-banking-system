@@ -235,7 +235,7 @@
     </div>
 
 
-<!--Handpicked Offer-->
+ <!--Handpicked Offer-->
 
     <div class="handpicked-offer-container">
         <div class="heading-handpicked-offer">
@@ -366,9 +366,9 @@
 
     
  </div>   
- </div>
+</div>
 
- <footer id="main-footer">
+<footer id="main-footer">
     <div class="contact-follow-container">
             
             <div class="contact-us-container">
