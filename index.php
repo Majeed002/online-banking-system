@@ -35,12 +35,7 @@
             </li>
             <li>
                 <a href="#">Blogs</a>
-            </li>
-            <li>
-                <a href="#">Downloads</a>
-            </li>
-            
-            
+            </li>    
         </ul>
         <!-- Login and Register Button-->
             <ul class="login-register-button">
