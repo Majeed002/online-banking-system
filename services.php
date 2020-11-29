@@ -71,7 +71,7 @@
                     </span>
                     <span class="contact-us-mail">
                     <i class="fas fa-envelope"></i>
-                    urban.help@gmail.com
+                    urban.contact.us@gmail.com
                     </span>
                 </div>
             </div>
