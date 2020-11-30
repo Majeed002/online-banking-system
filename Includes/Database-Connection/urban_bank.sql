@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 5.0.2
+-- version 5.0.4
 -- https://www.phpmyadmin.net/
 --
--- Host: 127.0.0.1:3308
--- Generation Time: Oct 19, 2020 at 01:02 PM
--- Server version: 10.4.13-MariaDB
--- PHP Version: 7.3.20
+-- Host: 127.0.0.1
+-- Generation Time: Nov 30, 2020 at 06:46 PM
+-- Server version: 10.4.16-MariaDB
+-- PHP Version: 7.4.12
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -43,10 +43,10 @@ CREATE TABLE `address_details` (
 --
 
 CREATE TABLE `admin_login` (
-  `admin_id` int(255) NOT NULL,
-  `email_id` varchar(255) NOT NULL,
-  `password` varchar(255) NOT NULL,
-  `site` enum('online','offline') NOT NULL
+  `admin_id` int(11) NOT NULL,
+  `admin_mail_id` varchar(255) NOT NULL,
+  `admin_pwd` varchar(255) NOT NULL,
+  `admin_role` enum('online','offline') NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 -- --------------------------------------------------------
@@ -119,6 +119,17 @@ CREATE TABLE `customer_phone_details` (
   `corresponding_no` bigint(255) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `newsletter_subscriber`
+--
+
+CREATE TABLE `newsletter_subscriber` (
+  `subscriber_id` int(11) NOT NULL,
+  `subscriber_mail` varchar(255) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
 --
 -- Indexes for dumped tables
 --
@@ -151,7 +162,11 @@ ALTER TABLE `customer_account_details`
 -- Indexes for table `customer_details`
 --
 ALTER TABLE `customer_details`
-  ADD PRIMARY KEY (`customer_id`) USING BTREE;
+  ADD PRIMARY KEY (`customer_id`),
+  ADD KEY `phone_no_id` (`phone_no_id`),
+  ADD KEY `address_id` (`address_id`),
+  ADD KEY `customer_user_id` (`customer_user_id`),
+  ADD KEY `account_number` (`account_number`);
 
 --
 -- Indexes for table `customer_login`
@@ -166,6 +181,12 @@ ALTER TABLE `customer_phone_details`
   ADD PRIMARY KEY (`phone_no_id`);
 
 --
+-- Indexes for table `newsletter_subscriber`
+--
+ALTER TABLE `newsletter_subscriber`
+  ADD PRIMARY KEY (`subscriber_id`);
+
+--
 -- AUTO_INCREMENT for dumped tables
 --
 
@@ -176,22 +197,16 @@ ALTER TABLE `address_details`
   MODIFY `address_id` int(255) NOT NULL AUTO_INCREMENT;
 
 --
+-- AUTO_INCREMENT for table `admin_login`
+--
+ALTER TABLE `admin_login`
+  MODIFY `admin_id` int(11) NOT NULL AUTO_INCREMENT;
+
+--
 -- AUTO_INCREMENT for table `blog`
 --
 ALTER TABLE `blog`
   MODIFY `blog_id` int(255) NOT NULL AUTO_INCREMENT;
-
---
--- AUTO_INCREMENT for table `customer_account_details`
---
-ALTER TABLE `customer_account_details`
-  MODIFY `account_number` int(255) NOT NULL AUTO_INCREMENT;
-
---
--- AUTO_INCREMENT for table `customer_details`
---
-ALTER TABLE `customer_details`
-  MODIFY `customer_id` int(255) NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT for table `customer_login`
@@ -204,6 +219,25 @@ ALTER TABLE `customer_login`
 --
 ALTER TABLE `customer_phone_details`
   MODIFY `phone_no_id` int(255) NOT NULL AUTO_INCREMENT;
+
+--
+-- AUTO_INCREMENT for table `newsletter_subscriber`
+--
+ALTER TABLE `newsletter_subscriber`
+  MODIFY `subscriber_id` int(11) NOT NULL AUTO_INCREMENT;
+
+--
+-- Constraints for dumped tables
+--
+
+--
+-- Constraints for table `customer_details`
+--
+ALTER TABLE `customer_details`
+  ADD CONSTRAINT `customer_details_ibfk_1` FOREIGN KEY (`phone_no_id`) REFERENCES `customer_phone_details` (`phone_no_id`),
+  ADD CONSTRAINT `customer_details_ibfk_2` FOREIGN KEY (`address_id`) REFERENCES `address_details` (`address_id`),
+  ADD CONSTRAINT `customer_details_ibfk_3` FOREIGN KEY (`customer_user_id`) REFERENCES `customer_login` (`customer_user_id`),
+  ADD CONSTRAINT `customer_details_ibfk_4` FOREIGN KEY (`account_number`) REFERENCES `customer_account_details` (`account_number`);
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
