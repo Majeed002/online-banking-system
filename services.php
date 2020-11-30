@@ -54,8 +54,79 @@
     <!-- End of the Navigation Bar-->
     
     <div class="service-title">Services</div>
-    </div>   
- </div>
+    <div class="we-provide-container">
+        <div class="heading-we-provide">
+            <h2>
+                We Provide 
+            </h2>
+        </div>
+        
+        <div class="we-provide-wrapper">
+
+            <div class="we-provide">
+                <div class="we-provide-card-info">
+                <div class="service-card-icon">
+                    <i class="fas fa-clock"  ></i>
+                </div>
+                
+                    <h3>
+                        24x7 Service
+                    </h3>
+                    <h4>
+                       Lorem ipsum dolor sit, amet consectetur adipisicing elit. Fuga sed at ullam inventore incidunt? Aliquid debitis sequi officiis. Quasi sint ipsum eum ut sapiente dignissimos aspernatur cum pariatur cumque accusantium.
+                    </h4>
+                </div>
+            </div>
+
+            <div class="we-provide">
+                <div class="we-provide-card-info">
+                <div class="service-card-icon">
+                    <i class="fas fa-money-bill-wave"></i>
+                </div>
+                    <h3>
+                        Fast Transaction
+                    </h3>
+                    <h4>
+                       Lorem ipsum dolor sit, amet consectetur adipisicing elit. Fuga sed at ullam inventore incidunt? Aliquid debitis sequi officiis. Quasi sint ipsum eum ut sapiente dignissimos aspernatur cum pariatur cumque accusantium.
+                    </h4>
+                </div>
+            </div>
+
+            <div class="we-provide">
+                <div class="we-provide-card-info">
+                    <div class="service-card-icon">
+                        <i class="fas fa-shield-alt"></i>
+                    </div>
+                    <h3>
+                        Secured Service
+                    </h3>
+                    <h4>
+                       Lorem ipsum dolor sit, amet consectetur adipisicing elit. Fuga sed at ullam inventore incidunt? Aliquid debitis sequi officiis. Quasi sint ipsum eum ut sapiente dignissimos aspernatur cum pariatur cumque accusantium.
+                    </h4>
+                </div>
+            </div>
+            
+            <div class="we-provide">
+                <div class="we-provide-card-info">
+                    <div class="service-card-icon">
+                        <i class="fas fa-hands-helping"></i>
+                    </div>
+                    <h3>
+                        Intra-Banking
+                    </h3>
+                    <h4>
+                       Lorem ipsum dolor sit, amet consectetur adipisicing elit. Fuga sed at ullam inventore incidunt? Aliquid debitis sequi officiis. Quasi sint ipsum eum ut sapiente dignissimos aspernatur cum pariatur cumque accusantium.
+                    </h4>
+                </div>
+            </div>
+            
+            
+        </div>
+
+    </div>
+ 
+ </div>   
+</div>
 
 <footer id="main-footer">
     <div class="contact-follow-container">

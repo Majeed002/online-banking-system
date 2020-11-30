@@ -713,7 +713,7 @@ nav{
 
 .handpicked-offer-wrapper > div{  
   background-color: rgba(245, 245, 245, 0.842);
-  height: 60vh;
+  height: auto;
   width: auto;
   border-radius: 25px;
   overflow: hidden;
@@ -788,7 +788,6 @@ nav{
     transform: scale(1.0);
     transition: all 0.3s ease-in-out;   
 }
-
 .button-handpicked-offer {
     margin-top: 3rem;
     margin-bottom: 2rem;
@@ -862,9 +861,6 @@ nav{
     .handpicked-offer-wrapper{
         grid-template-columns: repeat(2,1fr);
     }
-    .handpicked-offer-wrapper > div{
-        height: 55vh;
-    }
     .offer .handpicked-offer-card-info h3{
         font-size: 1.60rem;
     }
@@ -879,17 +875,13 @@ nav{
         height:40px;
         font-size: 0.85rem;
     }
-    .btn-handpicked-offer{}
+
 }
 
 @media (max-width:767px) and (min-width:730px){
     .handpicked-offer-wrapper{
         grid-template-columns: repeat(1,1fr);
     }
-
-    .handpicked-offer-wrapper > div{
-        height: 52vh;
-    } 
     .offer .handpicked-offer-card-info h3{
         font-size: 1.75rem;
     }
@@ -903,7 +895,6 @@ nav{
         width: 150px;
         height:40px;
         font-size: 0.85rem;
-        margin-bottom: 2rem;
     }
 
 }
@@ -914,9 +905,6 @@ nav{
         grid-template-columns: repeat(1,1fr);
     }
 
-    .handpicked-offer-wrapper > div{
-        height: 55vh;
-    } 
     .offer .handpicked-offer-card-info h3{
         font-size: 1.75rem;
     }
@@ -930,7 +918,6 @@ nav{
         width: 150px;
         height:40px;
         font-size: 0.85rem;
-        margin-bottom: 2rem;
     }
 
 }
@@ -2334,7 +2321,7 @@ nav{
         font-size: 0.95rem;
     }
 }
-
+/*Service and About-us Page title*/
 .service-title,
 .about-us-title{
     font-size: 2.5rem;
@@ -2345,5 +2332,137 @@ nav{
     border-left: 0.5rem solid rgb(26, 64, 99) ;
     color: rgb(26, 64, 99);
 }
+/*We provide card-service page*/
+.service-card-icon{
+    display: flex;
+    justify-content: center;
+}
+.service-card-icon i{
+    font-size: 15rem;
+    margin-top: 1rem;
+    color: #cea820;
+}
+
+.we-provide-container{
+    height: auto;
+    font-family: 'Roboto',sans-serif;
+    text-align: center;
+ }
+
+.we-provide-container .heading-we-provide h2{
+    font-size: 2.2rem;
+    letter-spacing: 0.2px;
+    color: rgb(26, 64, 99);
+    text-align: center;
+    text-transform: uppercase;
+    text-decoration-color: lightsalmon;
+    padding: 0.5rem 1rem;
+}
+
+.we-provide-wrapper{
+    display: grid;
+    margin: 20px;
+    grid-gap: 3rem;
+    color: rgb(26, 64, 99);
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    padding: 0em 4em;
+}
+
+.we-provide-wrapper > div{  
+  background-color: rgba(245, 245, 245, 0.842);
+  height: auto;
+  width: auto;
+  border-radius: 25px;
+  overflow: hidden;
+}
+
+.we-provide-wrapper > div:hover{
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19),
+    0 8px 20px 0 rgba(0, 0, 0, 0.19);
+    transform: scale(1.02);
+    transition: all 0.3s ease-in-out;
+}
+
+.we-provide .we-provide-card-info h3{
+    margin: 2rem 3rem 0rem 2rem ;
+    font-size: 2.25rem;
+    font-family: 'Roboto', sans-serif;
+}
+
+.we-provide .we-provide-card-info h4{
+    margin: 1rem 3rem 0rem 2rem ;
+    font-size: 1.15rem;
+    font-family: 'Roboto', sans-serif;
+    color: rgb(15, 81, 146);
+    text-align: justify;
+    margin-bottom: 1rem;
+}
 
 
+@media (max-width:1790px) and (min-width:1670px){
+    .we-provide .we-provide-card-info h3{
+        font-size: 2rem;
+    }
+    .we-provide .we-provide-card-info h4{
+        font-size: 1.05rem;
+    }
+    .we-provide .we-provide-card-info a{
+        font-size: 0.85rem;
+    }
+}
+
+
+@media (max-width:1669px) and (min-width:1410px){
+    .service-card-icon i{
+        font-size: 13rem;
+    }
+    .we-provide .we-provide-card-info h3{
+        font-size: 1.60rem;
+    }
+    .we-provide .we-provide-card-info h4{
+        font-size: 1rem;
+    }
+    .we-provide .we-provide-card-info a{
+        font-size: 0.80rem;
+    }
+}
+
+@media (max-width:1409px) and (min-width:768px){
+    .we-provide-wrapper{
+        grid-template-columns: repeat(2,1fr);
+    }
+    .we-provide .we-provide-card-info h3{
+        font-size: 1.60rem;
+    }
+    .we-provide .we-provide-card-info h4{
+        font-size: 1rem;
+    }
+    
+}
+
+@media (max-width:767px) and (min-width:730px){
+    .we-provide-wrapper{
+        grid-template-columns: repeat(1,1fr);
+    } 
+    .we-provide .we-provide-card-info h3{
+        font-size: 1.75rem;
+    }
+    .we-provide .we-provide-card-info h4{
+        font-size: 1rem;
+    }
+
+}
+
+
+@media screen and (max-width:729px){
+    .we-provide-wrapper{
+        grid-template-columns: repeat(1,1fr);
+    }
+    .we-provide .we-provide-card-info h3{
+        font-size: 1.75rem;
+    }
+    .offer .handpicked-offer-card-info h4{
+        font-size: 1rem;
+    }
+
+}
