@@ -828,14 +828,112 @@ nav{
     opacity: 1;
 }
 
+@media (max-width:1750px) and (min-width:1600px){
+    .offer .handpicked-offer-card-info h3{
+        font-size: 2rem;
+    }
+    .offer .handpicked-offer-card-info h4{
+        font-size: 1.05rem;
+    }
+    .offer .handpicked-offer-card-info a{
+        font-size: 0.85rem;
+    }
+}
 
 
+@media (max-width:1599px) and (min-width:1400px){
+    .offer .handpicked-offer-card-info h3{
+        font-size: 1.60rem;
+    }
+    .offer .handpicked-offer-card-info h4{
+        font-size: 1rem;
+    }
+    .offer .handpicked-offer-card-info a{
+        font-size: 0.80rem;
+    }
+    .btn-handpicked-offer-card button{
+        width: 150px;
+        height:40px;
+        font-size: 0.85rem;
+    }
+}
+
+@media (max-width:1399px) and (min-width:768px){
+    .handpicked-offer-wrapper{
+        grid-template-columns: repeat(2,1fr);
+    }
+    .handpicked-offer-wrapper > div{
+        height: 55vh;
+    }
+    .offer .handpicked-offer-card-info h3{
+        font-size: 1.60rem;
+    }
+    .offer .handpicked-offer-card-info h4{
+        font-size: 1rem;
+    }
+    .offer .handpicked-offer-card-info a{
+        font-size: 0.80rem;
+    }
+    .btn-handpicked-offer-card button{
+        width: 150px;
+        height:40px;
+        font-size: 0.85rem;
+    }
+    .btn-handpicked-offer{}
+}
+
+@media (max-width:767px) and (min-width:730px){
+    .handpicked-offer-wrapper{
+        grid-template-columns: repeat(1,1fr);
+    }
+
+    .handpicked-offer-wrapper > div{
+        height: 52vh;
+    } 
+    .offer .handpicked-offer-card-info h3{
+        font-size: 1.75rem;
+    }
+    .offer .handpicked-offer-card-info h4{
+        font-size: 1rem;
+    }
+    .offer .handpicked-offer-card-info a{
+        font-size: 0.80rem;
+    }
+    .btn-handpicked-offer-card button{
+        width: 150px;
+        height:40px;
+        font-size: 0.85rem;
+        margin-bottom: 2rem;
+    }
+
+}
 
 
+@media screen and (max-width:729px){
+    .handpicked-offer-wrapper{
+        grid-template-columns: repeat(1,1fr);
+    }
 
+    .handpicked-offer-wrapper > div{
+        height: 55vh;
+    } 
+    .offer .handpicked-offer-card-info h3{
+        font-size: 1.75rem;
+    }
+    .offer .handpicked-offer-card-info h4{
+        font-size: 1rem;
+    }
+    .offer .handpicked-offer-card-info a{
+        font-size: 0.80rem;
+    }
+    .btn-handpicked-offer-card button{
+        width: 150px;
+        height:40px;
+        font-size: 0.85rem;
+        margin-bottom: 2rem;
+    }
 
-
-
+}
 
 
 

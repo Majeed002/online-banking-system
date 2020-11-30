@@ -250,7 +250,7 @@
                         Get Instant 10% Discount at Amazon.in
                     </h3>
                     <h4>
-                        Pay using UB Credit or Debit Card
+                        Pay using UB Credit Card
                         <br>
                         <a href="#"> T&C Applied</a>
                     </h4>
@@ -302,7 +302,7 @@
                         Get Flat 5% Discount at Adidas Store
                     </h3>
                     <h4>
-                        Pay using UB Credit or Debit Card
+                        Pay using UB Credit Card
                         <br>
                         <a href="#"> T&C Applied</a>
                     </h4>
