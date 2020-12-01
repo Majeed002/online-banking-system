@@ -14,7 +14,7 @@
 </head>
 <body>
 <div id="services-container">
-    <div id="services-main">
+ <div id="services-main">
     <!-- Navigation Bar  of Website-->  
     <nav>
         <!-- Logo Image of the navbar-->
@@ -124,7 +124,82 @@
         </div>
 
     </div>
- 
+    <div class="our-core-value-container">
+        <div class="heading-our-core-value">
+            <h2>
+                Our Core Values 
+            </h2>
+        </div>
+        
+        <div class="our-core-value-wrapper">
+            <div class="our-core-value">
+                <div class="our-core-value-card-info">
+                    <div class="our-core-value-card-icon">
+                    <i class="far fa-handshake"></i>
+                    </div>
+                    <h3>
+                        TRUST
+                    </h3>
+                </div>
+            </div> 
+            <div class="our-core-value">
+                <div class="our-core-value-card-info">
+                    <div class="our-core-value-card-icon">
+                    <i class="fas fa-user-lock"></i>
+                    </div>
+                    <h3>
+                        CONFIDENTIAL
+                    </h3>
+                </div>
+            </div>
+            <div class="our-core-value">
+                <div class="our-core-value-card-info">
+                    <div class="our-core-value-card-icon">
+                    <i class="fas fa-check-circle"></i>
+                    </div>
+                    <h3>
+                        INTEGRITY
+                    </h3>
+                </div>
+            </div>
+            <div class="our-core-value">
+                <div class="our-core-value-card-info">
+                    <div class="our-core-value-card-icon">
+                    <i class="fas fa-user-tie"></i>
+                    </div>
+                    <h3>
+                        PROFESSIONALISM
+                    </h3>
+                </div>
+            </div>
+
+        </div>
+
+    </div>
+    <div class="corporate-partner-container">
+        <div class="heading-corporate-partner">
+                <h2>
+                    Our Corporate Partners 
+                </h2>
+            </div>
+        <div class="corporate-partner-wrapper">
+            <i class="fab fa-accusoft" title="ACCUSOFT" ></i>
+            <i class="fab fa-amazon" title="AMAZON"></i>
+            <i class="fab fa-asymmetrik" title="ASYMMETRIK"></i>
+            <i class="fab fa-microsoft" title="MICROSOFT"></i>
+            <i class="fab fa-cc-visa" title="VISA"></i>
+            <i class="fab fa-cc-mastercard" title="MASTERCARD"></i>
+            <i class="fab fa-cloudflare" title="CLOUDFARE"></i>
+            <i class="fab fa-fedex" title="FEDEX"></i>
+            <i class="fab fa-dashcube" title="DASHCUBE"></i>
+            <i class="fab fa-fedora" title="FEDORA"></i>
+            <i class="fab fa-gg" title="GG"></i>
+            <i class="fab fa-keycdn" title="KEY-CDN"></i>
+        </div>
+        
+        
+    </div>
+
  </div>   
 </div>
 

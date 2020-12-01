@@ -2326,7 +2326,7 @@ nav{
 .about-us-title{
     font-size: 2.5rem;
     font-family: 'Roboto', sans-serif;
-    margin: 2rem 2rem;
+    margin: 1.75rem 2rem 0.5rem 2rem;
     font-weight: 600;
     padding-left: 0.625rem;
     border-left: 0.5rem solid rgb(26, 64, 99) ;
@@ -2338,7 +2338,7 @@ nav{
     justify-content: center;
 }
 .service-card-icon i{
-    font-size: 15rem;
+    font-size: 13rem;
     margin-top: 1rem;
     color: #cea820;
 }
@@ -2347,6 +2347,7 @@ nav{
     height: auto;
     font-family: 'Roboto',sans-serif;
     text-align: center;
+    margin-bottom: 2rem;
  }
 
 .we-provide-container .heading-we-provide h2{
@@ -2414,7 +2415,7 @@ nav{
 
 @media (max-width:1669px) and (min-width:1410px){
     .service-card-icon i{
-        font-size: 13rem;
+        font-size: 11rem;
     }
     .we-provide .we-provide-card-info h3{
         font-size: 1.60rem;
@@ -2458,6 +2459,9 @@ nav{
     .we-provide-wrapper{
         grid-template-columns: repeat(1,1fr);
     }
+    .heading-we-provide h2{
+        font-size: 1.7rem;
+    }
     .we-provide .we-provide-card-info h3{
         font-size: 1.75rem;
     }
@@ -2465,4 +2469,183 @@ nav{
         font-size: 1rem;
     }
 
+}
+
+@media screen and (max-width:800px){
+    
+    .we-provide-container .heading-we-provide h2{
+        font-size: 1.7rem; 
+    }
+
+} 
+/*Our Core Values-Service Page*/
+.our-core-value-container{
+    height: auto;
+    font-family: 'Roboto',sans-serif;
+    text-align: center;
+    margin-bottom: 3rem;
+ }
+
+ .our-core-value-container .heading-our-core-value h2{
+    font-size: 2.2rem;
+    letter-spacing: 0.2px;
+    color: rgb(26, 64, 99);
+    text-align: center;
+    text-transform: uppercase;
+    text-decoration-color: lightsalmon;
+    padding: 0.5rem 1rem;
+    margin-top: 1rem;
+}
+
+.our-core-value-wrapper{
+    display: grid;
+    margin: 10px 0px 10px 0px;
+    grid-gap: 3rem;
+    color: rgb(26, 64, 99);
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    padding: 0em 1em;
+}
+
+.our-core-value-card-icon i{
+    font-size: 4rem;
+}
+
+.our-core-value-card-info h3{
+    margin-top: 1rem;
+}
+
+@media (max-width:996px) and (min-width:848px){
+    .our-core-value-wrapper{
+        grid-gap: 0.5rem;
+        padding: 0em 0.1em;
+    }
+    .our-core-value-card-icon i{
+        font-size: 2.55rem;
+    }
+    .our-core-value-card-info h3{
+        margin-top: 1rem;
+        grid-template-columns: repeat(4,1fr);
+        font-size: 1rem;
+    }
+}
+
+@media (max-width:848px) and (min-width:746px){
+    
+    .our-core-value-wrapper{
+        grid-template-columns: repeat(2,1fr);
+    }
+}
+
+@media screen and (max-width:800px){
+
+    .our-core-value-container .heading-our-core-value h2{
+        font-size: 1.7rem; 
+    }
+
+}
+
+.corporate-partner-container{
+    height: auto;
+    font-family: 'Roboto',sans-serif;
+    text-align: center;
+    margin-bottom: 4rem;
+}
+
+.corporate-partner-container .heading-corporate-partner h2{
+    font-size: 2.2rem;
+    letter-spacing: 0.2px;
+    color: rgb(26, 64, 99);
+    text-align: center;
+    text-transform: uppercase;
+    text-decoration-color: lightsalmon;
+    padding: 0.5rem 1rem;
+    margin-top: 2rem;
+}
+
+.corporate-partner-wrapper {
+    display: grid;
+    margin: 10px 0px 10px 0px;
+    grid-gap: 2rem;
+    color: rgb(26, 64, 99);
+    grid-template-columns: repeat(3, 1fr);
+    padding: 0em 0em;
+}
+
+.corporate-partner-wrapper i{
+    font-size: 10rem;
+    color: rgb(167, 164, 164);
+}
+
+.fa-accusoft:hover{
+    color:rgb(7, 168, 7);
+    transition: all 0.3s ease;
+}
+
+.fa-amazon:hover{
+    color: orange;
+    transition: all 0.3s ease;
+}
+
+.fa-asymmetrik:hover{
+    color: maroon;
+    transition: all 0.3s ease;
+}
+
+.fa-microsoft:hover{
+    color: rgb(33, 119, 233);
+    transition: all 0.3s ease;
+} 
+
+.fa-cc-visa:hover{
+    color: #1a1f71;
+    transition: all 0.3s ease;
+} 
+
+.fa-cc-mastercard:hover{
+    color: #f79e1b ;
+    transition: all 0.3s ease;
+}  
+
+.fa-cloudflare:hover{
+    color: #404041 ;
+    transition: all 0.3s ease;
+}  
+ 
+.fa-fedex:hover{
+    color: #4D148C ;
+    transition: all 0.3s ease;
+}  
+
+.fa-dashcube:hover{
+    color: black ;
+    transition: all 0.3s ease;
+}  
+
+.fa-fedora:hover{
+    color: #0B57A4 ;
+    transition: all 0.3s ease;
+}  
+
+.fa-gg:hover{
+    color: rgb(56, 55, 55) ;
+    transition: all 0.3s ease;
+}  
+
+.fa-keycdn:hover{
+    color: rgb(12, 12, 124) ;
+    transition: all 0.3s ease;
+} 
+
+@media screen and (max-width:800px){
+    .corporate-partner-container .heading-corporate-partner h2{
+        font-size: 1.7rem; 
+    }
+
+    .corporate-partner-wrapper{
+        grid-template-columns: repeat(2,1fr);
+    }
+
+    .corporate-partner-wrapper i{
+        font-size: 7rem;
+    }
 }
