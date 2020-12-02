@@ -56,6 +56,83 @@
     <div class="about-us-title">About Us</div>
 
 
+        <section class="team-section">
+        <div class="team-container">
+            <div class="heading-team">
+                <h2>
+                    Board of Directors 
+                </h2>
+            </div>
+            <div class="team-row">
+                <div class="team-items">
+                    <div class="item">
+                    <img src="./Assets/Images/About-us/team-1.jpg" alt="team" />
+                        <div class="inner">
+                            <div class="info">
+                                <h5>John Peter</h5>
+                                <p>Managing Director & CEO</p>
+                                    <div class="social-links">
+                                        <a href=""><i class="fab fa-linkedin-in"></i></a>
+                                        <a href=""><i class="fab fa-twitter"></i></a>
+                                        <a href=""><i class="fab fa-facebook-f"></i></a>
+                                        <a href=""><i class="fab fa-instagram"></i></a>
+                                    </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="item">
+                        <img src="./Assets/Images/About-us/team-2.jpg" alt="team" />
+                        <div class="inner">
+                            <div class="info">
+                                <h5>Abhay Gupta</h5>
+                                <p>Executive Director & CFO</p>
+                                    <div class="social-links">
+                                            <a href=""><i class="fab fa-linkedin-in"></i></a>
+                                            <a href=""><i class="fab fa-twitter"></i></a>
+                                            <a href=""><i class="fab fa-facebook-f"></i></a>
+                                            <a href=""><i class="fab fa-instagram"></i></a>
+                                    </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="item">
+                    <img src="./Assets/Images/About-us/team-3.jpg" alt="team" />
+                        <div class="inner">
+                            <div class="info">
+                                <h5>Dani Rower</h5>
+                                <p>Executive Director & COO</p>
+                                    <div class="social-links">
+                                            <a href=""><i class="fab fa-linkedin-in"></i></a>
+                                            <a href=""><i class="fab fa-twitter"></i></a>
+                                            <a href=""><i class="fab fa-facebook-f"></i></a>
+                                            <a href=""><i class="fab fa-instagram"></i></a>
+                                     </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="item">
+                    <img src="./Assets/Images/About-us/team-4.jpg" alt="team" />
+                        <div class="inner">
+                            <div class="info">
+                                <h5>Jimmy Cliff</h5>
+                                <p>Shareholder Director</p>
+                                <div class="social-links">
+                                    <div class="social-links">
+                                        <a href=""><i class="fab fa-linkedin-in"></i></a>
+                                        <a href=""><i class="fab fa-twitter"></i></a>
+                                        <a href=""><i class="fab fa-facebook-f"></i></a>
+                                        <a href=""><i class="fab fa-instagram"></i></a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    
 
 
 
