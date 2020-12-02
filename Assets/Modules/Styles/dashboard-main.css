@@ -1,0 +1,398 @@
+/*ADMIN DASHBOARD STYLE*/
+
+
+/*===== GOOGLE FONTS =====*/
+@import url("https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700&display=swap");
+
+/*===== VARIABLES CSS =====*/
+:root{
+  --header-height: 3rem;
+  --nav-width: 68px;
+
+  /*===== Colors =====*/
+  --first-color:  rgb(26, 64, 99);
+  --first-color-light: rgba(245, 245, 245, 0.877);
+  --white-color: #f0c424;
+  
+  /*===== Font and typography =====*/
+  --body-font: 'Nunito', sans-serif;
+  --normal-font-size: 1rem;
+  
+  /*===== z index =====*/
+  --z-fixed: 100;
+}
+
+/*===== BASE =====*/
+*,::before,::after{
+  box-sizing: border-box;
+}
+
+body{
+  position: relative;
+  margin: 8rem 0 0 0;
+  padding: 0 1rem;
+  font-family: var(--body-font);
+  font-size: var(--normal-font-size);
+  transition: .5s;
+}
+
+a{
+  text-decoration: none;
+}
+
+/*===== HEADER =====*/
+.admin-header{
+  width: 100%;
+  height: var(--header-height);
+  position: fixed;
+  top: 0;
+  left: 0;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 1rem;
+  background-color: var(--first-color-light);
+  z-index: var(--z-fixed);
+  transition: .5s;
+}
+
+.admin-header__toggle{
+  color: var(--first-color);
+  font-size: 1.5rem;
+  cursor: pointer;
+}
+
+
+.admin-logout button{
+  width: 140px;
+    min-height: 35px;
+    font-size: 1rem;
+    text-decoration: none;
+    background-color: rgba(255, 0, 0, 0.849);
+    color:rgb(33, 85, 133);
+    font-family: inherit;
+    letter-spacing: 0.5px;
+    border-radius: 25px;
+    transition: 0.3s ease;
+    outline: none;
+    box-shadow: none;
+    border: 1px;
+    padding-bottom: 0rem;
+}
+
+.admin-logout button:focus {
+  border: 0;
+}
+
+.admin-logout button:hover
+{
+    background-image: linear-gradient(to left, rgb(226, 63, 23) 0%, #a52f20 100%);
+    z-index: 10px;
+    color: white;
+    box-shadow: 0 12px 16px 0 rgba(161, 161, 161, 0.514), 0 17px 50px 0 rgba(182, 10, 10, 0.19);
+}
+
+.admin-header__icon{
+  font-size: 1rem;
+  padding-right: 2px;
+}
+
+/*===== NAV =====*/
+.admin-l-navbar{
+  position: fixed;
+  top: 0;
+  left: -30%;
+  width: var(--nav-width);
+  height: 100vh;
+  background-color: var(--first-color);
+  padding: .5rem 1rem 0 0;
+  transition: .5s;
+  z-index: var(--z-fixed);
+}
+
+.admin-nav{
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  overflow: hidden;
+}
+
+.admin-nav__logo, .admin-nav__link{
+  display: grid;
+  grid-template-columns: max-content max-content;
+  align-items: center;
+  column-gap: 1rem;
+  padding: .5rem 0 .5rem 1.5rem;
+}
+
+.admin-nav__logo{
+  margin-bottom: 2rem;
+}
+
+.admin-nav__logo-icon{
+  font-size: 1.5rem;
+  color: var(--white-color);
+}
+
+.admin-nav__logo-name{
+  color: var(--white-color);
+  font-weight: 700;
+}
+
+.admin-nav__link{
+  position: relative;
+  color: var(--first-color-light);
+  margin-bottom: 1.5rem;
+  transition: .3s;
+}
+
+.admin-nav__link:hover{
+  color: var(--white-color);
+}
+
+.admin-nav__icon{
+  font-size: 1.25rem;
+}
+
+/*Show navbar movil*/
+.show{
+  left: 0;
+}
+
+/*Add padding body movil*/
+.admin-body-pd{
+  padding-left: calc(var(--nav-width) + 1rem);
+}
+
+/*Active links*/
+.active{
+  color: var(--white-color);
+}
+
+.active::before{
+  content: '';
+  position: absolute;
+  left: 0;
+  width: 2px;
+  height: 32px;
+  background-color: var(--white-color);
+}
+
+/* ===== MEDIA QUERIES=====*/
+@media screen and (min-width: 768px){
+  body{
+    margin: calc(var(--header-height) + 1rem) 0 0 0;
+    padding-left: calc(var(--nav-width) + 1rem);
+  }
+
+  .admin-header{
+    height: calc(var(--header-height) + 1rem);
+    padding: 0 2rem 0 calc(var(--nav-width) + 2rem);
+  }
+
+
+  .admin-l-navbar{
+    left: 0;
+    padding: 1rem 1rem 0 0;
+  }
+  
+  /*Show navbar desktop*/
+  .show{
+    width: calc(var(--nav-width) + 156px);
+  }
+
+  /*Add padding body desktop*/
+  .admin-body-pd{
+    padding-left: calc(var(--nav-width) + 188px);
+  }
+}
+
+/*USER DASHBOARD STYLE*/
+:root{
+    --header-height: 3rem;
+    --nav-width: 68px;
+  
+    /*===== Colors =====*/
+    --first-color:  rgb(26, 64, 99);
+    --first-color-light: rgba(245, 245, 245, 0.877);
+    --white-color: #f0c424;
+    
+    /*===== Font and typography =====*/
+    --body-font: 'Nunito', sans-serif;
+    --normal-font-size: 1rem;
+    
+    /*===== z index =====*/
+    --z-fixed: 100;
+  }
+
+
+  .user-header{
+  width: 100%;
+  height: var(--header-height);
+  position: fixed;
+  top: 0;
+  left: 0;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 1rem;
+  background-color: var(--first-color-light);
+  z-index: var(--z-fixed);
+  transition: .5s;
+}
+
+.user-header__toggle{
+  color: var(--first-color);
+  font-size: 1.5rem;
+  cursor: pointer;
+}
+
+
+.user-logout button{
+  width: 140px;
+    min-height: 35px;
+    font-size: 1rem;
+    text-decoration: none;
+    background-color: rgba(255, 0, 0, 0.849);
+    color:rgb(33, 85, 133);
+    font-family: inherit;
+    letter-spacing: 0.5px;
+    border-radius: 25px;
+    transition: 0.3s ease;
+    outline: none;
+    box-shadow: none;
+    border: 1px;
+    padding-bottom: 0rem;
+}
+
+.user-logout button:focus {
+  border: 0;
+}
+
+.user-logout button:hover
+{
+    background-image: linear-gradient(to left, rgb(226, 63, 23) 0%, #a52f20 100%);
+    z-index: 10px;
+    color: white;
+    box-shadow: 0 12px 16px 0 rgba(161, 161, 161, 0.514), 0 17px 50px 0 rgba(182, 10, 10, 0.19);
+}
+
+.user-header__icon{
+  font-size: 1rem;
+  padding-right: 2px;
+}
+
+/*===== NAV =====*/
+.user-l-navbar{
+  position: fixed;
+  top: 0;
+  left: -30%;
+  width: var(--nav-width);
+  height: 100vh;
+  background-color: var(--first-color);
+  padding: .5rem 1rem 0 0;
+  transition: .5s;
+  z-index: var(--z-fixed);
+}
+
+.user-nav{
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  overflow: hidden;
+}
+
+.user-nav__logo, .user-nav__link{
+  display: grid;
+  grid-template-columns: max-content max-content;
+  align-items: center;
+  column-gap: 1rem;
+  padding: .5rem 0 .5rem 1.5rem;
+}
+
+.user-nav__logo{
+  margin-bottom: 2rem;
+}
+
+.user-nav__logo-icon{
+  font-size: 1.5rem;
+  color: var(--white-color);
+}
+
+.user-nav__logo-name{
+  color: var(--white-color);
+  font-weight: 700;
+}
+
+.user-nav__link{
+  position: relative;
+  color: var(--first-color-light);
+  margin-bottom: 1.5rem;
+  transition: .3s;
+}
+
+.user-nav__link:hover{
+  color: var(--white-color);
+}
+
+.user-nav__icon{
+  font-size: 1.25rem;
+}
+
+/*Show navbar movil*/
+.show{
+  left: 0;
+}
+
+/*Add padding body movil*/
+.user-body-pd{
+  padding-left: calc(var(--nav-width) + 1rem);
+}
+
+/*Active links*/
+.active{
+  color: var(--white-color);
+}
+
+.active::before{
+  content: '';
+  position: absolute;
+  left: 0;
+  width: 2px;
+  height: 32px;
+  background-color: var(--white-color);
+}
+
+/* ===== MEDIA QUERIES=====*/
+@media screen and (min-width: 768px){
+  body{
+    margin: calc(var(--header-height) + 1rem) 0 0 0;
+    padding-left: calc(var(--nav-width) + 1rem);
+  }
+
+  .user-header{
+    height: calc(var(--header-height) + 1rem);
+    padding: 0 2rem 0 calc(var(--nav-width) + 2rem);
+  }
+
+
+  .user-l-navbar{
+    left: 0;
+    padding: 1rem 1rem 0 0;
+  }
+  
+  /*Show navbar desktop*/
+  .show{
+    width: calc(var(--nav-width) + 156px);
+  }
+
+  /*Add padding body desktop*/
+  .user-body-pd{
+    padding-left: calc(var(--nav-width) + 188px);
+  }
+}
+
+
+
