@@ -1540,7 +1540,18 @@ nav{
 
 
 
+.ol-register-credentials .input-file{
+    width: 400px;
+    height: 2rem;
+    box-shadow: none;
+    border-radius: 25px;
+}
 
+.ol-register-credentials div p{
+    font-size: 1.05rem;
+    padding-left: 1rem;
+    color: red;
+}
 
 
 
@@ -1549,7 +1560,9 @@ nav{
 
 
 .ol-register-checkbox {
+    
     margin: auto;
+    margin-top: 1rem;
     font-size: 1.2rem;
     text-align: center;
     padding-bottom: 1rem;
@@ -1568,7 +1581,7 @@ nav{
 
 
 .ol-register-button {
-    margin-top: 1rem;
+    margin-top: 2rem;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -1609,7 +1622,6 @@ nav{
 
 .forgot-password {
     margin: auto;
-    padding-top: 2.5rem;
     text-align: center;
     color: rgb(26, 64, 99);
     font-size: 1.1rem;
@@ -1632,7 +1644,6 @@ nav{
 
 .register-process-link{
     margin: auto;
-    padding-top: 1.5rem;
     text-align: center;
     color: rgb(26, 64, 99);
     font-size: 1.1rem;
@@ -2867,7 +2878,6 @@ nav{
       margin: 20px;
       overflow-y: auto;
       box-shadow: 2px 3px 8px #888888;
-      overflow-x: hidden;
   }
   
   .blog-flex-container-title {
