@@ -1,3 +1,24 @@
+<?php
+
+session_start();
+
+if(!isset($_SESSION['loggedin']) || $_SESSION['loggedin'] !==true)
+{
+    header("location: ../../admin-login.php");
+}
+
+
+?>
+
+
+
+
+
+
+
+
+
+
 <!DOCTYPE html>
 <html lang="en">
     <head>
@@ -7,10 +28,10 @@
         <link href="https://fonts.googleapis.com/css2?family=Roboto+Slab&display=swap" rel="stylesheet">
         <link href='https://cdn.jsdelivr.net/npm/boxicons@2.0.5/css/boxicons.min.css' rel='stylesheet'>
         <link rel="icon" href="../../Assets/Images/Bank_Logo/Title_icon.png" type="png">
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css">>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css">
         <link rel="stylesheet" href="../../Assets/Modules/Styles/dashboard-main.css">
         <script defer src="../../Assets/Modules/Scripts/admin-dashboard-app.js"></script>
-        <title>Add Customer | Dashboard</title>
+        <title>Post Blog | Dashboard</title>
     </head>
     <body id="admin-body-pd" >
         <header class="admin-header" id="admin-header">
@@ -18,7 +39,7 @@
                 <i class='bx bx-menu' id="admin-header-toggle"></i>
             </div>
             <div class="admin-logout">
-                <button type="submit"><i class='bx bx-log-out admin-header__icon'></i>LOGOUT</button>
+                <a href="../../admin-logout.php"> <button type="submit"><i class='bx bx-log-out admin-header__icon' ></i>LOGOUT</button> </a>
             </div>
         </header>
 
@@ -80,8 +101,47 @@
             </nav>
         </div>
 
+    <div class="blog-container">
+
+
+            <div class="heading-title">
+                <h2>Post Blogs</h2>
+            </div>
+
+            <form class="blog_form" action="post-blog-action.php" method="post">
+                <div class="flex-container">
+                    <div class=container>
+                        <label>Blog title :</label><br>
+                        <input name="blog_title" size="50" type="text" required />
+                    </div>
+                </div>
+
+                <div class="flex-container">
+                    <div class=container>
+                        <label>Blog Details :</label><br>
+                        <textarea name="blog_detail" style="height: 50vh; width: 80vw;" required /></textarea>
+                    </div>
+                </div>
+
+                <div class="flex-container">
+                    <div class="container">
+                        <button type="submit">Submit</button>
+                    </div>
+
+                    <div class="container">
+                        <button type="reset" class="reset" onclick="return confirmReset();">Reset</button>
+                    </div>
+                </div>
+
+            </form>
         
-        <!--===== MAIN JS =====-->
-        <script src="assets/js/main.js"></script>
+    </div>
+
+    
+    <script>
+    function confirmReset() {
+        return confirm('Do you really want to reset?')
+    }
+    </script>
     </body>
 </html>

@@ -1,3 +1,8 @@
+<?php
+    include "./Includes/Database-Connection/db-connection-inc.php";
+?>
+
+
 <!DOCTYPE html>
 <html lang="en">
 <head> 
@@ -14,7 +19,7 @@
 </head>
 <body>
 <div id="services-container">
- <div id="services-main">
+    <div id="services-main">
     <!-- Navigation Bar  of Website-->  
     <nav>
         <!-- Logo Image of the navbar-->
@@ -27,13 +32,13 @@
                 <a href="./index.php" >Home</a>
             </li>
             <li>
-                <a class="current" href="./services.php">Services</a>
+                <a  href="./services.php">Services</a>
             </li>
             <li>
-                <a href="./about-us.php">About Us</a>
+                <a  href="./about-us.php">About Us</a>
             </li>
             <li>
-                <a href="./bllogs.php">Blogs</a>
+                <a class="current" href=".blogs.php">Blogs</a>
             </li>  
         </ul>
         <!-- Login and Register Button-->
@@ -53,155 +58,48 @@
     </nav>   
     <!-- End of the Navigation Bar-->
     
-    <div class="service-title">Services</div>
-    <div class="we-provide-container">
-        <div class="heading-we-provide">
-            <h2>
-                We Provide 
-            </h2>
-        </div>
-        
-        <div class="we-provide-wrapper">
+    <div class="about-us-title">Blogs</div>
 
-            <div class="we-provide">
-                <div class="we-provide-card-info">
-                <div class="service-card-icon">
-                    <i class="fas fa-clock"  ></i>
-                </div>
-                
-                    <h3>
-                        24x7 Service
-                    </h3>
-                    <h4>
-                       Lorem ipsum dolor sit, amet consectetur adipisicing elit. Fuga sed at ullam inventore incidunt? Aliquid debitis sequi officiis. Quasi sint ipsum eum ut sapiente dignissimos aspernatur cum pariatur cumque accusantium.
-                    </h4>
-                </div>
-            </div>
+    <div class="blog-flex-container">
+        <?php
+            $sql0 = "SELECT blog_id, blog_title, created FROM blog ORDER BY created DESC";
+            $result = $conn->query($sql0);
 
-            <div class="we-provide">
-                <div class="we-provide-card-info">
-                <div class="service-card-icon">
-                    <i class="fas fa-money-bill-wave"></i>
-                </div>
-                    <h3>
-                        Fast Transaction
-                    </h3>
-                    <h4>
-                       Lorem ipsum dolor sit, amet consectetur adipisicing elit. Fuga sed at ullam inventore incidunt? Aliquid debitis sequi officiis. Quasi sint ipsum eum ut sapiente dignissimos aspernatur cum pariatur cumque accusantium.
-                    </h4>
-                </div>
-            </div>
+            if ($result->num_rows > 0) {
+            // output data of each row
+            while($row = $result->fetch_assoc()) {
+                $blog_id = $row["blog_id"];
+                $sql1 = "SELECT blog_detail FROM blog_body WHERE blog_id=$blog_id";
+                $result1 = $conn->query($sql1); ?>
 
-            <div class="we-provide">
-                <div class="we-provide-card-info">
-                    <div class="service-card-icon">
-                        <i class="fas fa-shield-alt"></i>
+                <div class="blog-flex-item">
+                    <div class="blog-flex-container-title">
+                        <h1 id="blog_title"><?php echo $row["blog_title"] . "<br>"; ?></h1>
                     </div>
-                    <h3>
-                        Secured Service
-                    </h3>
-                    <h4>
-                       Lorem ipsum dolor sit, amet consectetur adipisicing elit. Fuga sed at ullam inventore incidunt? Aliquid debitis sequi officiis. Quasi sint ipsum eum ut sapiente dignissimos aspernatur cum pariatur cumque accusantium.
-                    </h4>
-                </div>
-            </div>
-            
-            <div class="we-provide">
-                <div class="we-provide-card-info">
-                    <div class="service-card-icon">
-                        <i class="fas fa-hands-helping"></i>
+                    <div class="blog-flex-container-title">
+                        <p id="date"><?php echo "Date Creation : " .
+                            date("d/m/Y", strtotime($row["created"])); ?></p>
                     </div>
-                    <h3>
-                        Intra-Banking
-                    </h3>
-                    <h4>
-                       Lorem ipsum dolor sit, amet consectetur adipisicing elit. Fuga sed at ullam inventore incidunt? Aliquid debitis sequi officiis. Quasi sint ipsum eum ut sapiente dignissimos aspernatur cum pariatur cumque accusantium.
-                    </h4>
+                    <div class="blog-flex-container-body">
+                        <p id="blog_detail"><?php while($row1 = $result1->fetch_assoc()) {
+                            echo $row1["blog_detail"]; } ?></p>
+                    </div>
                 </div>
-            </div>
-            
-            
-        </div>
 
-    </div>
-    <div class="our-core-value-container">
-        <div class="heading-our-core-value">
-            <h2>
-                Our Core Values 
-            </h2>
-        </div>
-        
-        <div class="our-core-value-wrapper">
-            <div class="our-core-value">
-                <div class="our-core-value-card-info">
-                    <div class="our-core-value-card-icon">
-                    <i class="far fa-handshake"></i>
-                    </div>
-                    <h3>
-                        TRUST
-                    </h3>
-                </div>
-            </div> 
-            <div class="our-core-value">
-                <div class="our-core-value-card-info">
-                    <div class="our-core-value-card-icon">
-                    <i class="fas fa-user-lock"></i>
-                    </div>
-                    <h3>
-                        CONFIDENTIAL
-                    </h3>
-                </div>
-            </div>
-            <div class="our-core-value">
-                <div class="our-core-value-card-info">
-                    <div class="our-core-value-card-icon">
-                    <i class="fas fa-check-circle"></i>
-                    </div>
-                    <h3>
-                        INTEGRITY
-                    </h3>
-                </div>
-            </div>
-            <div class="our-core-value">
-                <div class="our-core-value-card-info">
-                    <div class="our-core-value-card-icon">
-                    <i class="fas fa-user-tie"></i>
-                    </div>
-                    <h3>
-                        PROFESSIONALISM
-                    </h3>
-                </div>
-            </div>
-
-        </div>
-
-    </div>
-    <div class="corporate-partner-container">
-        <div class="heading-corporate-partner">
-                <h2>
-                    Our Corporate Partners 
-                </h2>
-            </div>
-        <div class="corporate-partner-wrapper">
-            <i class="fab fa-accusoft" title="ACCUSOFT" ></i>
-            <i class="fab fa-amazon" title="AMAZON"></i>
-            <i class="fab fa-asymmetrik" title="ASYMMETRIK"></i>
-            <i class="fab fa-microsoft" title="MICROSOFT"></i>
-            <i class="fab fa-cc-visa" title="VISA"></i>
-            <i class="fab fa-cc-mastercard" title="MASTERCARD"></i>
-            <i class="fab fa-cloudflare" title="CLOUDFARE"></i>
-            <i class="fab fa-fedex" title="FEDEX"></i>
-            <i class="fab fa-dashcube" title="DASHCUBE"></i>
-            <i class="fab fa-fedora" title="FEDORA"></i>
-            <i class="fab fa-gg" title="GG"></i>
-            <i class="fab fa-keycdn" title="KEY-CDN"></i>
-        </div>
-        
-        
+            <?php }
+            } else {
+                echo "No news available ! Please post some.";
+            }
+            $conn->close();
+        ?>
     </div>
 
- </div>   
-</div>
+    
+
+
+
+    </div>   
+ </div>
 
 <footer id="main-footer">
     <div class="contact-follow-container">

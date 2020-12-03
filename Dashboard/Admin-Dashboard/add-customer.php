@@ -1,3 +1,17 @@
+<?php
+
+session_start();
+
+if(!isset($_SESSION['loggedin']) || $_SESSION['loggedin'] !==true)
+{
+    header("location: ../../admin-login.php");
+}
+
+
+?>
+
+
+
 <!DOCTYPE html>
 <html lang="en">
     <head>
@@ -18,7 +32,7 @@
                 <i class='bx bx-menu' id="admin-header-toggle"></i>
             </div>
             <div class="admin-logout">
-                <button type="submit"><i class='bx bx-log-out admin-header__icon'></i>LOGOUT</button>
+            <a href="../../admin-logout.php""> <button type="submit"><i class='bx bx-log-out admin-header__icon' ></i>LOGOUT</button> </a>
             </div>
         </header>
 

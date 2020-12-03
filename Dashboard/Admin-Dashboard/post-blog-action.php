@@ -7,8 +7,14 @@ if(!isset($_SESSION['loggedin']) || $_SESSION['loggedin'] !==true)
     header("location: ../../admin-login.php");
 }
 
+include '../../Includes/Database-Connection/db-connection-inc.php';
 
 ?>
+
+
+
+
+
 
 
 
@@ -26,7 +32,7 @@ if(!isset($_SESSION['loggedin']) || $_SESSION['loggedin'] !==true)
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css">
         <link rel="stylesheet" href="../../Assets/Modules/Styles/dashboard-main.css">
         <script defer src="../../Assets/Modules/Scripts/admin-dashboard-app.js"></script>
-        <title>Home | Dashboard</title>
+        <title>Post Blog | Dashboard</title>
     </head>
     <body id="admin-body-pd" >
         <header class="admin-header" id="admin-header">
@@ -34,8 +40,7 @@ if(!isset($_SESSION['loggedin']) || $_SESSION['loggedin'] !==true)
                 <i class='bx bx-menu' id="admin-header-toggle"></i>
             </div>
             <div class="admin-logout">
-            <a href="../../admin-logout.php""> <button type="submit"><i class='bx bx-log-out admin-header__icon' ></i>LOGOUT</button> </a>
-                
+                <a href="../../admin-logout.php"> <button type="submit"><i class='bx bx-log-out admin-header__icon' ></i>LOGOUT</button> </a>
             </div>
         </header>
 
@@ -48,7 +53,7 @@ if(!isset($_SESSION['loggedin']) || $_SESSION['loggedin'] !==true)
                     </a>
 
                     <div class="admin-sidebar-component">
-                        <a href="./home.php" class="admin-nav__link active"  title="Home">
+                        <a href="./home.php" class="admin-nav__link"  title="Home">
                         <i class='bx bx-home admin-nav__icon' ></i>
                             <span class="admin-nav__name">HOME</span>
                         </a>
@@ -68,12 +73,12 @@ if(!isset($_SESSION['loggedin']) || $_SESSION['loggedin'] !==true)
                             <span class="admin-nav__name">ONLINE APPROVAL</span>
                         </a>
 
-                        <a href="./add-notice.php" class="admin-nav__link "  title="Add Notice">
+                        <a href="./add-notice.php" class="admin-nav__link"  title="Add Notice">
                             <i class='bx bxs-note admin-nav__icon' ></i>
                             <span class="admin-nav__name">ADD NOTICE</span>
                         </a>
 
-                        <a href="./post-blog.php" class="admin-nav__link"  title="Post Blog">
+                        <a href="./post-blog.php" class="admin-nav__link active"  title="Post Blog">
                             <i class='bx bxl-blogger admin-nav__icon' ></i>
                             <span class="admin-nav__name">POST BLOG</span>
                         </a>
@@ -97,8 +102,53 @@ if(!isset($_SESSION['loggedin']) || $_SESSION['loggedin'] !==true)
             </nav>
         </div>
 
-        <?php echo "Welcome ". $_SESSION['admin_email_id']?>! You can now use this website
-        <!--===== MAIN JS =====-->
-        <script src="assets/js/main.js"></script>
+    <div class="blog-container">
+
+
+            <div class="heading-title">
+                <h2>Post Blogs</h2>
+            </div>
+
+            <div class="flex-container">
+                <div class="flex-item">
+                    <?php
+                    $blog_title = mysqli_real_escape_string($conn, $_POST["blog_title"]);
+                    $blog_detail = mysqli_real_escape_string($conn, $_POST["blog_detail"]);
+
+                    $sql0 = "INSERT INTO blog (blog_title, created)
+                    VALUES('$blog_title', NOW())";
+
+                    $sql1 = "INSERT INTO blog_body (blog_detail)
+                    VALUES('$blog_detail')"; ?>
+
+                    <?php
+                    if (($conn->query($sql0) === TRUE) && ($conn->query($sql1) === TRUE)) { ?>
+                        <p id="info" style="font-size:2rem; color: #212121 ;"> <?php echo "Blog posted successfully !\n"; ?> </p>
+                    <?php
+                    } else { ?>
+                        <p id="info"><?php
+                        echo "Server Error !<br>";
+                        echo "Error: " . $sql0 . "<br>" . $conn->error . "<br>";
+                        echo "Error: " . $sql1 . "<br>" . $conn->error . "<br>"; ?></p>
+                    <?php
+                    }
+
+                    $conn->close();
+                    ?>
+                </div>
+                
+            <div class="flex-item">
+                <br>    
+                <a href="./post-blog.php" class="button">Post Again</a>
+            </div>
+
+    </div>
+
+    
+    <script>
+    function confirmReset() {
+        return confirm('Do you really want to reset?')
+    }
+    </script>
     </body>
 </html>

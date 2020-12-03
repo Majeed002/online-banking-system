@@ -1,4 +1,73 @@
-<?php include './Includes/AdminDashBoard-inc/admin-login-inc.php' ?>
+<?php 
+//This script will handle login
+session_start();
+
+// check if the user is already logged in
+if(isset($_SESSION['admin_mail_id']))
+{
+    header("location: ./Dashboard/Admin-Dashboard/home.php");
+    exit;
+}
+require_once "./Includes/Database-Connection/db-connection-inc.php";
+
+$admin_email_id = $admin_pwd = "";
+$admin_email_id_err = $admin_pwd_err= "";
+
+// if request method is post
+if ($_SERVER['REQUEST_METHOD'] == "POST"){
+    if(empty(trim($_POST['admin_email_id'])))
+    {
+        $admin_email_id_err = "*Please enter Email ID";
+    }
+    if(empty(trim($_POST['admin_pwd']))){
+        $admin_pwd_err = "*Please enter Password";
+    }
+    else{
+        $admin_email_id = trim($_POST['admin_email_id']);
+        $admin_pwd = trim($_POST['admin_pwd']);
+    }
+
+
+if(empty($err))
+{
+    $sql = "SELECT admin_id, admin_email_id, admin_pwd FROM admin_login WHERE admin_email_id = ?";
+    $stmt = mysqli_prepare($conn, $sql);
+    mysqli_stmt_bind_param($stmt, "s", $param_admin_email_id);
+    $param_admin_email_id = $admin_email_id;
+    
+    
+    // Try to execute this statement
+    if(mysqli_stmt_execute($stmt)){
+        mysqli_stmt_store_result($stmt);
+        if(mysqli_stmt_num_rows($stmt) == 1)
+                {
+                    mysqli_stmt_bind_result($stmt, $admin_id, $admin_email_id, $hashed_admin_pwd);
+                    if(mysqli_stmt_fetch($stmt))
+                    {
+                        if(password_verify($admin_pwd, $hashed_admin_pwd))
+                        {
+                            // this means the admin_pwd is corrct. Allow user to login
+                            session_start();
+                            $_SESSION["admin_email_id"] = $admin_email_id;
+                            $_SESSION["admin_id"] = $admin_id;
+                            $_SESSION["loggedin"] = true;
+
+                            header("location: ./Dashboard/Admin-Dashboard/home.php");
+                            
+                        }
+                    }
+
+                }
+
+    }
+}    
+
+
+}
+
+
+?>
+
 <!DOCTYPE html>
 <html lang="en">
     <head>
@@ -44,24 +113,24 @@
                 <h2 class="log-in-title">Admin Login</h2>
             </div>
                         
-            <form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>" method="POST">
+            <form action="" method="POST">
                 
                 <div class="admin-login-credentials">
                     <div>    
-                        <label for="admin_mail">
+                        <label for="admin_email_id">
                             <i class="far fa-envelope" style="color: rgb(26, 64, 99);"></i>
                             Email-ID 
-                            <span class="error-messages"> <br> <?php echo $admin_mailErr; ?> </span>
+                            <span class="error-messages"> <br> <?php echo $admin_email_id_err; ?> </span>
                         </label>
-                        <input id="admin_mail" name="admin_mail"  type="text" value="<?php $admin_mail; ?>" placeholder="Enter your email-id..." >
+                        <input id="admin_email_id" name="admin_email_id"  type="text" value="<?php $admin_email_id?>" placeholder="Enter your email-id..." >
                     </div>
 
                     <div>
-                        <label for="admin_login_pwd">
+                        <label for="admin_pwd">
                             <i class="fas fa-key" style="color: rgb(26, 64, 99);"></i>
-                            Password <span class="error-messages"> <br> <?php echo $admin_login_pwdErr; ?> </span>
+                            Password <span class="error-messages"> <br> <?php echo $admin_pwd_err; ?> </span>
                         </label>
-                        <input id="admin_login_pwd" name="admin_login_pwd" value="<?php $admin_login_pwd; ?>" type="password" placeholder="Enter your password..." >
+                        <input id="admin_pwd" name="admin_pwd"  type="password" value="<?php $admin_pwd?>" placeholder="Enter your password..." >
                     </div>
                 </div>
 

@@ -1,3 +1,7 @@
+<?php
+    include "./Includes/Database-Connection/db-connection-inc.php";
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -34,7 +38,7 @@
                 <a href="./about-us.php">About Us</a>
             </li>
             <li>
-                <a href="#">Blogs</a>
+                <a href="./blogs.php">Blogs</a>
             </li>    
         </ul>
         <!-- Login and Register Button-->
@@ -112,13 +116,37 @@
             <div class="loan" id="personal-loan-card">
                 <div class="loan-title" id="loan-title">
                     <i class="fas fa-wallet loan-icon" style="color: rgb(122, 92, 63); , hover"></i>
+                    
                     Personal Loan
                 </div>
                 <div class="interest-rate-percentage">
-                    1.5% p.a.
+                <?php
+                    $sql = "select * from interest_rate where ir_id=1;";
+                    $result = mysqli_query($conn, $sql);
+                    $resultCheck = mysqli_num_rows($result);
+                    
+                    if ($resultCheck > 0){
+                        while($row = mysqli_fetch_assoc($result)){
+                            echo $row['interest_rate'];
+                        }
+                    }
+                    
+                    ?>
+                 p.a.
                 </div>
                 <div class="interest-rate-date">
-                    w.e.f. 01.08.2020 
+                    w.e.f. <?php
+                    $sql = "select * from interest_rate where ir_id=1;";
+                    $result = mysqli_query($conn, $sql);
+                    $resultCheck = mysqli_num_rows($result);
+                    
+                    if ($resultCheck > 0){
+                        while($row = mysqli_fetch_assoc($result)){
+                            echo date("d.m.Y", strtotime($row['create_at']));
+                        }
+                    }
+                    
+                    ?> 
                 </div>
                 <div class="interest-rate-tc">
                    <a href="#">
@@ -133,10 +161,32 @@
                     Home Loan
                 </div>
                 <div class="interest-rate-percentage">
-                    6.95% p.a.
+                <?php
+                    $sql = "select * from interest_rate where ir_id=2;";
+                    $result = mysqli_query($conn, $sql);
+                    $resultCheck = mysqli_num_rows($result);
+                    
+                    if ($resultCheck > 0){
+                        while($row = mysqli_fetch_assoc($result)){
+                            echo $row['interest_rate'];
+                        }
+                    }
+                    
+                    ?> p.a.
                 </div>
                 <div class="interest-rate-date">
-                    w.e.f. 01.08.2020 
+                    w.e.f.  <?php
+                    $sql = "select * from interest_rate where ir_id=2;";
+                    $result = mysqli_query($conn, $sql);
+                    $resultCheck = mysqli_num_rows($result);
+                    
+                    if ($resultCheck > 0){
+                        while($row = mysqli_fetch_assoc($result)){
+                            echo date("d.m.Y", strtotime($row['create_at']));
+                        }
+                    }
+                    
+                    ?> 
                 </div>
                 <div class="interest-rate-tc">
                    <a href="#">
@@ -151,10 +201,32 @@
                     Car Loan
                 </div>
                 <div class="interest-rate-percentage">
-                    3.45% p.a.
+                <?php
+                    $sql = "select * from interest_rate where ir_id=3;";
+                    $result = mysqli_query($conn, $sql);
+                    $resultCheck = mysqli_num_rows($result);
+                    
+                    if ($resultCheck > 0){
+                        while($row = mysqli_fetch_assoc($result)){
+                            echo $row['interest_rate'];
+                        }
+                    }
+                    
+                    ?> p.a.
                 </div>
                 <div class="interest-rate-date">
-                    w.e.f. 01.08.2020 
+                    w.e.f. <?php
+                    $sql = "select * from interest_rate where ir_id=3;";
+                    $result = mysqli_query($conn, $sql);
+                    $resultCheck = mysqli_num_rows($result);
+                    
+                    if ($resultCheck > 0){
+                        while($row = mysqli_fetch_assoc($result)){
+                            echo date("d.m.Y", strtotime($row['create_at']));
+                        }
+                    }
+                    
+                    ?> 
                 </div>
                 <div class="interest-rate-tc">
                    <a href="#">
@@ -169,10 +241,32 @@
                     Business Loan
                 </div>
                 <div class="interest-rate-percentage">
-                    8.35% p.a.
+                <?php
+                    $sql = "select * from interest_rate where ir_id=4;";
+                    $result = mysqli_query($conn, $sql);
+                    $resultCheck = mysqli_num_rows($result);
+                    
+                    if ($resultCheck > 0){
+                        while($row = mysqli_fetch_assoc($result)){
+                            echo $row['interest_rate'];
+                        }
+                    }
+                    
+                    ?> p.a.
                 </div>
                 <div class="interest-rate-date">
-                    w.e.f. 01.08.2020 
+                    w.e.f. <?php
+                    $sql = "select * from interest_rate where ir_id=4;";
+                    $result = mysqli_query($conn, $sql);
+                    $resultCheck = mysqli_num_rows($result);
+                    
+                    if ($resultCheck > 0){
+                        while($row = mysqli_fetch_assoc($result)){
+                            echo date("d.m.Y", strtotime($row['create_at']));
+                        }
+                    }
+                    
+                    ?> 
                 </div>
                 <div class="interest-rate-tc">
                    <a href="#">
@@ -187,10 +281,32 @@
                     Gold Loan
                 </div>
                 <div class="interest-rate-percentage">
-                    6.25% p.a.
+                <?php
+                    $sql = "select * from interest_rate where ir_id=5;";
+                    $result = mysqli_query($conn, $sql);
+                    $resultCheck = mysqli_num_rows($result);
+                    
+                    if ($resultCheck > 0){
+                        while($row = mysqli_fetch_assoc($result)){
+                            echo $row['interest_rate'];
+                        }
+                    }
+                    
+                    ?> p.a.
                 </div>
                 <div class="interest-rate-date">
-                    w.e.f. 01.08.2020 
+                    w.e.f. <?php
+                    $sql = "select * from interest_rate where ir_id=5;";
+                    $result = mysqli_query($conn, $sql);
+                    $resultCheck = mysqli_num_rows($result);
+                    
+                    if ($resultCheck > 0){
+                        while($row = mysqli_fetch_assoc($result)){
+                            echo date("d.m.Y", strtotime($row['create_at']));
+                        }
+                    }
+                    
+                    ?> 
                 </div>
                 <div class="interest-rate-tc">
                    <a href="#">
@@ -205,10 +321,32 @@
                     Education Loan
                 </div>
                 <div class="interest-rate-percentage">
-                    3.95% p.a.
+                <?php
+                    $sql = "select * from interest_rate where ir_id=6;";
+                    $result = mysqli_query($conn, $sql);
+                    $resultCheck = mysqli_num_rows($result);
+                    
+                    if ($resultCheck > 0){
+                        while($row = mysqli_fetch_assoc($result)){
+                            echo $row['interest_rate'];
+                        }
+                    }
+                    
+                    ?> p.a.
                 </div>
                 <div class="interest-rate-date">
-                    w.e.f. 01.08.2020 
+                    w.e.f. <?php
+                    $sql = "select * from interest_rate where ir_id=6;";
+                    $result = mysqli_query($conn, $sql);
+                    $resultCheck = mysqli_num_rows($result);
+                    
+                    if ($resultCheck > 0){
+                        while($row = mysqli_fetch_assoc($result)){
+                            echo date("d.m.Y", strtotime($row['create_at']));
+                        }
+                    }
+                    
+                    ?>
                 </div>
                 <div class="interest-rate-tc">
                    <a href="#">

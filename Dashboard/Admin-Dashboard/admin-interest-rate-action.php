@@ -7,6 +7,8 @@ if(!isset($_SESSION['loggedin']) || $_SESSION['loggedin'] !==true)
     header("location: ../../admin-login.php");
 }
 
+include '../../Includes/Database-Connection/db-connection-inc.php';
+
 
 ?>
 
@@ -23,10 +25,11 @@ if(!isset($_SESSION['loggedin']) || $_SESSION['loggedin'] !==true)
         <link href="https://fonts.googleapis.com/css2?family=Roboto+Slab&display=swap" rel="stylesheet">
         <link href='https://cdn.jsdelivr.net/npm/boxicons@2.0.5/css/boxicons.min.css' rel='stylesheet'>
         <link rel="icon" href="../../Assets/Images/Bank_Logo/Title_icon.png" type="png">
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css">
         <link rel="stylesheet" href="../../Assets/Modules/Styles/dashboard-main.css">
         <script defer src="../../Assets/Modules/Scripts/admin-dashboard-app.js"></script>
-        <title>Home | Dashboard</title>
+        <title>Add Interest Rate | Dashboard</title>
     </head>
     <body id="admin-body-pd" >
         <header class="admin-header" id="admin-header">
@@ -35,7 +38,6 @@ if(!isset($_SESSION['loggedin']) || $_SESSION['loggedin'] !==true)
             </div>
             <div class="admin-logout">
             <a href="../../admin-logout.php""> <button type="submit"><i class='bx bx-log-out admin-header__icon' ></i>LOGOUT</button> </a>
-                
             </div>
         </header>
 
@@ -48,7 +50,7 @@ if(!isset($_SESSION['loggedin']) || $_SESSION['loggedin'] !==true)
                     </a>
 
                     <div class="admin-sidebar-component">
-                        <a href="./home.php" class="admin-nav__link active"  title="Home">
+                        <a href="./home.php" class="admin-nav__link"  title="Home">
                         <i class='bx bx-home admin-nav__icon' ></i>
                             <span class="admin-nav__name">HOME</span>
                         </a>
@@ -68,7 +70,7 @@ if(!isset($_SESSION['loggedin']) || $_SESSION['loggedin'] !==true)
                             <span class="admin-nav__name">ONLINE APPROVAL</span>
                         </a>
 
-                        <a href="./add-notice.php" class="admin-nav__link "  title="Add Notice">
+                        <a href="./add-notice.php" class="admin-nav__link"  title="Add Notice">
                             <i class='bx bxs-note admin-nav__icon' ></i>
                             <span class="admin-nav__name">ADD NOTICE</span>
                         </a>
@@ -83,7 +85,7 @@ if(!isset($_SESSION['loggedin']) || $_SESSION['loggedin'] !==true)
                             <span class="admin-nav__name">NEWSLETTER</span>
                         </a>
 
-                        <a href="./admin-interest-rate.php" class="admin-nav__link"  title="Interest Rate">
+                        <a href="./admin-interest-rate.php" class="admin-nav__link active"  title="Interest Rate">
                             <i class='bx bx-line-chart admin-nav__icon'></i>
                             <span class="admin-nav__name">INTEREST RATE</span>
                         </a>
@@ -96,8 +98,67 @@ if(!isset($_SESSION['loggedin']) || $_SESSION['loggedin'] !==true)
                 </a>
             </nav>
         </div>
+         
 
-        <?php echo "Welcome ". $_SESSION['admin_email_id']?>! You can now use this website
+        <div class="interest-container">
+
+
+            <div class="heading-title">
+                <h2>Update Interest Rate</h2>
+            </div>
+
+            <form class="ir_form" action="" method="post">
+                <div class="flex-container">
+                    <div class=container>
+                        <label>Loan Type :</label>
+                        <input name="loan_type" size="20" type="text" required />
+                    </div>
+                </div>
+                <div class="flex-container">
+                    <div class=container>
+                        <label>Interest Rate :</label>
+                        <input name="interest_rate" size="20" type="text" required />
+                    </div>
+                </div>
+                <div class="flex-container">
+                    <div class=container>
+                        <label>Date :</label>
+                        <input name="create_at" size="20" type="text" required />
+                    </div>
+                </div>
+
+                <div class="flex-container">
+                    <div class="container">
+                        <input type="submit" class="button" name="update" value="UPDATE DATA" style="background-color: rgb(26, 64, 99);"/>&nbsp; &nbsp;
+                        <a href="./admin-interest-rate.php"><input type="button" name="update" value="BACK" class="button" ></a>    
+                    </div>
+
+                    <div class="container">
+                       
+                    </div>
+                </div>
+               
+            </form>
+            
+            <?php
+            if(isset($_POST['update'])){
+                $loan_type = $_POST['loan_type'];
+            
+                $sql = "UPDATE interest_rate SET interest_rate='$_POST[interest_rate]',create_at = '$_POST[create_at]' WHERE loan_type = '$_POST[loan_type]';"; 
+                $result = mysqli_query($conn, $sql);
+            
+                if($result){
+                    echo "Value Updated";
+                }
+                else{
+                    echo "Value was not Updated";
+                }
+            }
+            
+            
+            
+            ?>
+        </div>
         <!--===== MAIN JS =====-->
         <script src="assets/js/main.js"></script>
     </body>

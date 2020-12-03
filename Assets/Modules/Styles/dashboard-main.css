@@ -1,7 +1,7 @@
-/*ADMIN DASHBOARD STYLE*/
-
-
-/*===== GOOGLE FONTS =====*/
+@import url('https://fonts.googleapis.com/css2?family=Anton&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Balsamiq+Sans&family=Roboto+Condensed:wght@300&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Open+Sans:400,600,700&display=swap');
 @import url("https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700&display=swap");
 
 /*===== VARIABLES CSS =====*/
@@ -11,7 +11,7 @@
 
   /*===== Colors =====*/
   --first-color:  rgb(26, 64, 99);
-  --first-color-light: rgba(245, 245, 245, 0.877);
+  --first-color-light: inherit;
   --white-color: #f0c424;
   
   /*===== Font and typography =====*/
@@ -34,6 +34,9 @@ body{
   font-family: var(--body-font);
   font-size: var(--normal-font-size);
   transition: .5s;
+  background-image: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+  background-attachment: fixed;
+  height: 100%;
 }
 
 a{
@@ -63,11 +66,11 @@ a{
 }
 
 
-.admin-logout button{
+.admin-logout a  button{
   width: 140px;
-    min-height: 35px;
-    font-size: 1rem;
-    text-decoration: none;
+  height: 35px;
+  font-size: 1rem;
+  text-decoration: none;
     background-color: rgba(255, 0, 0, 0.849);
     color:rgb(33, 85, 133);
     font-family: inherit;
@@ -77,14 +80,14 @@ a{
     outline: none;
     box-shadow: none;
     border: 1px;
-    padding-bottom: 0rem;
+    padding-bottom: 2rem;
 }
 
-.admin-logout button:focus {
+.admin-logout a  button:focus {
   border: 0;
 }
 
-.admin-logout button:hover
+.admin-logout a button:hover
 {
     background-image: linear-gradient(to left, rgb(226, 63, 23) 0%, #a52f20 100%);
     z-index: 10px;
@@ -394,5 +397,452 @@ a{
   }
 }
 
+.heading-title h2{
+    font-size: 2.5rem;
+    font-family: 'Roboto', sans-serif;
+    margin: 6rem 0rem 0.5rem 0rem;
+    font-weight: 600;
+    padding-left: 0.625rem;
+    border-left: 0.5rem solid rgb(26, 64, 99) ;
+    color: rgb(26, 64, 99);
+}
 
 
+/*Form Style*/
+.flex-container {
+  display: -webkit-flex;
+  display: flex;
+  margin-left: 256px;
+  width: auto;
+  height: auto;
+  -webkit-flex-wrap: wrap;
+  flex-wrap: wrap;
+  background-color: inherit;
+  font-family: 'Roboto', sans-serif;
+}
+
+.flex-container-form_header {
+  display: -webkit-flex;
+  display: flex;
+  margin-left: 256px;
+  width: auto;
+  height: auto;
+  background-color: #FAFAFA;
+  border-bottom: 3px solid #263238;
+}
+
+h1[id="form_header"] {
+  margin-left: 20px;
+  font-family: 'Roboto', sans-serif;
+  color: #263238;
+}
+
+.flex-container-radio {
+  display: -webkit-flex;
+  display: flex;
+  width: auto;
+  height: auto;
+  -webkit-flex-wrap: wrap;
+  flex-wrap: wrap;
+  background-color: #FAFAFA;
+}
+
+@media screen and (max-width: 855px) {
+  .flex-container, .flex-container-form_header {
+      margin-left: auto;
+  }
+}
+
+/* Bordered form */
+form {
+  border: 3px solid inherit;
+  width: inherit;
+  margin-left: 0px;
+}
+
+label {
+  display: block;
+  float: left;
+  color: rgb(33, 85, 133);
+  font-family: 'Roboto', sans-serif;
+  font-size: 1.5rem;
+}
+
+label[id="info_label"] {
+  display: block;
+  float: right;
+  margin-left: 6px;
+  font-family: 'Roboto', sans-serif;
+  color: #212121;
+  font-size: 2rem;
+}
+
+/* Full-width inputs */
+input[type=text], input[type=password] {
+  font-family: 'Roboto', sans-serif;
+  color: #212121;
+  font-size: 24px;
+  width: auto;
+  margin: 8px 0;
+  padding: 1px 1px;
+  border: 0;
+  border-bottom: 1px solid #212121;
+  box-sizing: border-box;
+  background-color: transparent;
+}
+
+@media screen and (max-width: 480px) {
+  input[type=text], input[type=password] {
+      width: 300px;
+  }
+
+  label[id="info_label"] {
+      display: block;
+      float:none;
+  }
+}
+
+@media screen and (max-width: 350px) {
+  input[type=text], input[type=password] {
+      width: 240px;
+  }
+}
+
+.container {
+  margin-top: 20px;
+  margin-left: -10px;
+  margin-right: 20px;
+  float: left;
+  display: inline-block;
+}
+
+input[type=radio] {
+  display: none;
+  background-color: white;
+  float: left;
+  padding: 1px 1px;
+}
+
+label[id="radio-label"] {
+background: url("images/radio_button_unchecked.png") left top no-repeat;
+display: block;
+min-height: 25px;
+padding-left: 35px;
+}
+
+input[type=radio]:checked + label {
+background: url("images/radio_button_checked.png") left top no-repeat;
+}
+
+textarea {
+  font-family: Roboto-Regular;
+  color: #212121;
+  font-size: 24px;
+  height: 100px;
+  width:35vw;
+  max-width: 720px;
+  min-width: 240px;
+  margin: 8px 0;
+  padding: 1px 1px;
+  border: 0;
+  border: 1px solid #212121;
+  box-sizing: border-box;
+  background-color: transparent;
+}
+
+select {
+  font-family: Roboto-Regular;
+  color: #212121;
+  font-size: 20px;
+  background: url("images/down_arrow.png") 96% / 15% no-repeat #eee;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  background-color: transparent;
+  width: 130%;
+  padding: 4px 0;
+  border: none;
+  border-bottom: 1px solid #212121;
+}
+
+/* Set a style for all buttons */
+button {
+  font-family: OpenSans-Regular;
+  font-size: 18px;
+  background-color: rgb(33, 85, 133);
+  color: white;
+  padding: 14px 20px;
+  margin: 8px 0;
+  border: none;
+  cursor: pointer;
+  width: 100%;
+  border-radius: 3px;
+  border-radius: 10px;
+}
+
+.button {
+  background-color: #4CAF50;
+  border: none;
+  color: white;
+  font-family: OpenSans-Regular;
+  font-size: 18px;
+  padding: 14px 20px;
+  margin: 8px 0;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  border-radius: 3px;
+  cursor: pointer;
+}
+
+.password-button {
+  background-color: transparent;
+  color: #d50000;
+  font-family: OpenSans-Regular;
+  font-size: 18px;
+  padding: 14px 20px;
+  margin: 8px 0;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  border-radius: 3px;
+  border: 2px solid #d50000;
+  cursor: pointer;
+}
+
+.password-button:hover {
+  background-color: #d32f2f;
+  color: white;
+  border: 2px solid #d32f2f;
+}
+
+/* Add a hover effect for buttons */
+button:hover, .button:hover {
+  opacity: 0.8;
+}
+
+/* Extra style for the cancel button (red) */
+.reset {
+  width: auto;
+  background-color: #f44336;
+}
+
+
+/*interest rate home page*/
+.interest-rate-container{
+  height: auto;
+  font-family: 'Roboto',sans-serif;
+}
+
+#personal-loan-card{
+  background-image: url("https://upload.wikimedia.org/wikipedia/commons/thumb/3/3f/Font_Awesome_5_solid_wallet.svg/512px-Font_Awesome_5_solid_wallet.svg.png");
+  background-size: 20rem; 
+  background-repeat: no-repeat;
+  background-blend-mode: hue;
+  background-position: -20px 110px;
+} 
+
+#home-loan-card{
+  background-image: url("https://upload.wikimedia.org/wikipedia/commons/thumb/2/22/Home_font_awesome.svg/1200px-Home_font_awesome.svg.png");
+  background-size: 24rem; 
+  background-repeat: no-repeat;
+  background-blend-mode: hue;
+  background-position: -100px 70px;
+}
+
+#car-loan-card{
+  background-image: url("https://upload.wikimedia.org/wikipedia/commons/thumb/2/24/Font_Awesome_5_solid_car-alt.svg/512px-Font_Awesome_5_solid_car-alt.svg.png");
+  background-size: 18rem; 
+  background-repeat: no-repeat;
+  background-blend-mode: hue;
+  background-position: -25px 100px;
+}
+
+#business-loan-card{
+  background-image: url("https://upload.wikimedia.org/wikipedia/commons/thumb/e/ed/Font_Awesome_5_solid_chart-line.svg/600px-Font_Awesome_5_solid_chart-line.svg.png");
+  background-size: 20rem; 
+  background-repeat: no-repeat;
+  background-blend-mode: hue;
+  background-position: -5px 80px; 
+}
+
+#gold-loan-card{
+  background-image: url("https://upload.wikimedia.org/wikipedia/commons/thumb/8/87/Font_Awesome_5_solid_coins.svg/512px-Font_Awesome_5_solid_coins.svg.png");
+  background-size: 20rem; 
+  background-repeat: no-repeat;
+  background-blend-mode: hue;
+  background-position: -20px 110px; 
+}
+
+#education-loan-card{
+  background-image: url("https://upload.wikimedia.org/wikipedia/commons/thumb/c/cd/Font_Awesome_5_solid_graduation-cap.svg/1279px-Font_Awesome_5_solid_graduation-cap.svg.png");
+  background-size: 23rem; 
+  background-repeat: no-repeat;
+  background-blend-mode: hue;
+  background-position: -40px 120px; 
+}
+
+#personal-loan-card:hover,
+#home-loan-card:hover,
+#car-loan-card:hover,
+#business-loan-card:hover,
+#gold-loan-card:hover,
+#education-loan-card:hover{
+  background-blend-mode: lighten;
+}
+.loan:hover{
+  background-color: #f0c424b6;
+  color: rgb(11, 32, 51);
+  transition: all 0.5s ease-in;
+}
+
+.interest-rate-container .heading-interest-rate h2{
+  font-size: 2.2rem;
+  letter-spacing: 0.2px;
+  color: rgb(26, 64, 99);
+  text-align: center;
+  margin: 2rem 0rem;
+  text-transform: uppercase;
+  text-decoration-color: lightsalmon;
+  padding: 0.5rem 1rem;
+}
+
+.interest-rate-loan-wrapper{
+  display: grid;
+  margin: 20px;
+  grid-gap: 3rem;
+  color: rgb(26, 64, 99);
+  grid-template-columns: repeat(auto-fit, minmax(450px, 1fr));
+  padding: 0em 4em;
+}
+
+.interest-rate-loan-wrapper > div{  
+background-color: rgba(255, 255, 255, 0.8);
+height: 350px;
+width: auto;
+}
+
+.interest-rate-loan-wrapper > div:hover{
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19),
+  0 8px 20px 0 rgba(0, 0, 0, 0.19);
+  transform: scale(1.02);
+  transition: all 0.3s ease-in-out;
+}
+
+.interest-rate-loan-wrapper > div:hover::after{
+  content: '';
+  opacity: 1;
+}
+
+.interest-rate-loan-wrapper .loan .loan-title {
+  text-align: center;
+  padding-top: 3rem;
+  margin-bottom: 20px;
+  font-size: 2.5rem;
+}
+
+.interest-rate-container .loan .interest-rate-percentage{
+  text-align: center;
+  padding-top: 2rem;
+  margin-bottom: 20px;
+  font-size: 2.5rem;
+}
+
+.interest-rate-container .loan .interest-rate-date{
+  text-align: center;
+  padding-top: 0.1rem;
+  margin-bottom: 20px;
+  font-size: 1rem;
+  font-weight: 600;
+}
+
+.interest-rate-container .loan .interest-rate-tc{
+  text-align: right;
+  padding-top: 3rem;
+  margin-bottom: 20px;
+  font-size: 1rem;
+}
+.interest-rate-container .loan .interest-rate-tc a{
+  text-align: right;
+  padding-top: 3rem;
+  padding-right: 0.5rem;
+  margin-bottom: 20px;
+  font-size: 1rem;
+  text-decoration: none;
+  color: rgb(26, 64, 99);
+}
+
+.btn-interest-rate {
+  margin-top: 3rem;
+  margin-bottom: 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.btn-interest-rate button{
+  height:50px;
+  width: 250px;
+  border: 3px solid rgb(26, 64, 99);
+  font-size: 1rem;
+  text-transform: uppercase;
+  font-weight: bold;
+  background-color: inherit;
+  color: rgb(26, 64, 99);
+  outline: none;
+  box-shadow: none;
+  text-decoration: none;
+  border-radius: 0px;
+}
+
+
+.btn-interest-rate button:hover{
+  background-color: rgb(26, 64, 99);
+  color: whitesmoke;
+  transform: scale(1.0);
+  transition: all 0.3s ease-in-out;   
+}
+
+.interest-rate-loan-wrapper .button-interest-rate button:hover::after{
+  content: '';
+  opacity: 1;
+}
+
+
+
+
+@media (max-width:1632px) and (min-width:1025px){
+  .interest-rate-loan-wrapper{
+      grid-template-columns: repeat(auto-fit, minmax(360px, 1fr));
+      padding: 0em 1em;
+  }
+}
+
+@media screen and (max-width:1024px){
+  
+  .interest-rate-loan-wrapper{
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      padding: 0em 1em;
+  }
+}
+
+@media screen and (max-width:860px){
+  
+  .interest-rate-loan-wrapper{
+      grid-template-columns: repeat(auto-fit, (minmax(260px, 1fr)));
+      padding: 0em 1em;
+  }
+  #loan-title{
+      font-size: 2.2rem;
+      font-weight: 500;
+  }
+}
+@media screen and (max-width:768px){
+  
+  .interest-rate-loan-wrapper{
+      grid-template-columns: repeat(auto-fit, (minmax(300px, 1fr)));
+      padding: 0em 1em;
+  }
+  #loan-title{
+      font-size: 2.2rem;
+  }
+}

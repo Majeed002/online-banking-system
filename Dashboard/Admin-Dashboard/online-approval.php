@@ -1,3 +1,25 @@
+<?php
+
+session_start();
+
+if(!isset($_SESSION['loggedin']) || $_SESSION['loggedin'] !==true)
+{
+    header("location: ../../admin-login.php");
+}
+
+
+?>
+
+
+
+
+
+
+
+
+
+
+
 <!DOCTYPE html>
 <html lang="en">
     <head>
@@ -10,7 +32,7 @@
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css">>
         <link rel="stylesheet" href="../../Assets/Modules/Styles/dashboard-main.css">
         <script defer src="../../Assets/Modules/Scripts/admin-dashboard-app.js"></script>
-        <title>Add Customer | Dashboard</title>
+        <title>Online Approval | Dashboard</title>
     </head>
     <body id="admin-body-pd" >
         <header class="admin-header" id="admin-header">
@@ -18,7 +40,7 @@
                 <i class='bx bx-menu' id="admin-header-toggle"></i>
             </div>
             <div class="admin-logout">
-                <button type="submit"><i class='bx bx-log-out admin-header__icon'></i>LOGOUT</button>
+            <a href="../../admin-logout.php""> <button type="submit"><i class='bx bx-log-out admin-header__icon' ></i>LOGOUT</button> </a>
             </div>
         </header>
 
@@ -51,7 +73,7 @@
                             <span class="admin-nav__name">ONLINE APPROVAL</span>
                         </a>
 
-                        <a href="./add-notice.php" class="admin-nav__link active"  title="Add Notice">
+                        <a href="./add-notice.php" class="admin-nav__link"  title="Add Notice">
                             <i class='bx bxs-note admin-nav__icon' ></i>
                             <span class="admin-nav__name">ADD NOTICE</span>
                         </a>
