@@ -60,8 +60,8 @@
                             <i class="far fa-file-image" style="color: rgb(26, 64, 99);""></i>
                             Aadhaar Card 
                         </label>
-                        <input class="input-file" id="aadhaar_no" name="aadhaar_no"  type="file"  >
-                        <p>*Note: file size should be less than 250 MB </p>
+                        <input class="input-file" id="aadhaar_no" name="aadhaar_no"  type="file" required >
+                        <p>*Note: file size should be less than 40 MB </p>
                     </div>
                 </div>
 

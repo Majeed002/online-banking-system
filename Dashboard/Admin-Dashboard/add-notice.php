@@ -60,6 +60,11 @@ if(!isset($_SESSION['loggedin']) || $_SESSION['loggedin'] !==true)
                             <i class='bx bxs-user-rectangle admin-nav__icon' ></i>
                             <span class="admin-nav__name">MY CUSTOMERS</span>
                         </a>
+
+                        <a href="./verified-account.php" class="admin-nav__link" title="Verified Account">
+                        <i class='bx bx-check-double admin-nav__icon' ></i>
+                            <span class="admin-nav__name">VERIFIED ACCOUNTS</span>
+                        </a>
                         
                         <a href="./online-approval.php" class="admin-nav__link" title="Online Approval">
                             <i class='bx bxs-user-check admin-nav__icon' ></i>
