@@ -410,26 +410,18 @@ a{
 
 
 /*Form Style*/
+
+
 .flex-container {
   display: -webkit-flex;
   display: flex;
-  margin-left: 256px;
+  margin-left: 1rem;
   width: auto;
   height: auto;
   -webkit-flex-wrap: wrap;
   flex-wrap: wrap;
   background-color: inherit;
   font-family: 'Roboto', sans-serif;
-}
-
-.flex-container-form_header {
-  display: -webkit-flex;
-  display: flex;
-  margin-left: 256px;
-  width: auto;
-  height: auto;
-  background-color: #FAFAFA;
-  border-bottom: 3px solid #263238;
 }
 
 h1[id="form_header"] {
@@ -491,6 +483,33 @@ input[type=text], input[type=password] {
   box-sizing: border-box;
   background-color: transparent;
 }
+
+.container {
+  margin-top: 2rem;
+  margin-left: 20px;
+  margin-right: 20px;
+  padding-left: 5rem;
+  display: inline-block;
+} 
+
+
+.ol-delete{
+  margin: auto auto 3rem auto;
+  color: rgb(26, 64, 99);
+  font-size: 1.25rem;
+}
+input[class="accept"]{
+  width: 10rem;
+  height: 2rem;
+  border: 0px;
+  border-radius: 10px;
+  background-color: #c72f1b;
+}
+input[class="accept"]:hover{
+  background-color: rgb(235, 11, 11);
+  transition: all 0.3s ease-in  ;
+}
+
 
 @media screen and (max-width: 480px) {
   input[type=text], input[type=password] {
@@ -847,3 +866,4 @@ width: auto;
       font-size: 2.2rem;
   }
 }
+

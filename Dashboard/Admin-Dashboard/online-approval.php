@@ -6,7 +6,7 @@ if(!isset($_SESSION['loggedin']) || $_SESSION['loggedin'] !==true)
 {
     header("location: ../../admin-login.php");
 }
-
+include '../../Includes/Database-Connection/db-connection-inc.php';
 
 ?>
 
@@ -29,7 +29,9 @@ if(!isset($_SESSION['loggedin']) || $_SESSION['loggedin'] !==true)
         <link href="https://fonts.googleapis.com/css2?family=Roboto+Slab&display=swap" rel="stylesheet">
         <link href='https://cdn.jsdelivr.net/npm/boxicons@2.0.5/css/boxicons.min.css' rel='stylesheet'>
         <link rel="icon" href="../../Assets/Images/Bank_Logo/Title_icon.png" type="png">
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css">>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css">
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
+        integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
         <link rel="stylesheet" href="../../Assets/Modules/Styles/dashboard-main.css">
         <script defer src="../../Assets/Modules/Scripts/admin-dashboard-app.js"></script>
         <title>Online Approval | Dashboard</title>
@@ -109,8 +111,67 @@ if(!isset($_SESSION['loggedin']) || $_SESSION['loggedin'] !==true)
             </nav>
         </div>
 
+        <div class="online-approval-container">
         
-        <!--===== MAIN JS =====-->
-        <script src="assets/js/main.js"></script>
+            <div class="heading-title">
+                <h2>Online Approval</h2>
+            </div>
+
+                
+                    
+    
+                    <div class="ol-delete">
+                        
+                        <form action="" method="POST">
+                            Delete Aaddhar Card:
+                            <input type="text" name="aaddhar_no" >
+                            <input type="submit" name="delete" value="Delete Record" class="accept"> 
+                        </form>
+
+                        <?php
+                            if(isset($_POST['delete']))
+                            {
+                                $aaddhar_no = $_POST['aaddhar_no'];
+                                $sql1="DELETE from ol_registration where aaddhar_no='$aaddhar_no'";
+                                $result1 = mysqli_query($conn,$sql1);
+
+                                if($result1){
+                                    ?>
+                                    <p><?php echo "Deleted Record Successfully!!!"?></p><?php
+                                }
+                                
+                            }
+                        ?>
+                    </div>
+                    
+                <form action="" method="POST" enctype="multipart/form-data">
+                    <table class="table">
+                        <thead class="thead" style="background-color: rgb(26, 64, 99); color: whitesmoke; text-align:center;">
+                            <tr>
+                            <th scope="col">Registered Aaddhar Number</th>
+                            <th scope="col">Uploaded Aaddhar Card</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <?php
+                                $sql= " SELECT * from ol_registration";
+                                $result= mysqli_query($conn,$sql);
+
+                                while($row = mysqli_fetch_array($result))
+                                {
+                                    ?>
+                                <tr style=" color: rgb(26, 64, 99); text-align:center;">
+                                    <td><?php echo $row['aaddhar_no']?></td>
+                                    <td><?php echo '<img src="data:image;base64,'.base64_encode($row['aaddhar_card']).'" alt="Aadharcard" style="max-width:500px; height: 250px; border-radius:25px;">'; ?></td>
+                            </tr>
+                                    <?php
+                                }
+                            ?>
+                        
+                        </tbody>
+                    </table>
+                </form>
+            </div>
+        </div>
     </body>
 </html>

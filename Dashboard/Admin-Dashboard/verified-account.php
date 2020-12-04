@@ -106,42 +106,44 @@ include '../../Includes/Database-Connection/db-connection-inc.php';
 
         <div class="verified-account-container">
         
-        <div class="heading-title">
+            <div class="heading-title">
                 <h2>Verified Accounts</h2>
             </div>
-            <form action="" method="POST" enctype="multipart/form-data">
-            <table class="table"  >
-                <thead class="thead" style="background-color: rgb(26, 64, 99); color: whitesmoke; text-align:center;">
-                    <tr>
-                    <th scope="col">Email-ID</th>
-                    <th scope="col">Account Number</th>
-                    <th scope="col">Aaddhar Number</th>
-                    <th scope="col">Aaddhar Card</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <?php
-                        $sql= " SELECT * from verified_customer";
-                        $result= mysqli_query($conn,$sql);
-
-                        while($row = mysqli_fetch_array($result))
-                        {
-                            ?>
-                         <tr style=" color: rgb(26, 64, 99); text-align:center;">
-                            <td><?php echo $row['customer_email_id']?></td>
-                            <td><?php echo $row['account_no']?></td>
-                            <td ><?php echo $row['aaddhar_no']?></td>
-                            <td><?php echo '<img src="data:image;base64,'.base64_encode($row['aaddhar_card']).'" alt="Aadharcard" style="max-width:500px; height: 250px;">'; ?></td>
-                    </tr>
+                <form action="" method="POST" enctype="multipart/form-data">
+                    <table class="table"  >
+                        <thead class="thead" style="background-color: rgb(26, 64, 99); color: whitesmoke; text-align:center;">
+                            <tr>
+                            <th scope="col">Email-ID</th>
+                            <th scope="col">Account Number</th>
+                            <th scope="col">Aaddhar Number</th>
+                            <th scope="col">Opening Balance</th>
+                            <th scope="col">Aaddhar Card</th>
+                            </tr>
+                        </thead>
+                        <tbody>
                             <?php
-                        }
-                    ?>
-                   
-                </tbody>
-            </table>
-            </form>
-        </div>
+                                $sql= " SELECT * from verified_customer";
+                                $result= mysqli_query($conn,$sql);
 
+                                while($row = mysqli_fetch_array($result))
+                                {
+                                    ?>
+                                <tr style=" color: rgb(26, 64, 99); text-align:center;">
+                                    <td><?php echo $row['customer_email_id']?></td>
+                                    <td><?php echo $row['account_no']?></td>
+                                    <td ><?php echo $row['aaddhar_no']?></td>
+                                    <td >Rs.<?php echo $row['o_balance']?></td>
+                                    <td><?php echo '<img src="data:image;base64,'.base64_encode($row['aaddhar_card']).'" alt="Aadharcard" style="max-width:500px; height: 250px; border-radius:25px;">'; ?></td>
+                            </tr>
+                                    <?php
+                                }
+                            ?>
+                        
+                        </tbody>
+                    </table>
+                </form>
+            </div>
+        </div>
         
         <!--===== MAIN JS =====-->
         <script src="assets/js/main.js"></script>

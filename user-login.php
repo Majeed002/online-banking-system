@@ -1,4 +1,3 @@
-<?php include './Includes/UserDashboard-inc/user-login-inc.php' ?>
 <!DOCTYPE html>
 <html lang="en">
     <head>

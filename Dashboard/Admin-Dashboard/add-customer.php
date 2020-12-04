@@ -21,7 +21,7 @@ if(!isset($_SESSION['loggedin']) || $_SESSION['loggedin'] !==true)
         <link href="https://fonts.googleapis.com/css2?family=Roboto+Slab&display=swap" rel="stylesheet">
         <link href='https://cdn.jsdelivr.net/npm/boxicons@2.0.5/css/boxicons.min.css' rel='stylesheet'>
         <link rel="icon" href="../../Assets/Images/Bank_Logo/Title_icon.png" type="png">
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css">>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css">
         <link rel="stylesheet" href="../../Assets/Modules/Styles/dashboard-main.css">
         <script defer src="../../Assets/Modules/Scripts/admin-dashboard-app.js"></script>
         <title>Add Customer | Dashboard</title>
@@ -100,8 +100,96 @@ if(!isset($_SESSION['loggedin']) || $_SESSION['loggedin'] !==true)
             </nav>
         </div>
 
+
+
+        <div class="heading-title">
+                <h2>Add Customer</h2>
+        </div>
         
-        <!--===== MAIN JS =====-->
-        <script src="assets/js/main.js"></script>
+        <form class="add_customer_form" action="./add-customer-action.php" method="post">
+            
+            <div class="flex-container">
+                <div class=container>
+                    <label>First Name :</label><br>
+                    <input name="cust_fname" size="30" type="text" required />
+                </div>
+                <div  class=container>
+                    <label>Last Name :</b></label><br>
+                    <input name="cust_lname" size="30" type="text" required />
+                </div>
+            </div>
+            <div class="flex-container">
+            <div  class=container>
+                <label>Gender :</label>
+            </div>
+            <div class="container dropdown">
+                <select name="gender" width="20px" >
+                    <option value="" selected disabled>Select Gender</option>
+                    <option value="male">Male</option>
+                    <option value="female">Female</option>
+                    <option value="others">Others</option>
+                </select>
+            </div>
+        </div>
+            <div class="flex-container">
+                <div class=container>
+                    <label>Date of Birth :</label><br>
+                    <input name="dob" size="30" type="text" placeholder="yyyy-mm-dd" required />
+                </div>
+                <div class=container>
+                    <label>Aaddhar No :</label><br>
+                    <input name="aaddhar_no" size="25" type="text" required />
+                </div>
+            </div>
+
+            <div class="flex-container">
+                <div class=container>
+                    <label>Email-ID :</label><br>
+                    <input name="cust_email_id" size="30" type="text" required />
+                </div>
+                <div  class=container>
+                    <label>Phone No. :</b></label><br>
+                    <input name="cust_phone_no" size="30" type="text" required />
+                </div>
+            </div>
+
+            <div class="flex-container">
+                <div class=container>
+                    <label>Address :</label><br>
+                    <textarea name="cust_address" required /></textarea>
+                </div>
+            </div>
+
+            
+
+            <div class="flex-container">
+                <div class=container>
+                    <label>Account No :</label><br>
+                    <input name="account_no" size="25" type="text" required />
+                </div>
+                <div class=container>
+                    <label>Opening Balance :</label><br>
+                    <input name="o_balance" size="20" type="text" required />
+                </div>
+            </div>
+
+            <div class="flex-container">
+                <div class="container">
+                    <button type="submit">Submit</button>
+                </div>
+
+                <div class="container">
+                    <button type="reset" class="reset" onclick="return confirmReset();">Reset</button>
+                </div>
+            </div>
+
+    </form>
+
+    <script>
+    function confirmReset() {
+        return confirm('Do you really want to reset?')
+    }
+    </script>
+
     </body>
 </html>

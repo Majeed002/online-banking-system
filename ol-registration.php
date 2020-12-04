@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -6,6 +7,8 @@
     <meta http-equiv="X-UA-Compatible" content="IE">
     <link rel="stylesheet" href="./Assets/Modules/Styles/icons.css">
     <link href="https://fonts.googleapis.com/css2?family=Roboto+Slab&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
+        integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css">
     <link rel="stylesheet" href="./Assets/Modules/Styles/main.css">
     <script  defer src="./Assets/Modules/Scripts/app.js"></script>
@@ -44,29 +47,28 @@
                 <h2 class="ol-register-title">Online Registration</h2>
             </div>
                         
-            <form action="" method="POST">
+            <form action="" method="POST" enctype="multipart/form-data">
                 
                 <div class="ol-register-credentials">
                     <div>
-                        <label for="aadhaar_no">
+                        <label for="aaddhar_no">
                             <i class="far fa-id-card style="color: rgb(26, 64, 99);"></i>
-                            Aadhaar Number 
-                            
+                            Aaddhar Number 
                         </label>
-                        <input id="aadhaar_no" name="aadhaar_no"  type="text" placeholder="Enter your aadhaar number..." >
+                        <input id="aaddhar_no" name="aaddhar_no"  type="number" title="Please use a 10 digit telephone number with no dashes or dots"  placeholder="Enter your aadhaar number..." required>
                     </div>
                     <div>
-                        <label for="aadhaar_no">
-                            <i class="far fa-file-image" style="color: rgb(26, 64, 99);""></i>
-                            Aadhaar Card 
+                        <label for="aaddhar_card">
+                            <i class="far fa-file-image" style="color: rgb(26, 64, 99);"></i>
+                            Aaddhar Card 
                         </label>
-                        <input class="input-file" id="aadhaar_no" name="aadhaar_no"  type="file" required >
+                        <input class="input-file" id="aaddhar_card" name="aaddhar_card"  type="file" required />
                         <p>*Note: file size should be less than 40 MB </p>
                     </div>
                 </div>
 
                  <div class="ol-register-button"> 
-                    <button type="Submit">
+                    <button type="submit" name="submit">
                     <i class="fas fa-user-plus" style="color: whitesmoke;"></i>
                         Register
                      </button>
@@ -82,7 +84,30 @@
                 Want be a member?<a href="./reg.php">Registration Process.</a>
                 </div>
             </form>
-            
+            <?php
+                
+                include "./Includes/Database-Connection/db-connection-inc.php";
+
+
+                if(isset($_POST['submit'])){
+                    $aaddhar_no = $_POST['aaddhar_no'];
+                    $aaddhar_card = addslashes(file_get_contents($_FILES["aaddhar_card"]["tmp_name"]));
+                    $sql = "INSERT into ol_registration(aaddhar_no,aaddhar_card) values ('$aaddhar_no', '$aaddhar_card')";
+                    $result = mysqli_query($conn,$sql);
+
+                    if($result){
+                        echo '<div class="alert alert-success" role="alert">
+                            Form Submitted Successfully please wait for the sign-in link
+                        </div>';
+                    }
+                    else{
+                        echo "Submission was unsuccessful";
+                    }
+        
+                }
+          
+          
+            ?>
         </div>
     </div>
 </div>
