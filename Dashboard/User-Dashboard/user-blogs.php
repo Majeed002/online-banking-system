@@ -1,3 +1,6 @@
+<?php
+include '../../Includes/Database-Connection/db-connection-inc.php';
+?>
 <!DOCTYPE html>
 <html lang="en">
     <head>
@@ -75,8 +78,41 @@
             </nav>
         </div>
 
+        <div class="heading-title">
+                <h2>Blogs</h2>
+        </div>
+    <div class="blog-flex-container">
+        <?php
+            $sql0 = "SELECT blog_id, blog_title, created FROM blog ORDER BY created DESC";
+            $result = $conn->query($sql0);
+
+            if ($result->num_rows > 0) {
+            // output data of each row
+            while($row = $result->fetch_assoc()) {
+                $blog_id = $row["blog_id"];
+                $sql1 = "SELECT blog_detail FROM blog_body WHERE blog_id=$blog_id";
+                $result1 = $conn->query($sql1); ?>
+
+                <div class="blog-flex-item">
+                    <div class="blog-flex-container-title">
+                        <h1 id="blog_title"><?php echo $row["blog_title"] . "<br>"; ?></h1>
+                    </div>
+                    <div class="blog-flex-container-title">
+                        <p id="date"><?php echo "Date Creation : " .
+                            date("d/m/Y", strtotime($row["created"])); ?></p>
+                    </div>
+                    <div class="blog-flex-container-body">
+                        <p id="blog_detail"><?php while($row1 = $result1->fetch_assoc()) {
+                            echo $row1["blog_detail"]; } ?></p>
+                    </div>
+                </div>
+
+            <?php }
+            } else {
+                echo "No news available ! Please post some.";
+            }
+            $conn->close();
+        ?>
         
-        <!--===== MAIN JS =====-->
-        <script src="assets/js/main.js"></script>
     </body>
 </html>

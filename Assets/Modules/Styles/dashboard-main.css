@@ -867,3 +867,395 @@ width: auto;
   }
 }
 
+::-webkit-scrollbar {
+  width: 10px;
+  height: 20px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  box-shadow: inset 0 0 5px inset; 
+  border-radius: 10px;
+}
+ 
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: goldenrod; 
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: rgb(15, 81, 146); 
+}
+
+.blog-flex-container {
+    display: -webkit-flex;
+    display: flex;
+    width: auto;
+    height: auto;
+    -webkit-flex-wrap: wrap;
+    flex-wrap: wrap;
+    margin: 1rem;
+}
+
+.blog-flex-item {
+    -webkit-flex-direction: column;
+    flex-direction: column;
+    flex:  500px;
+    background-color: #EEEEEE;
+    width: auto;
+    height: auto;
+    max-height: 50vh;
+    margin: 20px;
+    overflow-y: auto;
+    box-shadow: 2px 3px 8px #888888;
+}
+
+.blog-flex-container-title {
+    display: -webkit-flex;
+    display: flex;
+    width: auto;
+    height: auto;
+    background-color: rgb(26, 64, 99);
+}
+
+.blog-flex-container-title h1{
+    font-size: 3rem;
+}
+
+
+.blog-flex-container-body {
+    display: -webkit-flex;
+    display: flex;
+    background-color: #EEEEEE;
+}
+
+h1[id="notice_title"] {
+    margin-left: 20px;
+    font-family: 'Roboto', sans-serif;
+    color: #f0c424;
+    font-size: 2rem;
+    margin-top: 2rem;
+}
+
+p[id="date"] {
+    font-size: 1.1rem;
+    color: #FAFAFA;
+    margin-left: 20px;
+    font-family: 'Roboto', sans-serif;
+    margin-top: 10px;
+    margin-bottom: 2rem;
+}
+
+p[id="notice_detail"] {
+    font-size: 1.2rem;
+    margin-left: 20px;
+    font-family: 'Roboto', sans-serif;
+    text-align: justify;
+    margin-top: 0.3rem;
+}
+::-webkit-scrollbar {
+  width: 10px;
+  height: 20px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  box-shadow: inset 0 0 5px inset; 
+  border-radius: 10px;
+}
+ 
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: goldenrod; 
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: rgb(15, 81, 146); 
+}
+
+.blog-flex-container {
+    display: -webkit-flex;
+    display: flex;
+    width: auto;
+    height: auto;
+    -webkit-flex-wrap: wrap;
+    flex-wrap: wrap;
+    margin: 1rem;
+}
+
+.blog-flex-item {
+    -webkit-flex-direction: column;
+    flex-direction: column;
+    flex:  500px;
+    background-color: #EEEEEE;
+    width: auto;
+    height: auto;
+    max-height: 50vh;
+    margin: 20px;
+    overflow-y: auto;
+    box-shadow: 2px 3px 8px #888888;
+}
+
+.blog-flex-container-title {
+    display: -webkit-flex;
+    display: flex;
+    width: auto;
+    height: auto;
+    background-color: rgb(26, 64, 99);
+}
+
+.blog-flex-container-title h1{
+    font-size: 3rem;
+}
+
+
+.blog-flex-container-body {
+    display: -webkit-flex;
+    display: flex;
+    background-color: #EEEEEE;
+}
+
+h1[id="blog_title"] {
+    margin-left: 20px;
+    font-family: 'Roboto', sans-serif;
+    color: #f0c424;
+    font-size: 2rem;
+    margin-top: 2rem;
+}
+
+p[id="date"] {
+    font-size: 1.1rem;
+    color: #FAFAFA;
+    margin-left: 20px;
+    font-family: 'Roboto', sans-serif;
+    margin-top: 10px;
+    margin-bottom: 2rem;
+}
+
+p[id="blog_detail"] {
+    font-size: 1.2rem;
+    margin-left: 20px;
+    font-family: 'Roboto', sans-serif;
+    text-align: justify;
+    margin-top: 0.3rem;
+}
+/*interest rate user dashboard */
+.interest-rate-container{
+  height: auto;
+  font-family: 'Roboto',sans-serif;
+}
+
+#personal-loan-card{
+  background-image: url("https://upload.wikimedia.org/wikipedia/commons/thumb/3/3f/Font_Awesome_5_solid_wallet.svg/512px-Font_Awesome_5_solid_wallet.svg.png");
+  background-size: 20rem; 
+  background-repeat: no-repeat;
+  background-blend-mode: hue;
+  background-position: -20px 110px;
+} 
+
+#home-loan-card{
+  background-image: url("https://upload.wikimedia.org/wikipedia/commons/thumb/2/22/Home_font_awesome.svg/1200px-Home_font_awesome.svg.png");
+  background-size: 24rem; 
+  background-repeat: no-repeat;
+  background-blend-mode: hue;
+  background-position: -100px 70px;
+}
+
+#car-loan-card{
+  background-image: url("https://upload.wikimedia.org/wikipedia/commons/thumb/2/24/Font_Awesome_5_solid_car-alt.svg/512px-Font_Awesome_5_solid_car-alt.svg.png");
+  background-size: 18rem; 
+  background-repeat: no-repeat;
+  background-blend-mode: hue;
+  background-position: -25px 100px;
+}
+
+#business-loan-card{
+  background-image: url("https://upload.wikimedia.org/wikipedia/commons/thumb/e/ed/Font_Awesome_5_solid_chart-line.svg/600px-Font_Awesome_5_solid_chart-line.svg.png");
+  background-size: 20rem; 
+  background-repeat: no-repeat;
+  background-blend-mode: hue;
+  background-position: -5px 80px; 
+}
+
+#gold-loan-card{
+  background-image: url("https://upload.wikimedia.org/wikipedia/commons/thumb/8/87/Font_Awesome_5_solid_coins.svg/512px-Font_Awesome_5_solid_coins.svg.png");
+  background-size: 20rem; 
+  background-repeat: no-repeat;
+  background-blend-mode: hue;
+  background-position: -20px 110px; 
+}
+
+#education-loan-card{
+  background-image: url("https://upload.wikimedia.org/wikipedia/commons/thumb/c/cd/Font_Awesome_5_solid_graduation-cap.svg/1279px-Font_Awesome_5_solid_graduation-cap.svg.png");
+  background-size: 23rem; 
+  background-repeat: no-repeat;
+  background-blend-mode: hue;
+  background-position: -40px 120px; 
+}
+
+#personal-loan-card:hover,
+#home-loan-card:hover,
+#car-loan-card:hover,
+#business-loan-card:hover,
+#gold-loan-card:hover,
+#education-loan-card:hover{
+  background-blend-mode: lighten;
+}
+.loan:hover{
+  background-color: #f0c424b6;
+  color: rgb(11, 32, 51);
+  transition: all 0.5s ease-in;
+}
+
+.interest-rate-container .heading-interest-rate h2{
+  font-size: 2.2rem;
+  letter-spacing: 0.2px;
+  color: rgb(26, 64, 99);
+  text-align: center;
+  margin: 2rem 0rem;
+  text-transform: uppercase;
+  text-decoration-color: lightsalmon;
+  padding: 0.5rem 1rem;
+}
+
+.interest-rate-loan-wrapper{
+  display: grid;
+  margin: 20px;
+  grid-gap: 3rem;
+  color: rgb(26, 64, 99);
+  grid-template-columns: repeat(auto-fit, minmax(450px, 1fr));
+  padding: 0em 4em;
+}
+
+.interest-rate-loan-wrapper > div{  
+background-color: rgba(255, 255, 255, 0.8);
+height: 350px;
+width: auto;
+}
+
+.interest-rate-loan-wrapper > div:hover{
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19),
+  0 8px 20px 0 rgba(0, 0, 0, 0.19);
+  transform: scale(1.02);
+  transition: all 0.3s ease-in-out;
+}
+
+.interest-rate-loan-wrapper > div:hover::after{
+  content: '';
+  opacity: 1;
+}
+
+.interest-rate-loan-wrapper .loan .loan-title {
+  text-align: center;
+  padding-top: 3rem;
+  margin-bottom: 20px;
+  font-size: 2.5rem;
+}
+
+.interest-rate-container .loan .interest-rate-percentage{
+  text-align: center;
+  padding-top: 2rem;
+  margin-bottom: 20px;
+  font-size: 2.5rem;
+}
+
+.interest-rate-container .loan .interest-rate-date{
+  text-align: center;
+  padding-top: 0.1rem;
+  margin-bottom: 20px;
+  font-size: 1rem;
+  font-weight: 600;
+}
+
+.interest-rate-container .loan .interest-rate-tc{
+  text-align: right;
+  padding-top: 3rem;
+  margin-bottom: 20px;
+  font-size: 1rem;
+}
+.interest-rate-container .loan .interest-rate-tc a{
+  text-align: right;
+  padding-top: 3rem;
+  padding-right: 0.5rem;
+  margin-bottom: 20px;
+  font-size: 1rem;
+  text-decoration: none;
+  color: rgb(26, 64, 99);
+}
+
+.button-interest-rate {
+  margin-top: 3rem;
+  margin-bottom: 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.button-interest-rate button{
+  height:50px;
+  width: 200px;
+  border: 3px solid rgb(26, 64, 99);
+  font-size: 1rem;
+  text-transform: uppercase;
+  font-weight: bold;
+  background-color: inherit;
+  color: rgb(26, 64, 99);
+  outline: none;
+  box-shadow: none;
+  text-decoration: none;
+}
+
+
+.button-interest-rate button:hover{
+  background-color: rgb(26, 64, 99);
+  color: whitesmoke;
+  transform: scale(1.0);
+  transition: all 0.3s ease-in-out;   
+}
+
+.interest-rate-loan-wrapper .button-interest-rate button:hover::after{
+  content: '';
+  opacity: 1;
+}
+
+
+
+
+@media (max-width:1632px) and (min-width:1025px){
+  .interest-rate-loan-wrapper{
+      grid-template-columns: repeat(auto-fit, minmax(360px, 1fr));
+      padding: 0em 1em;
+  }
+}
+
+@media screen and (max-width:1024px){
+  
+  .interest-rate-loan-wrapper{
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      padding: 0em 1em;
+  }
+}
+
+@media screen and (max-width:860px){
+  
+  .interest-rate-loan-wrapper{
+      grid-template-columns: repeat(auto-fit, (minmax(260px, 1fr)));
+      padding: 0em 1em;
+  }
+  #loan-title{
+      font-size: 2.2rem;
+      font-weight: 500;
+  }
+}
+@media screen and (max-width:768px){
+  
+  .interest-rate-loan-wrapper{
+      grid-template-columns: repeat(auto-fit, (minmax(300px, 1fr)));
+      padding: 0em 1em;
+  }
+  #loan-title{
+      font-size: 2.2rem;
+  }
+}

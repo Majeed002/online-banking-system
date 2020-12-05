@@ -1,3 +1,6 @@
+<?php
+include '../../Includes/Database-Connection/db-connection-inc.php';
+?>
 <!DOCTYPE html>
 <html lang="en">
     <head>
@@ -74,9 +77,268 @@
                 </a>
             </nav>
         </div>
+        <div class="heading-title">
+                <h2>Interest Rate</h2>
+        </div>
 
+        <div class="interest-rate-container">
         
-        <!--===== MAIN JS =====-->
-        <script src="assets/js/main.js"></script>
+        <div class="interest-rate-loan-wrapper">
+
+            <div class="loan" id="personal-loan-card">
+                <div class="loan-title" id="loan-title">
+                    <i class="fas fa-wallet loan-icon" style="color: rgb(122, 92, 63); , hover"></i>
+                    
+                    Personal Loan
+                </div>
+                <div class="interest-rate-percentage">
+                <?php
+                    $sql = "select * from interest_rate where ir_id=1;";
+                    $result = mysqli_query($conn, $sql);
+                    $resultCheck = mysqli_num_rows($result);
+                    
+                    if ($resultCheck > 0){
+                        while($row = mysqli_fetch_assoc($result)){
+                            echo $row['interest_rate'];
+                        }
+                    }
+                    
+                    ?>
+                 p.a.
+                </div>
+                <div class="interest-rate-date">
+                    w.e.f. <?php
+                    $sql = "select * from interest_rate where ir_id=1;";
+                    $result = mysqli_query($conn, $sql);
+                    $resultCheck = mysqli_num_rows($result);
+                    
+                    if ($resultCheck > 0){
+                        while($row = mysqli_fetch_assoc($result)){
+                            echo date("d.m.Y", strtotime($row['create_at']));
+                        }
+                    }
+                    
+                    ?> 
+                </div>
+                <div class="interest-rate-tc">
+                   <a href="#">
+                   *T&C Apply
+                   </a> 
+                </div>
+            </div>
+
+            <div class="loan" id="home-loan-card">
+                <div class="loan-title" id="loan-title">
+                    <i class="fas fa-home" style="color: rgb(48, 122, 60);"></i>
+                    Home Loan
+                </div>
+                <div class="interest-rate-percentage">
+                <?php
+                    $sql = "select * from interest_rate where ir_id=2;";
+                    $result = mysqli_query($conn, $sql);
+                    $resultCheck = mysqli_num_rows($result);
+                    
+                    if ($resultCheck > 0){
+                        while($row = mysqli_fetch_assoc($result)){
+                            echo $row['interest_rate'];
+                        }
+                    }
+                    
+                    ?> p.a.
+                </div>
+                <div class="interest-rate-date">
+                    w.e.f.  <?php
+                    $sql = "select * from interest_rate where ir_id=2;";
+                    $result = mysqli_query($conn, $sql);
+                    $resultCheck = mysqli_num_rows($result);
+                    
+                    if ($resultCheck > 0){
+                        while($row = mysqli_fetch_assoc($result)){
+                            echo date("d.m.Y", strtotime($row['create_at']));
+                        }
+                    }
+                    
+                    ?> 
+                </div>
+                <div class="interest-rate-tc">
+                   <a href="#">
+                   *T&C Apply
+                   </a> 
+                </div>
+            </div>
+
+            <div class="loan" id="car-loan-card">
+                <div class="loan-title" id="loan-title">
+                    <i class="fas fa-car" style="color: rgba(184, 41, 5, 0.938);"></i>
+                    Car Loan
+                </div>
+                <div class="interest-rate-percentage">
+                <?php
+                    $sql = "select * from interest_rate where ir_id=3;";
+                    $result = mysqli_query($conn, $sql);
+                    $resultCheck = mysqli_num_rows($result);
+                    
+                    if ($resultCheck > 0){
+                        while($row = mysqli_fetch_assoc($result)){
+                            echo $row['interest_rate'];
+                        }
+                    }
+                    
+                    ?> p.a.
+                </div>
+                <div class="interest-rate-date">
+                    w.e.f. <?php
+                    $sql = "select * from interest_rate where ir_id=3;";
+                    $result = mysqli_query($conn, $sql);
+                    $resultCheck = mysqli_num_rows($result);
+                    
+                    if ($resultCheck > 0){
+                        while($row = mysqli_fetch_assoc($result)){
+                            echo date("d.m.Y", strtotime($row['create_at']));
+                        }
+                    }
+                    
+                    ?> 
+                </div>
+                <div class="interest-rate-tc">
+                   <a href="#">
+                   *T&C Apply
+                   </a> 
+                </div>
+            </div>
+
+            <div class="loan" id="business-loan-card">
+                <div class="loan-title" id="loan-title">
+                    <i class="fas fa-chart-line" style="color: rgb(9, 162, 209);"></i>
+                    Business Loan
+                </div>
+                <div class="interest-rate-percentage">
+                <?php
+                    $sql = "select * from interest_rate where ir_id=4;";
+                    $result = mysqli_query($conn, $sql);
+                    $resultCheck = mysqli_num_rows($result);
+                    
+                    if ($resultCheck > 0){
+                        while($row = mysqli_fetch_assoc($result)){
+                            echo $row['interest_rate'];
+                        }
+                    }
+                    
+                    ?> p.a.
+                </div>
+                <div class="interest-rate-date">
+                    w.e.f. <?php
+                    $sql = "select * from interest_rate where ir_id=4;";
+                    $result = mysqli_query($conn, $sql);
+                    $resultCheck = mysqli_num_rows($result);
+                    
+                    if ($resultCheck > 0){
+                        while($row = mysqli_fetch_assoc($result)){
+                            echo date("d.m.Y", strtotime($row['create_at']));
+                        }
+                    }
+                    
+                    ?> 
+                </div>
+                <div class="interest-rate-tc">
+                   <a href="#">
+                   *T&C Apply
+                   </a> 
+                </div>
+            </div>
+
+            <div class="loan" id="gold-loan-card">
+                <div class="loan-title" id="loan-title">
+                    <i class="fas fa-coins" style="color: rgb(204, 185, 98);"></i>
+                    Gold Loan
+                </div>
+                <div class="interest-rate-percentage">
+                <?php
+                    $sql = "select * from interest_rate where ir_id=5;";
+                    $result = mysqli_query($conn, $sql);
+                    $resultCheck = mysqli_num_rows($result);
+                    
+                    if ($resultCheck > 0){
+                        while($row = mysqli_fetch_assoc($result)){
+                            echo $row['interest_rate'];
+                        }
+                    }
+                    
+                    ?> p.a.
+                </div>
+                <div class="interest-rate-date">
+                    w.e.f. <?php
+                    $sql = "select * from interest_rate where ir_id=5;";
+                    $result = mysqli_query($conn, $sql);
+                    $resultCheck = mysqli_num_rows($result);
+                    
+                    if ($resultCheck > 0){
+                        while($row = mysqli_fetch_assoc($result)){
+                            echo date("d.m.Y", strtotime($row['create_at']));
+                        }
+                    }
+                    
+                    ?> 
+                </div>
+                <div class="interest-rate-tc">
+                   <a href="#">
+                   *T&C Apply
+                   </a> 
+                </div>
+            </div>
+
+            <div class="loan" id="education-loan-card">
+                <div class="loan-title" id="loan-title">
+                    <i class="fas fa-graduation-cap" style="color: rgb(75, 75, 75);"></i>
+                    Education Loan
+                </div>
+                <div class="interest-rate-percentage">
+                <?php
+                    $sql = "select * from interest_rate where ir_id=6;";
+                    $result = mysqli_query($conn, $sql);
+                    $resultCheck = mysqli_num_rows($result);
+                    
+                    if ($resultCheck > 0){
+                        while($row = mysqli_fetch_assoc($result)){
+                            echo $row['interest_rate'];
+                        }
+                    }
+                    
+                    ?> p.a.
+                </div>
+                <div class="interest-rate-date">
+                    w.e.f. <?php
+                    $sql = "select * from interest_rate where ir_id=6;";
+                    $result = mysqli_query($conn, $sql);
+                    $resultCheck = mysqli_num_rows($result);
+                    
+                    if ($resultCheck > 0){
+                        while($row = mysqli_fetch_assoc($result)){
+                            echo date("d.m.Y", strtotime($row['create_at']));
+                        }
+                    }
+                    
+                    ?>
+                </div>
+                <div class="interest-rate-tc">
+                   <a href="#">
+                   *T&C Apply
+                   </a> 
+                </div>
+            </div>
+            
+        </div>
+        <div class="button-interest-rate">
+            
+            <a class="btn-interest-rate" href="#" target="_blank">
+                <button  class="btn-interest-rate"type="button" >
+                    <span>Check Eligibility</span>
+                </button>
+            </a>
+           
+        </div>
+    </div>
+
+
     </body>
 </html>

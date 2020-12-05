@@ -1,3 +1,6 @@
+<?php
+include '../../Includes/Database-Connection/db-connection-inc.php';
+?>
 <!DOCTYPE html>
 <html lang="en">
     <head>
@@ -75,8 +78,43 @@
             </nav>
         </div>
 
+        <div class="heading-title">
+                <h2>Notices</h2>
+        </div>
         
-        <!--===== MAIN JS =====-->
-        <script src="assets/js/main.js"></script>
+       <div class="blog-flex-container">
+       
+        <?php
+            $sql0 = "SELECT notice_id, notice_title, created FROM notice ORDER BY created DESC";
+            $result = $conn->query($sql0);
+
+            if ($result->num_rows > 0) {
+            // output data of each row
+            while($row = $result->fetch_assoc()) {
+                $notice_id = $row["notice_id"];
+                $sql1 = "SELECT notice_detail FROM notice_body WHERE notice_id=$notice_id";
+                $result1 = $conn->query($sql1); ?>
+
+                <div class="blog-flex-item">
+                    <div class="blog-flex-container-title">
+                        <h1 id="notice_title"><?php echo $row["notice_title"] . "<br>"; ?></h1>
+                    </div>
+                    <div class="blog-flex-container-title">
+                        <p id="date"><?php echo "Date Creation : " .
+                            date("d/m/Y", strtotime($row["created"])); ?></p>
+                    </div>
+                    <div class="blog-flex-container-body">
+                        <p id="notice_detail"><?php while($row1 = $result1->fetch_assoc()) {
+                            echo $row1["notice_detail"]; } ?></p>
+                    </div>
+                </div>
+
+            <?php }
+            } else {
+                echo "No Notice available ! ";
+            }
+            $conn->close();
+        ?>
+    </div>
     </body>
 </html>

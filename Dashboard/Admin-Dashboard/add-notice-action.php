@@ -7,8 +7,15 @@ if(!isset($_SESSION['loggedin']) || $_SESSION['loggedin'] !==true)
     header("location: ../../admin-login.php");
 }
 
+include '../../Includes/Database-Connection/db-connection-inc.php';
 
 ?>
+
+
+
+
+
+
 
 
 
@@ -33,7 +40,7 @@ if(!isset($_SESSION['loggedin']) || $_SESSION['loggedin'] !==true)
                 <i class='bx bx-menu' id="admin-header-toggle"></i>
             </div>
             <div class="admin-logout">
-            <a href="../../admin-logout.php""> <button type="submit"><i class='bx bx-log-out admin-header__icon' ></i>LOGOUT</button> </a>
+                <a href="../../admin-logout.php"> <button type="submit"><i class='bx bx-log-out admin-header__icon' ></i>LOGOUT</button> </a>
             </div>
         </header>
 
@@ -60,6 +67,7 @@ if(!isset($_SESSION['loggedin']) || $_SESSION['loggedin'] !==true)
                             <i class='bx bxs-user-rectangle admin-nav__icon' ></i>
                             <span class="admin-nav__name">MY CUSTOMERS</span>
                         </a>
+                        
 
                         <a href="./verified-account.php" class="admin-nav__link" title="Verified Account">
                         <i class='bx bx-check-double admin-nav__icon' ></i>
@@ -76,7 +84,7 @@ if(!isset($_SESSION['loggedin']) || $_SESSION['loggedin'] !==true)
                             <span class="admin-nav__name">ADD NOTICE</span>
                         </a>
 
-                        <a href="./post-blog.php" class="admin-nav__link"  title="Post Blog">
+                        <a href="./post-blog.php" class="admin-nav__link "  title="Post Blog">
                             <i class='bx bxl-blogger admin-nav__icon' ></i>
                             <span class="admin-nav__name">POST BLOG</span>
                         </a>
@@ -107,33 +115,47 @@ if(!isset($_SESSION['loggedin']) || $_SESSION['loggedin'] !==true)
                 <h2>Add Notice</h2>
             </div>
 
-            <form class="blog_form" action="./add-notice-action.php" method="post">
-                <div class="flex-container">
-                    <div class=container>
-                        <label>Notice title :</label><br>
-                        <input name="notice_title" size="50" type="text" required />
-                    </div>
+            <div class="flex-container">
+                <div class="flex-item">
+                    <?php
+                    $notice_title = mysqli_real_escape_string($conn, $_POST["notice_title"]);
+                    $notice_detail = mysqli_real_escape_string($conn, $_POST["notice_detail"]);
+
+                    $sql0 = "INSERT INTO notice (notice_title, created)
+                    VALUES('$notice_title', NOW())";
+
+                    $sql1 = "INSERT INTO notice_body (notice_detail)
+                    VALUES('$notice_detail')"; ?>
+
+                    <?php
+                    if (($conn->query($sql0) === TRUE) && ($conn->query($sql1) === TRUE)) { ?>
+                        <p id="info" style="font-size:2rem; color: #212121 ;"> <?php echo "Added Notice successfully !\n"; ?> </p>
+                    <?php
+                    } else { ?>
+                        <p id="info"><?php
+                        echo "Server Error !<br>";
+                        echo "Error: " . $sql0 . "<br>" . $conn->error . "<br>";
+                        echo "Error: " . $sql1 . "<br>" . $conn->error . "<br>"; ?></p>
+                    <?php
+                    }
+
+                    $conn->close();
+                    ?>
                 </div>
+                
+            <div class="flex-item">
+                <br>
+                <br>    
+                <a href="./add-notice.php" class="button">Add Again</a>
+            </div>
 
-                <div class="flex-container">
-                    <div class=container>
-                        <label>Notice Details :</label><br>
-                        <textarea name="notice_detail" style="height: 50vh; width: 80vw;" required /></textarea>
-                    </div>
-                </div>
-
-                <div class="flex-container">
-                    <div class="container">
-                        <button type="submit">Submit</button>
-                    </div>
-
-                    <div class="container">
-                        <button type="reset" class="reset" onclick="return confirmReset();">Reset</button>
-                    </div>
-                </div>
-
-            </form>
-        
     </div>
+
+    
+    <script>
+    function confirmReset() {
+        return confirm('Do you really want to reset?')
+    }
+    </script>
     </body>
 </html>
