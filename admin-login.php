@@ -140,7 +140,14 @@ if(empty($err))
                         Log In
                      </button>
                 </div>
+                <?php
+                    if (isset($_GET["newpwd"])){
+                        if($_GET["newpwd"] == "passwordupdated"){
+                            echo '<center><div class="success-messages">Your Password has been reset!</div></center>';
+                        }
+                    }
 
+                ?>
                 <div class="forgot-password">
                      Forgot your 
                      <a href="./admin-forgot-password.php">

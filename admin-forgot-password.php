@@ -1,4 +1,4 @@
-<?php include './Includes/AdminDashBoard-inc/admin-forgot-password-inc.php' ?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -48,29 +48,36 @@
                 </div>
     
                 
-                <form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>" method="POST">
+                <form action="./Includes/Reset-Request/admin-reset-request-inc.php" method="POST">
                     <div class="admin-forgot-password-credentials">
     
                             
     
                         <div>
-                            <label for="admin_mail">
+                            <label for="admin_email_id">
                                 <i class="far fa-envelope" style="color: rgb(26, 64, 99);"></i>
                                 Email-ID
-                                <span class="error-messages"> <br> <?php echo $admin_mailErr; ?> </span>
+                                
                             </label>
-                            <input id="admin_mail" name="admin_mail"  type="text" placeholder="Enter your email id...">
+                            <input id="admin_email_id" name="admin_email_id"  type="text" placeholder="Enter your email id...">
                         </div>
                     </div>
     
                      <div class="admin-forgot-password-send-button"> 
-                        <button type="Submit">
+                        <button type="submit" name="admin-reset-request-submit">
                         <i class="far fa-paper-plane" style="color: whitesmoke;"></i>
                             Send to mail
                          </button>
                     </div>
-                 </form>
-                
+                </form>
+                <?php
+                    if (isset($_GET["reset"])){
+                        if($_GET["reset"] == "success"){
+                            echo '<center><div class="success-messages"> Check your Email!</div></center>';
+                        }
+                    }
+
+                ?>
             </div>
         </div>
 </div>

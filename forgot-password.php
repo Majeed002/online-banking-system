@@ -1,4 +1,4 @@
-<?php include './Includes/UserDashBoard-inc/forgot-password-inc.php' ?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -47,23 +47,12 @@
                 
                 <form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>" method="POST">
                     <div class="forgot-password-credentials">
-                        <div>
-                         
-                            <label for="username">
-                                <i class="far fa-user" style="color: rgb(26, 64, 99);"></i>
-                                Username
-                                <span class="error-messages"> <br> <?php echo $usernameErr; ?> </span>
-                            </label>
-                            <input id="username" name="username"  type="text" placeholder="Enter your username..." >
-                        </div>
-    
-                            
+                        
     
                         <div>
                             <label for="user_mail">
                                 <i class="far fa-envelope" style="color: rgb(26, 64, 99);"></i>
                                 Email-ID
-                                <span class="error-messages"> <br> <?php echo $user_mailErr; ?> </span>
                             </label>
                             <input id="user_mail" name="user_mail"  type="text" placeholder="Enter your email id...">
                         </div>

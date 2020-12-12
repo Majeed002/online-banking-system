@@ -43,32 +43,30 @@
                 <h2 class="log-in-title">User Login</h2>
             </div>
                         
-            <form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>" method="POST">
+            <form action="" method="POST">
                 
                 <div class="login-credentials">
                     <div>    
                         <label for="username">
                             <i class="far fa-user" style="color: rgb(26, 64, 99);"></i>
                             Username 
-                            <span class="error-messages"> <br> <?php echo $usernameErr; ?> </span>
                         </label>
-                        <input id="username" name="username"  type="text" value="<?php $username; ?>" placeholder="Enter your username..." >
+                        <input id="username" name="username"  type="text" value="" placeholder="Enter your username..." >
                     </div>
 
                     <div>
                         <label for="user_login_pwd">
                             <i class="fas fa-key" style="color: rgb(26, 64, 99);"></i>
-                            Password <span class="error-messages"> <br> <?php echo $user_login_pwdErr; ?> </span>
+                            Password 
                         </label>
-                        <input id="user_login_pwd" name="user_login_pwd" value="<?php $user_login_pwd; ?>" type="password" placeholder="Enter your password..." >
+                        <input id="user_login_pwd" name="user_login_pwd" value="" type="password" placeholder="Enter your password..." >
                     </div>
                 </div>
 
                 <div class="login-checkbox">
-                    <input type="checkbox" name="tnc" id="tnc" value="Agreed">
-                    <label for="tnc"> I agree <a href="">Terms</a> and <a href="">Condition</a></label>
+                    <label for="tnc"><a href="">Terms</a> and <a href="">Condition</a> Applied</label>
                     <br> 
-                    <span class="error-messages"> <?php echo $tncErr; ?> </span> 
+                    <span class="error-messages"> </span> 
                 </div>
 
                  <div class="login-submit-button"> 
@@ -78,11 +76,7 @@
                      </button>
                 </div>
                 <div class="forgot-password">
-                     Forgot 
-                     <a href="./forgot-username.php">
-                        <span>Username</span>
-                    </a> 
-                     or 
+                     Forgot your
                      <a href="./forgot-password.php">
                         <span>Password?</span>
                     </a>
