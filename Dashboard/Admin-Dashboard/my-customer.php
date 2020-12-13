@@ -7,13 +7,9 @@ if(!isset($_SESSION['loggedin']) || $_SESSION['loggedin'] !==true)
     header("location: ../../admin-login.php");
 }
 
+include '../../Includes/Database-Connection/db-connection-inc.php';
 
 ?>
-
-
-
-
-
 
 <!DOCTYPE html>
 <html lang="en">
