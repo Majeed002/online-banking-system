@@ -38,7 +38,7 @@
                 <a  href="./about-us.php">About Us</a>
             </li>
             <li>
-                <a class="current" href=".blogs.php">Blogs</a>
+                <a class="current" href="./blogs.php">Blogs</a>
             </li>  
         </ul>
         <!-- Login and Register Button-->

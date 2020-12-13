@@ -33,7 +33,7 @@
                 <a href="./about-us.php">About Us</a>
             </li>
             <li>
-                <a href="./bllogs.php">Blogs</a>
+                <a href="./blogs.php">Blogs</a>
             </li>  
         </ul>
         <!-- Login and Register Button-->
