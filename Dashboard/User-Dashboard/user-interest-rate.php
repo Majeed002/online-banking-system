@@ -221,8 +221,8 @@ include '../../Includes/Database-Connection/db-connection-inc.php';
 
             <div class="loan" id="business-loan-card">
                 <div class="loan-title" id="loan-title">
-                    <i class="fas fa-chart-line" style="color: rgb(9, 162, 209);"></i>
-                    Business Loan
+                    <i class="fas fa-piggy-bank" style="color: rgb(9, 162, 209);"></i>
+                    Saving Accounts
                 </div>
                 <div class="interest-rate-percentage">
                 <?php
