@@ -91,7 +91,7 @@ include "./Includes/Database-Connection/db-connection-inc.php";
                 <?php
                     if (isset($_GET["newpwd"])){
                         if($_GET["newpwd"] == "empty"){
-                            echo '<center><div class="error-messages"> Please fill all the fields!</div></center>';
+                            echo '<br><center><div class="error-messages"> Please fill all the fields!</div></center>';
                         }
                     }
 
@@ -100,7 +100,7 @@ include "./Includes/Database-Connection/db-connection-inc.php";
                 <?php
                     if (isset($_GET["newpwd"])){
                         if($_GET["newpwd"] == "pwdlength"){
-                            echo '<center><div class="error-messages"> Your Password should contain 8 characters!</div></center>';
+                            echo '<br><center><div class="error-messages"> Your Password should contain 8 characters!</div></center>';
                         }
                     }
 
@@ -109,7 +109,7 @@ include "./Includes/Database-Connection/db-connection-inc.php";
                 <?php
                     if (isset($_GET["newpwd"])){
                         if($_GET["newpwd"] == "pwdnotsame"){
-                            echo '<center><div class="error-messages"> Both Passsword does not match!</div></center>';
+                            echo '<br><center><div class="error-messages"> Both Passsword does not match!</div></center>';
                         }
                     }
 

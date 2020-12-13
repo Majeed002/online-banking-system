@@ -8,15 +8,15 @@ if(isset($_POST["admin-reset-password-submit"])){
     $admin_pwd_cnf = $_POST["admin_pwd_cnf"];
 
     if(empty($admin_pwd) || empty($admin_pwd_cnf)){
-        header("Location: ../../admin-reset-password.php?newpwd=empty");
+        header("Location: ../../admin-reset-password.php?selector=".$selector."&validator=".$validator."&newpwd=empty");
         exit();   
     }
     elseif($admin_pwd > 8){
-        header("Location: ../../admin-reset-password.php?newpwd=pwdlength");
+        header("Location: ../../admin-reset-password.php?selector=".$selector."&validator=".$validator."&newpwd=pwdlength");
         exit();
     }   
     elseif($admin_pwd != $admin_pwd_cnf){
-        header("Location: ../../admin-reset-password.php?newpwd=pwdnotsame");
+        header("Location: ../../admin-reset-password.php?selector=".$selector."&validator=".$validator."&newpwd=pwdnotsame");
         exit();
     }   
 
