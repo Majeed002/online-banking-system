@@ -1,36 +1,36 @@
 <?php
 
-if (isset($_POST["admin-reset-request-submit"])){
+if (isset($_POST["send-pwd-link-submit"])){
 
     $selector = bin2hex(random_bytes(8));
-    $admin_token = random_bytes(32);
+    $customer_token = random_bytes(32);
 
-    $url = "localhost/online-banking-system/admin-reset-password.php?selector=" . $selector . "&validator=" . bin2hex($admin_token);
+    $url = "localhost/online-banking-system/customer-set-password.php?selector=" . $selector . "&validator=" . bin2hex($customer_token);
 
-    $admin_expires = date("U") + 300; 
+    $customer_expires = date("U") + 300; 
 
-    include '../Database-Connection/db-connection-inc.php';
+    include '../Database-Connection/db-connection-inc.php'; 
 
-    $admin_email_id = $_POST["admin_email_id"];
+    $cust_email_id = $_POST["cust_email_id"];
     //Delete the previous token if exists
-    $sql = "DELETE FROM admin_pwdReset WHERE admin_pwdResetEmail=?;";
+    $sql = "DELETE FROM customer_pwdReset WHERE cust_pwdResetEmail=?;";
     $stmt = mysqli_stmt_init($conn);
     if(!mysqli_stmt_prepare($stmt, $sql)){
-        echo "There was an Error!";
+        echo "There was an Error!" . $conn->error ;
         exit();
     } else {
-        mysqli_stmt_bind_param($stmt, "s", $admin_email_id);
+        mysqli_stmt_bind_param($stmt, "s", $cust_email_id);
         mysqli_stmt_execute($stmt);
     }
     //Insert
-    $sql = "INSERT INTO admin_pwdReset (admin_pwdResetEmail, admin_pwdResetSelector, admin_pwdResetToken, admin_pwdResetExpires) VALUES (?, ?, ?, ?);";
+    $sql = "INSERT INTO customer_pwdReset (cust_pwdResetEmail, customer_pwdResetSelector, customer_pwdResetToken, customer_pwdResetExpires) VALUES (?, ?, ?, ?);";
     $stmt = mysqli_stmt_init($conn);
     if(!mysqli_stmt_prepare($stmt, $sql)){
-        echo "There was an Error!";
+        echo "There was an Error!" . $conn->error ;
         exit();
     } else {
-        $admin_hashedToken = password_hash($admin_token, PASSWORD_DEFAULT);
-        mysqli_stmt_bind_param($stmt, "ssss", $admin_email_id, $selector, $admin_hashedToken, $admin_expires);
+        $customer_hashedToken = password_hash($customer_token, PASSWORD_DEFAULT);
+        mysqli_stmt_bind_param($stmt, "ssss", $cust_email_id, $selector, $customer_hashedToken, $customer_expires);
         mysqli_stmt_execute($stmt);
     }
         
@@ -51,12 +51,12 @@ if (isset($_POST["admin-reset-request-submit"])){
     $mail->Port = 587;                                    // TCP port to connect to
 
 
-    $mail->addAddress($admin_email_id);
+    $mail->addAddress($cust_email_id);
 
     $mail->isHTML(true);                                  // Set email format to HTML
 
-    $mail->Subject = 'Reset your Password for URBAN BANK';
-    $mail->Body    = '<p> We recieved a password reset request. The link to reset your password is below. If you did not made nay requst then just ignore this email</p>';
+    $mail->Subject = 'Set your Password for URBAN BANK';
+    $mail->Body    = '<p> You have been successfully registred on URBAN BANK</p>';
     $mail->Body    .= '<p> Here is your password reset link: <br>';
     $mail->Body    .= '<a href="' .$url. '">' . $url . '</a></p>';
 
@@ -67,7 +67,7 @@ if (isset($_POST["admin-reset-request-submit"])){
     } else {
         echo 'Message has been sent';
     }
-    /*$to = $admin_email_id;
+    /*$to = $cust_email_id;
 
     $subject = 'Reset your Password for URBAN BANK';
 
@@ -82,9 +82,9 @@ if (isset($_POST["admin-reset-request-submit"])){
     
     mail($to, $subject, $message, $headers);
 */
-    header("Location: ../../admin-forgot-password.php?reset=success");
+    header("Location: ../../Dashboard/Admin-Dashboard/online-approval.php?reset=success");
 
 }
 else{
-    header("Location: ../../admin-forgot-password.php");
+    header("Location: ../../Dashboard/Admin-Dashboard/online-approval.php?reset=success");
 }

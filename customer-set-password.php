@@ -1,3 +1,10 @@
+<?php 
+
+include "./Includes/Database-Connection/db-connection-inc.php";
+
+
+?>
+
 <!DOCTYPE html>
 <html lang="en">
     <head>
@@ -10,96 +17,106 @@
         <link rel="stylesheet" href="./Assets/Modules/Styles/main.css">
         <script  defer src="./Assets/Modules/Scripts/app.js"></script>
         <link rel="icon" href="./Assets/Images/Bank_Logo/Title_icon.png" type="png">
-        <title>User Login | Urban Bank</title>
+        <title>Set Password | Urban Bank</title>
     </head>
 <body>
 <div id="form-container">
     <div id="form-main">
-    <!-- Navigation Bar  of Website-->  
-    <nav>
-        <!-- Logo Image of the navbar-->
-        <div class="logo">
-            <a href="./index.php"><img src="./Assets/Images/Bank_Logo/urban_bank_logo.png" title="Urban Bank" alt="Bank Logo"></a>
-        </div>
-       <!-- Online Register Button-->
-       <ul class="admin-login-button">
-            <li>
-                <a href="./admin-login.php" >
-                    <button>ADMIN LOGIN</button>
-                </a>
-            </li>
-        </ul>
-    </nav>   
-    <!-- End of the Navigation Bar-->
-
-    <!--Login Form-->
-        <div class="user-login-form-container">
-
-            <div class="logo-urban-bank-form">
-                <img src="./Assets/Images/Login-Register/logo_urban_bank_login.png" alt="urban-bank" class="logo-urban-bank-form-img">
+        <!-- Navigation Bar  of Website-->  
+        <nav>
+            <!-- Logo Image of the navbar-->
+            <div class="logo">
+                <a href="./index.php"><img src="./Assets/Images/Bank_Logo/urban_bank_logo.png" title="Urban Bank" alt="Bank Logo"></a>
             </div>
 
-            <div class="log-in-title">
-                <h2 class="log-in-title">User Login</h2>
-            </div>
-                        
-            <form action="" method="POST">
+        </nav>   
+        <!-- End of the Navigation Bar-->
+
+        <!--Admin Reset Password Form-->
+            <div class="admin-forgot-password-container">
+                <?php
                 
-                <div class="login-credentials">
-                    <div>    
-                        <label for="username">
-                            <i class="far fa-user" style="color: rgb(26, 64, 99);"></i>
-                            Username 
-                        </label>
-                        <input id="username" name="username"  type="text" value="" placeholder="Enter your username..." >
-                    </div>
+                 $selector = $_GET["selector"];
+                 $validator = $_GET["validator"];
 
-                    <div>
-                        <label for="user_login_pwd">
-                            <i class="fas fa-key" style="color: rgb(26, 64, 99);"></i>
-                            Password 
-                        </label>
-                        <input id="user_login_pwd" name="user_login_pwd" value="" type="password" placeholder="Enter your password..." >
-                    </div>
-                </div>
+                 if(empty($selector) || empty($validator)){
+                     echo "Could not Validate your Request" . $conn->error ;
+                 }
+                 else{
+                     if(ctype_xdigit($selector) !==  false && ctype_xdigit($validator) !== false){
+                        ?>
+                        <div class="logo-urban-bank-form">
+                            <img src="./Assets/Images/Login-Register/logo_urban_bank_login.png" alt="urban-bank" class="logo-urban-bank-form-img">
+                        </div>
 
-                <div class="login-checkbox">
-                    <label for="tnc"><a href="">Terms</a> and <a href="">Condition</a> Applied</label>
-                    <br> 
-                    <span class="error-messages"> </span> 
-                </div>
+                        <div class="admin-forgot-password-title">
+                            <h2 class="admin-forgot-password-title">Set Password</h2>
+                        </div>
+                        <form action="./Includes/Reset-Request/customer-set-password-inc.php" method="POST"> 
+                            <input name="selector"  type="hidden" value="<?php echo $selector; ?>">
+                            <input name="validator"  type="hidden" value="<?php echo $validator; ?>">
+                            <div class="admin-forgot-password-credentials">
+                                <div>
+                                    <label for="cust_pwd">
+                                        <i class="fas fa-key" style="color: rgb(26, 64, 99);"></i>
+                                        Enter Password
+                                        
+                                    </label>
+                                    <input id="cust_pwd_" name="cust_pwd"  type="password" placeholder="Enter a new password...">
+                                </div>
+                                <div>
+                                    <label for="cust_pwd_cnf">
+                                        <i class="fas fa-key" style="color: rgb(26, 64, 99);"></i>
+                                        Confirm Password
+                                        
+                                    </label>
+                                    <input id="cust_pwd_cnf" name="cust_pwd_cnf"  type="password" placeholder="Repeat new password...">
+                                </div>
+                            </div>
+    
+                            <div class="admin-forgot-password-send-button"> 
+                                <button type="submit" name="customer-reset-password-submit">
+                                    Reset Password
+                                </button>
+                            </div>
+                        </form>
+                        
+                     <?php   
+                     }
+                 }
 
-                 <div class="login-submit-button"> 
-                    <button type="Submit">
-                    <i class="fas fa-unlock-alt" style="color: whitesmoke;"></i>
-                        Log In
-                     </button>
-                </div>
+                 
+                ?>
+
                 <?php
                     if (isset($_GET["newpwd"])){
-                        if($_GET["newpwd"] == "passwordupdated"){
-                            echo '<center><div class="success-messages">Your Password has been reset!</div></center>';
+                        if($_GET["newpwd"] == "empty"){
+                            echo '<br><center><div class="error-messages"> Please fill all the fields!</div></center>';
                         }
                     }
 
                 ?>
-                <div class="forgot-password">
-                     Forgot your
-                     <a href="./forgot-password.php">
-                        <span>Password?</span>
-                    </a>
-                </div>  
-                
-                
-                <div class="ol-register-link">
-                Didn't Registered Online?<a href="./ol-registration.php">Register Online.</a>
-                </div>
-            </form>
-            
-        </div>
 
+                <?php
+                    if (isset($_GET["newpwd"])){
+                        if($_GET["newpwd"] == "pwdlength"){
+                            echo '<br><center><div class="error-messages"> Your Password should contain 8 characters!</div></center>';
+                        }
+                    }
+
+                ?>
+
+                <?php
+                    if (isset($_GET["newpwd"])){
+                        if($_GET["newpwd"] == "pwdnotsame"){
+                            echo '<br><center><div class="error-messages"> Both Passsword does not match!</div></center>';
+                        }
+                    }
+
+                ?>
+            </div>
     </div>
-</div> 
+</div>
 <footer id="main-footer">
     <div class="contact-follow-container">
             
@@ -197,6 +214,7 @@
     <div class="footer-bottom-container">
             &copy; 2020 URBAN BANK | All Rights Reserved.
     </div>
-</footer>   
+</footer>  
+    
 </body>
 </html>

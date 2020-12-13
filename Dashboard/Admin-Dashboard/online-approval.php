@@ -121,11 +121,24 @@ include '../../Includes/Database-Connection/db-connection-inc.php';
                     
     
                     <div class="ol-delete">
+                        <form action="../../Includes/Reset-Request/customer-set-request-inc.php" method="POST">
+                                Send Password Link:
+                                <input type="text" name="cust_email_id" >
+                                <input type="submit" name="send-pwd-link-submit" value="Send Mail" class="accept"> 
+                                <?php
+                                    if (isset($_GET["reset"])){
+                                        if($_GET["reset"] == "success"){
+                                            echo '<span class="success-messages"> Email Sent!</span>';
+                                        }
+                                    }
+
+                                ?>
+                        </form>
                         
                         <form action="" method="POST">
                             Delete Aaddhar Card:
                             <input type="text" name="aaddhar_no" >
-                            <input type="submit" name="delete" value="Delete Record" class="accept"> 
+                            <input type="submit" name="delete" value="Delete Record" class="unaccept"> 
                         </form>
 
                         <?php
