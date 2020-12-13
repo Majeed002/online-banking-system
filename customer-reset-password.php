@@ -1,69 +1,6 @@
 <?php 
-//This script will handle login
-session_start();
 
-// check if the user is already logged in
-if(isset($_SESSION['admin_mail_id']))
-{
-    header("location: ./Dashboard/Admin-Dashboard/home.php");
-    exit;
-}
-require_once "./Includes/Database-Connection/db-connection-inc.php";
-
-$admin_email_id = $admin_pwd = "";
-$admin_email_id_err = $admin_pwd_err= "";
-
-// if request method is post
-if ($_SERVER['REQUEST_METHOD'] == "POST"){
-    if(empty(trim($_POST['admin_email_id'])))
-    {
-        $admin_email_id_err = "*Please enter Email ID";
-    }
-    if(empty(trim($_POST['admin_pwd']))){
-        $admin_pwd_err = "*Please enter Password";
-    }
-    else{
-        $admin_email_id = trim($_POST['admin_email_id']);
-        $admin_pwd = trim($_POST['admin_pwd']);
-    }
-
-
-if(empty($err))
-{
-    $sql = "SELECT admin_id, admin_email_id, admin_pwd FROM admin_login WHERE admin_email_id = ?";
-    $stmt = mysqli_prepare($conn, $sql);
-    mysqli_stmt_bind_param($stmt, "s", $param_admin_email_id);
-    $param_admin_email_id = $admin_email_id;
-    
-    
-    // Try to execute this statement
-    if(mysqli_stmt_execute($stmt)){
-        mysqli_stmt_store_result($stmt);
-        if(mysqli_stmt_num_rows($stmt) == 1)
-                {
-                    mysqli_stmt_bind_result($stmt, $admin_id, $admin_email_id, $hashed_admin_pwd);
-                    if(mysqli_stmt_fetch($stmt))
-                    {
-                        if(password_verify($admin_pwd, $hashed_admin_pwd))
-                        {
-                            // this means the admin_pwd is corrct. Allow user to login
-                            session_start();
-                            $_SESSION["admin_email_id"] = $admin_email_id;
-                            $_SESSION["admin_id"] = $admin_id;
-                            $_SESSION["loggedin"] = true;
-
-                            header("location: ./Dashboard/Admin-Dashboard/home.php");
-                            
-                        }
-                    }
-
-                }
-
-    }
-}    
-
-
-}
+include "./Includes/Database-Connection/db-connection-inc.php";
 
 
 ?>
@@ -80,82 +17,104 @@ if(empty($err))
         <link rel="stylesheet" href="./Assets/Modules/Styles/main.css">
         <script  defer src="./Assets/Modules/Scripts/app.js"></script>
         <link rel="icon" href="./Assets/Images/Bank_Logo/Title_icon.png" type="png">
-        <title>Admin Login | Urban Bank</title>
+        <title>Reset Password | Urban Bank</title>
     </head>
 <body>
 <div id="form-container">
     <div id="form-main">
-    <!-- Navigation Bar  of Website-->  
-    <nav>
-        <!-- Logo Image of the navbar-->
-        <div class="logo">
-            <a href="./index.php"><img src="./Assets/Images/Bank_Logo/urban_bank_logo.png" title="Urban Bank" alt="Bank Logo"></a>
-        </div>
-       <!-- Online Register Button-->
-       <ul class="user-login-button">
-            <li>
-                <a href="./user-login.php" >
-                    <button>USER LOGIN</button>
-                </a>
-            </li>
-        </ul>
-    </nav>   
-    <!-- End of the Navigation Bar-->
-
-    <!--Login Form-->
-        <div class="admin-login-form-container">
-
-            <div class="logo-urban-bank-form">
-                <img src="./Assets/Images/Login-Register/logo_urban_bank_login.png" alt="urban-bank" class="logo-urban-bank-form-img">
+        <!-- Navigation Bar  of Website-->  
+        <nav>
+            <!-- Logo Image of the navbar-->
+            <div class="logo">
+                <a href="./index.php"><img src="./Assets/Images/Bank_Logo/urban_bank_logo.png" title="Urban Bank" alt="Bank Logo"></a>
             </div>
 
-            <div class="log-in-title">
-                <h2 class="log-in-title">Admin Login</h2>
-            </div>
-                        
-            <form action="" method="POST">
+        </nav>   
+        <!-- End of the Navigation Bar-->
+
+        <!--Admin Reset Password Form-->
+            <div class="admin-forgot-password-container">
+                <?php
                 
-                <div class="admin-login-credentials">
-                    <div>    
-                        <label for="admin_email_id">
-                            <i class="far fa-envelope" style="color: rgb(26, 64, 99);"></i>
-                            Email-ID 
-                            <span class="error-messages"> <br> <?php echo $admin_email_id_err; ?> </span>
-                        </label>
-                        <input id="admin_email_id" name="admin_email_id"  type="text" value="<?php $admin_email_id?>" placeholder="Enter your email-id..." >
-                    </div>
+                 $selector = $_GET["selector"];
+                 $validator = $_GET["validator"];
 
-                    <div>
-                        <label for="admin_pwd">
-                            <i class="fas fa-key" style="color: rgb(26, 64, 99);"></i>
-                            Password <span class="error-messages"> <br> <?php echo $admin_pwd_err; ?> </span>
-                        </label>
-                        <input id="admin_pwd" name="admin_pwd"  type="password" value="<?php $admin_pwd?>" placeholder="Enter your password..." >
-                    </div>
-                </div>
+                 if(empty($selector) || empty($validator)){
+                     echo "Could not Validate your Request" . $conn->error ;
+                 }
+                 else{
+                     if(ctype_xdigit($selector) !==  false && ctype_xdigit($validator) !== false){
+                        ?>
+                        <div class="logo-urban-bank-form">
+                            <img src="./Assets/Images/Login-Register/logo_urban_bank_login.png" alt="urban-bank" class="logo-urban-bank-form-img">
+                        </div>
 
-                 <div class="admin-login-submit-button"> 
-                    <button type="submit">
-                    <i class="fas fa-unlock-alt" style="color: whitesmoke;"></i>
-                        Log In
-                     </button>
-                </div>
+                        <div class="admin-forgot-password-title">
+                            <h2 class="admin-forgot-password-title">Reset Password</h2>
+                        </div>
+                        <form action="./Includes/Reset-Request/customer-reset-password-inc.php" method="POST"> 
+                            <input name="selector"  type="hidden" value="<?php echo $selector; ?>">
+                            <input name="validator"  type="hidden" value="<?php echo $validator; ?>">
+                            <div class="admin-forgot-password-credentials">
+                                <div>
+                                    <label for="cust_pwd">
+                                        <i class="fas fa-key" style="color: rgb(26, 64, 99);"></i>
+                                        Enter Password
+                                        
+                                    </label>
+                                    <input id="cust_pwd_" name="cust_pwd"  type="password" placeholder="Enter a new password...">
+                                </div>
+                                <div>
+                                    <label for="cust_pwd_cnf">
+                                        <i class="fas fa-key" style="color: rgb(26, 64, 99);"></i>
+                                        Confirm Password
+                                        
+                                    </label>
+                                    <input id="cust_pwd_cnf" name="cust_pwd_cnf"  type="password" placeholder="Repeat new password...">
+                                </div>
+                            </div>
+    
+                            <div class="admin-forgot-password-send-button"> 
+                                <button type="submit" name="customer-reset-password-submit">
+                                    Reset Password
+                                </button>
+                            </div>
+                        </form>
+                        
+                     <?php   
+                     }
+                 }
+
+                 
+                ?>
+
                 <?php
                     if (isset($_GET["newpwd"])){
-                        if($_GET["newpwd"] == "passwordupdated"){
-                            echo '<center><div class="success-messages">Your Password has been reset!</div></center>';
+                        if($_GET["newpwd"] == "empty"){
+                            echo '<br><center><div class="error-messages"> Please fill all the fields!</div></center>';
                         }
                     }
 
                 ?>
-                <div class="forgot-password">
-                     Forgot your 
-                     <a href="./admin-forgot-password.php">
-                        <span>Password?</span>
-                    </a>
-                </div>  
-            </form>
-        </div>
+
+                <?php
+                    if (isset($_GET["newpwd"])){
+                        if($_GET["newpwd"] == "pwdlength"){
+                            echo '<br><center><div class="error-messages"> Your Password should contain 8 characters!</div></center>';
+                        }
+                    }
+
+                ?>
+
+                <?php
+                    if (isset($_GET["newpwd"])){
+                        if($_GET["newpwd"] == "pwdnotsame"){
+                            echo '<br><center><div class="error-messages"> Both Passsword does not match!</div></center>';
+                        }
+                    }
+
+                ?>
+            </div>
     </div>
 </div>
 <footer id="main-footer">

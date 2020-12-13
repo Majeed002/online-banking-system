@@ -1,4 +1,15 @@
 <?php
+
+
+session_start();
+
+if(!isset($_SESSION['customer_loggedin']) || $_SESSION['customer_loggedin'] !==true)
+{
+    header("location: ../../user-login.php");
+}
+
+
+
 include '../../Includes/Database-Connection/db-connection-inc.php';
 ?>
 <!DOCTYPE html>
@@ -21,7 +32,7 @@ include '../../Includes/Database-Connection/db-connection-inc.php';
                 <i class='bx bx-menu' id="user-header-toggle"></i>
             </div>
             <div class="user-logout">
-                <button type="submit"><i class='bx bx-log-out user-header__icon'></i>LOGOUT</button>
+                <a href="../../user-logout.php"> <button type="submit"><i class='bx bx-log-out user-header__icon' ></i>LOGOUT</button> </a>
             </div>
         </header>
 

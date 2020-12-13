@@ -5,7 +5,7 @@ if (isset($_POST["send-pwd-link-submit"])){
     $selector = bin2hex(random_bytes(8));
     $customer_token = random_bytes(32);
 
-    $url = "localhost/online-banking-system/customer-set-password.php?selector=" . $selector . "&validator=" . bin2hex($customer_token);
+    $url = "localhost/online-banking-system/customer-reset-password.php?selector=" . $selector . "&validator=" . bin2hex($customer_token);
 
     $customer_expires = date("U") + 300; 
 
@@ -82,9 +82,9 @@ if (isset($_POST["send-pwd-link-submit"])){
     
     mail($to, $subject, $message, $headers);
 */
-    header("Location: ../../Dashboard/Admin-Dashboard/online-approval.php?reset=success");
+    header("Location: ../../forgot-password.php?reset=success");
 
 }
 else{
-    header("Location: ../../Dashboard/Admin-Dashboard/online-approval.php");
+    header("Location: ../../forgot-password.php");
 }

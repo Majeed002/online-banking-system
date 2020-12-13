@@ -45,27 +45,34 @@
                 </div>
     
                 
-                <form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>" method="POST">
+                <form action="./Includes/Reset-Request/customer-reset-request-inc.php" method="POST">
                     <div class="forgot-password-credentials">
                         
     
                         <div>
-                            <label for="user_mail">
+                            <label for="cust_email_id">
                                 <i class="far fa-envelope" style="color: rgb(26, 64, 99);"></i>
                                 Email-ID
                             </label>
-                            <input id="user_mail" name="user_mail"  type="text" placeholder="Enter your email id...">
+                            <input id="cust_email_id" name="cust_email_id"  type="text" placeholder="Enter your email id...">
                         </div>
                     </div>
     
                      <div class="forgot-password-send-button"> 
-                        <button type="Submit">
+                        <button type="submit" name="send-pwd-link-submit">
                         <i class="far fa-paper-plane" style="color: whitesmoke;"></i>
                             Send to mail
                          </button>
                     </div>
                  </form>
-                
+                 <?php
+                    if (isset($_GET["reset"])){
+                        if($_GET["reset"] == "success"){
+                            echo '<center><div class="success-messages"> Check your Email!</div></center>';
+                        }
+                    }
+
+                ?>
             </div>
         </div>
     </div>

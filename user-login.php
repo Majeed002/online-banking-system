@@ -1,3 +1,72 @@
+<?php 
+//This script will handle login
+session_start();
+
+// check if the user is already logged in
+if(isset($_SESSION['user_mail_id']))
+{
+    header("location: ./Dashboard/User-Dashboard/profile.php");
+    exit;
+}
+require_once "./Includes/Database-Connection/db-connection-inc.php";
+
+$cust_email_id = $cust_pwd = "";
+$cust_email_id_err = $cust_pwd_err= "";
+
+// if request method is post
+if ($_SERVER['REQUEST_METHOD'] == "POST"){
+    if(empty(trim($_POST['cust_email_id'])))
+    {
+        $cust_email_id_err = "*Please enter Email ID";
+    }
+    if(empty(trim($_POST['cust_pwd']))){
+        $cust_pwd_err = "*Please enter Password";
+    }
+    else{
+        $cust_email_id = trim($_POST['cust_email_id']);
+        $cust_pwd = trim($_POST['cust_pwd']);
+    }
+
+
+if(empty($err))
+{
+    $sql = "SELECT customer_id, cust_email_id, cust_pwd FROM customer_details WHERE cust_email_id = ?";
+    $stmt = mysqli_prepare($conn, $sql);
+    mysqli_stmt_bind_param($stmt, "s", $param_cust_email_id);
+    $param_cust_email_id = $cust_email_id;
+    
+    
+    // Try to execute this statement
+    if(mysqli_stmt_execute($stmt)){
+        mysqli_stmt_store_result($stmt);
+        if(mysqli_stmt_num_rows($stmt) == 1)
+                {
+                    mysqli_stmt_bind_result($stmt, $customer_id, $cust_email_id, $hashed_cust_pwd);
+                    if(mysqli_stmt_fetch($stmt))
+                    {
+                        if(password_verify($cust_pwd, $hashed_cust_pwd))
+                        {
+                            // this means the cust_pwd is corrct. Allow user to login
+                            session_start();
+                            $_SESSION["cust_email_id"] = $cust_email_id;
+                            $_SESSION["customer_id"] = $customer_id;
+                            $_SESSION["customer_loggedin"] = true;
+
+                            header("location: ./Dashboard/User-Dashboard/profile.php");
+                            
+                        }
+                    }
+
+                }
+
+    }
+}    
+
+
+}
+
+
+?>
 <!DOCTYPE html>
 <html lang="en">
     <head>
@@ -25,7 +94,7 @@
        <ul class="admin-login-button">
             <li>
                 <a href="./admin-login.php" >
-                    <button>ADMIN LOGIN</button>
+                    <button>Admin LOGIN</button>
                 </a>
             </li>
         </ul>
@@ -47,19 +116,21 @@
                 
                 <div class="login-credentials">
                     <div>    
-                        <label for="username">
+                        <label for="cust_email_id">
                             <i class="far fa-user" style="color: rgb(26, 64, 99);"></i>
-                            Username 
+                            Email 
+                            <span class="error-messages"> <br> <?php echo $cust_email_id_err; ?> </span>
                         </label>
-                        <input id="username" name="username"  type="text" value="" placeholder="Enter your username..." >
+                        <input id="cust_email_id" name="cust_email_id"  type="text" value="" placeholder="Enter your Email ID..." >
                     </div>
 
                     <div>
-                        <label for="user_login_pwd">
+                        <label for="cust_pwd">
                             <i class="fas fa-key" style="color: rgb(26, 64, 99);"></i>
                             Password 
+                            <span class="error-messages"> <br> <?php echo $cust_pwd_err; ?> </span>
                         </label>
-                        <input id="user_login_pwd" name="user_login_pwd" value="" type="password" placeholder="Enter your password..." >
+                        <input id="cust_pwd" name="cust_pwd" value="" type="password" placeholder="Enter your password..." >
                     </div>
                 </div>
 
@@ -70,7 +141,7 @@
                 </div>
 
                  <div class="login-submit-button"> 
-                    <button type="Submit">
+                    <button type="submit">
                     <i class="fas fa-unlock-alt" style="color: whitesmoke;"></i>
                         Log In
                      </button>
