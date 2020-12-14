@@ -9,6 +9,15 @@ if(!isset($_SESSION['loggedin']) || $_SESSION['loggedin'] !==true)
 
 include '../../Includes/Database-Connection/db-connection-inc.php';
 
+if (isset($_GET['customer_id'])) {
+    $_SESSION['customer_id'] = $_GET['customer_id'];
+}
+
+$sql0 = "DELETE FROM customer_details WHERE customer_id=".$_SESSION['customer_id'];
+$sql1 = "DROP TABLE passbook_".$_SESSION['customer_id'];
+$sql2 = "DROP TABLE beneficiary_".$_SESSION['customer_id'];
+
+
 ?>
 
 <!DOCTYPE html>
@@ -100,45 +109,52 @@ include '../../Includes/Database-Connection/db-connection-inc.php';
         </div>
         
 
-        <div class="heading-title">
-                <h2>My Customers</h2>
+        <div class="flex-container">
+        <div class="flex-item">
+            <?php
+                if (($conn->query($sql0) === TRUE)) { ?>
+                    <p ><?php echo "Customer Deleted Successfully !"; ?></p>
+                <?php
+                }
+                else { ?>
+                    <p ><?php echo "Error: " . $sql0 . "<br>" . $conn->error . "<br>"; ?></p>
+                <?php
+                }
+            ?>
         </div>
-        
-        <form action="" method="POST" >
-                    <table class="table"  >
-                        <thead class="thead" style="background-color: rgb(26, 64, 99); color: whitesmoke; text-align:center;">
-                            <tr>
-                            <th scope="col">Name</th>
-                            <th scope="col">Account Number</th>
-                            <th scope="col">View</th>
-                            <th scope="col">Update</th>
-                            <th scope="col">Delete</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <?php
-                                $sql= " SELECT * from customer_details";
-                                $result= mysqli_query($conn,$sql);
 
-                                while($row = mysqli_fetch_array($result))
-                                {
-                                    ?>
-                                <tr style=" color: rgb(26, 64, 99); text-align:center;" >
-                                    <td id="my-customer" ><?php echo $row['cust_fname'],' ', $row['cust_lname']?></td>
-                                    <td id="my-customer"><?php echo $row['account_no']?></td>
-                                    <td id="my-customer"><a href="./my-customer-view.php?customer_id=<?php echo  $row['customer_id']?>" class="view">View</a></td>
-                                    <td id="my-customer"><a href="./my-customer-update.php?customer_id=<?php echo $row['customer_id']?>" class="update">Update</a></td>
-                                    <td id="my-customer"><a href="./my-customer-delete.php?customer_id=<?php echo $row['customer_id']?>" class="delete"  onclick="return confirm('Are you sure?')">Delete</a></td>
-                                   
-                            </tr>
-                                    <?php
-                                }
-                            ?>
-                        
-                        </tbody>
-                    </table>
-                </form>
-        <!--===== MAIN JS =====-->
-        <script src="assets/js/main.js"></script>
+        <div class="flex-item">
+            <?php
+                if (($conn->query($sql1) === TRUE)) { ?>
+                    <p ><?php echo "Customer's Passbook Deleted Successfully !"; ?></p>
+                <?php
+                }
+                else { ?>
+                    <p ><?php echo "Error: " . $sql1 . "<br>" . $conn->error . "<br>"; ?></p>
+                <?php
+                }
+            ?>
+        </div>
+
+        <div class="flex-item">
+            <?php
+                if (($conn->query($sql2) === TRUE)) { ?>
+                    <p ><?php echo "Customer's Beneficiary Deleted Successfully !"; ?></p>
+                <?php
+                }
+                else { ?>
+                    <p ><?php echo "Error: " . $sql2 . "<br>" . $conn->error . "<br>"; ?></p>
+                <?php
+                }
+            ?>
+        </div>
+        <?php $conn->close(); ?>
+
+        <div class="flex-containers">
+            <a href="./my-customer.php" class="button">Go Back</a>
+        </div>
+
+    </div>
+
     </body>
 </html>
