@@ -7,6 +7,7 @@ if(!isset($_SESSION['customer_loggedin']) || $_SESSION['customer_loggedin'] !==t
     header("location: ../../user-login.php");
 }
 
+include '../../Includes/Database-Connection/db-connection-inc.php';
 
 ?>
 <!DOCTYPE html>
@@ -17,6 +18,7 @@ if(!isset($_SESSION['customer_loggedin']) || $_SESSION['customer_loggedin'] !==t
         <link rel="stylesheet" href="../../Assets/Modules/Styles/icons.css">
         <link href="https://fonts.googleapis.com/css2?family=Roboto+Slab&display=swap" rel="stylesheet">
         <link href='https://cdn.jsdelivr.net/npm/boxicons@2.0.5/css/boxicons.min.css' rel='stylesheet'>
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
         <link rel="icon" href="../../Assets/Images/Bank_Logo/Title_icon.png" type="png">
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css">
         <link rel="stylesheet" href="../../Assets/Modules/Styles/dashboard-main.css">
@@ -91,7 +93,60 @@ if(!isset($_SESSION['customer_loggedin']) || $_SESSION['customer_loggedin'] !==t
             </nav>
         </div>
 
-        
+        <div class="heading-title">
+                <h2>My Transactions</h2>
+        </div>
+
+        <div class="subheading-title">
+            Transaction History
+        </div>
+        <form action="" method="POST" >
+                    <table class="table" >
+                        <thead class="thead" style="background-color: rgb(26, 64, 99); color: whitesmoke; text-align:center;">
+                            <tr>
+                            <th scope="col">Transaction ID</th>
+                            <th scope="col">Transaction Date</th>
+                            <th scope="col">Remarks </th>
+                            <th scope="col">Debit</th>
+                            <th scope="col">Credit</th>
+                            <th scope="col">Balance</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <?php
+                                if (isset($_GET['customer_id'])) {
+                                    $_SESSION['customer_id'] = $_GET['customer_id'];
+                                }
+                                $sql= "SELECT * from passbook_".$_SESSION['customer_id'];
+                                $result= mysqli_query($conn,$sql);
+
+                                while($row = mysqli_fetch_assoc($result))
+                                {
+                                    ?>
+                                <tr style=" color: rgb(26, 64, 99); text-align:center;" >
+                                    <td id="my-customer"><?php echo $row['transaction_id']?></td>
+                                    <td id="my-customer">
+                                        <?php 
+                                        $time = strtotime($row["transaction_date"]);
+                                        $sanitized_time = date("d/m/Y, g:i A", $time);
+                                        echo $sanitized_time;
+                                        ?>
+                                    </td>
+                                    <td id="my-customer"><?php echo $row['remarks']?></td>
+                                    <td id="my-customer"><?php echo number_format($row["debit"]); ?></td>
+                                    <td id="my-customer"><?php echo number_format($row["credit"]); ?></td>
+                                    <td id="my-customer"><?php echo number_format($row["balance"]); ?></td>
+                                    
+                                    
+                                   
+                            </tr>
+                                    <?php
+                                }
+                            ?>
+                        
+                        </tbody>
+                    </table>
+                </form>
         <!--===== MAIN JS =====-->
         <script src="assets/js/main.js"></script>
     </body>

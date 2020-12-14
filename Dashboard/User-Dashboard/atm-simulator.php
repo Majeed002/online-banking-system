@@ -94,9 +94,54 @@ if(!isset($_SESSION['customer_loggedin']) || $_SESSION['customer_loggedin'] !==t
             </nav>
         </div>
 
-        <?php echo "Welcome ". $_SESSION['cust_email_id']?>! You can now use this website
-        
-        <!--===== MAIN JS =====-->
-        <script src="assets/js/main.js"></script>
+        <form class="add_customer_form" action="atm_simulator_action.php" method="post">
+        <div class="flex-container-form_header">
+            <h1 id="form_header">ATM Simulator</h1>
+        </div>
+
+        <div class="flex-container">
+            <div class=container>
+                <label>Enter Amount:</label><br>
+                <input name="amt" size="25" type="text" required />
+            </div>
+        </div>
+
+        <div class="flex-container">
+        <div  class=container>
+                <label>Type :</label>
+            </div>
+            <div class="container dropdown">
+                <select name="type" width="20px" >
+                    <option value="" selected disabled>Select Action  &#8595;</option>
+                    <option value="debit">Debit</option>
+                    <option value="credit">Credit</option>
+                </select>
+            </div>
+        </div>
+
+        <div class="flex-container">
+            <div  class=container>
+                <label>Password :</b></label><br>
+                <input name="cust_pwd" size="25" type="password" required />
+            </div>
+        </div>
+
+        <div class="flex-container">
+            <div class="container">
+                <button type="submit">Submit</button>
+            </div>
+
+            <div class="container">
+                <button type="reset" class="reset" onclick="return confirmReset();">Reset</button>
+            </div>
+        </div>
+
+    </form>
+
+    <script>
+    function confirmReset() {
+        return confirm('Do you really want to reset?')
+    }
+    </script>
     </body>
 </html>
