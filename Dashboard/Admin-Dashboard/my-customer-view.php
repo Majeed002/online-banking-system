@@ -160,6 +160,7 @@ include '../../Includes/Database-Connection/db-connection-inc.php';
                             <th scope="col">PAN No.</th>
                             <th scope="col">Email ID</th>
                             <th scope="col">Transactions</th>
+                            <th scope="col">Total Balance</th>
                             </tr>
                         </thead>
                         <tbody>
@@ -168,8 +169,10 @@ include '../../Includes/Database-Connection/db-connection-inc.php';
                                     $_SESSION['customer_id'] = $_GET['customer_id'];
                                 }
                                 $sql= " SELECT * from customer_details where customer_id=".$_SESSION['customer_id'];
+                                $sql1= "SELECT * FROM passbook_".$_SESSION['customer_id']." WHERE transaction_id=(
+                                    SELECT MAX(transaction_id) FROM passbook_".$_SESSION['customer_id'].")";
                                 $result= mysqli_query($conn,$sql);
-
+                                $result1= mysqli_query($conn,$sql1);
                                 while($row = mysqli_fetch_array($result))
                                 {
                                     ?>
@@ -178,19 +181,29 @@ include '../../Includes/Database-Connection/db-connection-inc.php';
                                     <td id="my-customer"><?php echo $row['account_no']?></td>
                                     <td id="my-customer"><?php echo $row['pan_no']?></td>
                                     <td id="my-customer"><?php echo $row['cust_email_id']?></td>
+                                
+                                
+                                    
                                     <td id="my-customer"><a href="./my-customer-view-transaction.php?customer_id=<?php echo  $row['customer_id']?>" class="view">Transactions</a></td>
                                    
-                            </tr>
+                            
                                     <?php
                                 }
+                            ?>
+                            <?php 
+                            while($row = mysqli_fetch_array($result1))
+                            {
+                                ?>
+                            <td id="my-customer"><?php echo number_format($row['balance'])?></td>
+                            </tr>
+                        <?php    
+                            }
+                            
                             ?>
                         
                         </tbody>
                     </table>
                 </form>
                 <div class="subheading-title"><a href="./my-customer.php" class="update">Back</a></div>
-                
-        <!--===== MAIN JS =====-->
-        <script src="assets/js/main.js"></script>
     </body>
 </html>

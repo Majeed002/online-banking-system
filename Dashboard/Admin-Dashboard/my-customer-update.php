@@ -6,10 +6,29 @@ if(!isset($_SESSION['loggedin']) || $_SESSION['loggedin'] !==true)
 {
     header("location: ../../admin-login.php");
 }
-
 include '../../Includes/Database-Connection/db-connection-inc.php';
 
+if (isset($_GET['customer_id'])) {
+    $_SESSION['customer_id'] = $_GET['customer_id'];
+}
+
+$sql = "SELECT * FROM customer_details WHERE customer_id=".$_SESSION['customer_id'];
+$result = mysqli_query($conn, $sql);
+if($result->num_rows > 0){
+    while($row = $result->fetch_assoc()){
+            $cust_fname = $row["cust_fname"];
+            $cust_lname = $row["cust_lname"];
+            $dob = $row["dob"];
+            $pan_no = $row["pan_no"];
+            $cust_email_id = $row["cust_email_id"];
+            $cust_phone_no = $row["cust_phone_no"];
+            $cust_address = $row["cust_address"];
+    }
+}
+
 ?>
+
+
 
 <!DOCTYPE html>
 <html lang="en">
@@ -20,11 +39,10 @@ include '../../Includes/Database-Connection/db-connection-inc.php';
         <link href="https://fonts.googleapis.com/css2?family=Roboto+Slab&display=swap" rel="stylesheet">
         <link href='https://cdn.jsdelivr.net/npm/boxicons@2.0.5/css/boxicons.min.css' rel='stylesheet'>
         <link rel="icon" href="../../Assets/Images/Bank_Logo/Title_icon.png" type="png">
-        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css">
         <link rel="stylesheet" href="../../Assets/Modules/Styles/dashboard-main.css">
         <script defer src="../../Assets/Modules/Scripts/admin-dashboard-app.js"></script>
-        <title>My Customer | Dashboard</title>
+        <title>Add Customer | Dashboard</title>
     </head>
     <body id="admin-body-pd" >
         <header class="admin-header" id="admin-header">
@@ -60,6 +78,7 @@ include '../../Includes/Database-Connection/db-connection-inc.php';
                             <span class="admin-nav__name">MY CUSTOMERS</span>
                         </a>
                         
+                        
                         <a href="./verified-account.php" class="admin-nav__link" title="Verified Account">
                         <i class='bx bx-check-double admin-nav__icon' ></i>
                             <span class="admin-nav__name">VERIFIED ACCOUNTS</span>
@@ -70,7 +89,7 @@ include '../../Includes/Database-Connection/db-connection-inc.php';
                             <span class="admin-nav__name">ONLINE APPROVAL</span>
                         </a>
 
-                        <a href="./add-notice.php" class="admin-nav__link "  title="Add Notice">
+                        <a href="./add-notice.php" class="admin-nav__link"  title="Add Notice">
                             <i class='bx bxs-note admin-nav__icon' ></i>
                             <span class="admin-nav__name">ADD NOTICE</span>
                         </a>
@@ -98,47 +117,74 @@ include '../../Includes/Database-Connection/db-connection-inc.php';
                 </a>
             </nav>
         </div>
-        
+
+
 
         <div class="heading-title">
-                <h2>My Customers</h2>
+                <h2>Update Customer</h2>
         </div>
         
-        <form action="" method="POST" >
-                    <table class="table"  >
-                        <thead class="thead" style="background-color: rgb(26, 64, 99); color: whitesmoke; text-align:center;">
-                            <tr>
-                            <th scope="col">Name</th>
-                            <th scope="col">Account Number</th>
-                            <th scope="col">View</th>
-                            <th scope="col">Update</th>
-                            <th scope="col">Delete</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <?php
-                                $sql= " SELECT * from customer_details";
-                                $result= mysqli_query($conn,$sql);
+        <form class="add_customer_form" action="./my-customer-update-action.php" method="post">
+            
+            <div class="flex-container">
+                <div class=container>
+                    <label>First Name :</label><br>
+                    <input name="cust_fname" size="30" value="<?php echo $cust_fname;?>" type="text" required />
+                </div>
+                <div  class=container>
+                    <label>Last Name :</b></label><br>
+                    <input name="cust_lname" size="30" value="<?php echo $cust_lname;?>"  type="text" required />
+                </div>
+            </div>
+        <div class="flex-container">
+            <div class=container>
+                    <label>Date of Birth :</label><br>
+                    <input name="dob" size="30" type="text" value="<?php echo $dob;?>"  placeholder="yyyy-mm-dd" required />
+            </div>
+        
+            <div class=container>
+                <label>PAN No. :</label><br>
+                <input name="pan_no" size="30" value="<?php echo $pan_no;?>" type="text" required />
+            </div>
+            </div>
 
-                                while($row = mysqli_fetch_array($result))
-                                {
-                                    ?>
-                                <tr style=" color: rgb(26, 64, 99); text-align:center;" >
-                                    <td id="my-customer" ><?php echo $row['cust_fname'],' ', $row['cust_lname']?></td>
-                                    <td id="my-customer"><?php echo $row['account_no']?></td>
-                                    <td id="my-customer"><a href="./my-customer-view.php?customer_id=<?php echo  $row['customer_id']?>" class="view">View</a></td>
-                                    <td id="my-customer"><a href="./my-customer-update.php?customer_id=<?php echo $row['customer_id']?>" class="update">Update</a></td>
-                                    <td id="my-customer"><a href="./my-customer-view.php?customer_id=<?php echo $row['customer_id']?>" class="delete">Delete</a></td>
-                                   
-                            </tr>
-                                    <?php
-                                }
-                            ?>
-                        
-                        </tbody>
-                    </table>
-                </form>
-        <!--===== MAIN JS =====-->
-        <script src="assets/js/main.js"></script>
+            <div class="flex-container">
+                <div class=container>
+                    <label>Email-ID :</label><br>
+                    <input name="cust_email_id" size="30"  value="<?php echo $cust_email_id;?>" type="text" required />
+                </div>
+                <div  class=container>
+                    <label>Phone No. :</b></label><br>
+                    <input name="cust_phone_no" size="30" value="<?php echo $cust_phone_no;?>" type="text" required />
+                </div>
+            </div>
+
+            <div class="flex-container">
+                <div class=container>
+                    <label>Address :</label><br>
+                    <textarea name="cust_address"  required /><?php echo $cust_address;?></textarea>
+                </div>
+            </div>
+
+
+            <div class="flex-container">
+                <div class="container">
+                    <button type="submit">Submit</button>
+                </div>
+
+                <div class="container">
+                    <button type="reset" class="reset" onclick="return confirmReset();">Reset</button>
+                </div>
+                
+            </div>
+
+    </form>
+
+    <script>
+    function confirmReset() {
+        return confirm('Do you really want to reset?')
+    }
+    </script>
+
     </body>
-</html>
+</html> 
