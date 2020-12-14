@@ -24,7 +24,7 @@ if(!isset($_SESSION['customer_loggedin']) || $_SESSION['customer_loggedin'] !==t
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css">
         <link rel="stylesheet" href="../../Assets/Modules/Styles/dashboard-main.css">
         <script defer src="../../Assets/Modules/Scripts/user-dashboard-app.js"></script>
-        <title>Profile | User Dashboard</title>
+        <title>ATM Simulator | User Dashboard</title>
     </head>
     <body id="user-body-pd" >
         <header class="user-header" id="user-header">
@@ -45,7 +45,7 @@ if(!isset($_SESSION['customer_loggedin']) || $_SESSION['customer_loggedin'] !==t
                     </a>
 
                     <div class="user-sidebar-component">
-                        <a href="./profile.php" class="user-nav__link active" title="Profile">
+                        <a href="./profile.php" class="user-nav__link " title="Profile">
                         <i class='bx bxs-user-rectangle user-nav__icon' ></i>
                             <span class="user-nav__name">PROFILE</span>
                         </a>
@@ -54,8 +54,8 @@ if(!isset($_SESSION['customer_loggedin']) || $_SESSION['customer_loggedin'] !==t
                             <i class='bx bx-money user-nav__icon' ></i>
                             <span class="user-nav__name">MY TRANSACTION</span>
                         </a>
-
-                        <a href="./atm-simulator.php" class="user-nav__link" title="Atm Simulator">
+                        
+                        <a href="./atm-simulator.php" class="user-nav__link active" title="Atm Simulator">
                             <i class='bx bx-box user-nav__icon' ></i>
                             <span class="user-nav__name">ATM SIMULATOR</span>
                         </a>

@@ -55,6 +55,11 @@ include '../../Includes/Database-Connection/db-connection-inc.php';
                             <span class="user-nav__name">MY TRANSACTION</span>
                         </a>
 
+                        <a href="./atm-simulator.php" class="user-nav__link" title="Atm Simulator">
+                            <i class='bx bx-box user-nav__icon' ></i>
+                            <span class="user-nav__name">ATM SIMULATOR</span>
+                        </a>
+
                         <a href="./transfer-fund.php" class="user-nav__link " title="Transfer Fund">
                             <i class='bx bx-transfer user-nav__icon' ></i>
                             <span class="user-nav__name">TRANSFER FUND</span>
