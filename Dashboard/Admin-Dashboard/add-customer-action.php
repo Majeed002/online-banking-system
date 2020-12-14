@@ -37,6 +37,7 @@ include '../../Includes/Database-Connection/db-connection-inc.php';
             $gender = mysqli_real_escape_string($conn, $_POST["gender"]);
             $dob = mysqli_real_escape_string($conn, $_POST["dob"]);
             $aaddhar_no = mysqli_real_escape_string($conn, $_POST["aaddhar_no"]);
+            $pan_no = mysqli_real_escape_string($conn, $_POST["pan_no"]);
             $cust_phone_no = mysqli_real_escape_string($conn, $_POST["cust_phone_no"]);
             $cust_address = mysqli_real_escape_string($conn, $_POST["cust_address"]);
             $account_no = mysqli_real_escape_string($conn, $_POST["account_no"]);
@@ -82,6 +83,7 @@ include '../../Includes/Database-Connection/db-connection-inc.php';
                         '$gender',
                         '$dob',
                         '$aaddhar_no',
+                        '$pan_no',
                         '$cust_phone_no',
                         '$cust_address',
                         '$account_no',

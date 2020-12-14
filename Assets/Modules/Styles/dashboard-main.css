@@ -408,7 +408,32 @@ a{
     margin-bottom: 2rem;
 }
 
+.subheading-title {
+  font-size: 2rem;
+  font-family: 'Roboto', sans-serif;
+  text-align: center;
+  margin: 0.5rem 0rem 0.5rem 0rem;
+  font-weight: 500;
+  padding-left: 0.625rem;
+  color: rgb(26, 64, 99);
+  margin-bottom: 1rem;
+}
 
+.subheading-title .update{
+  padding: 0.5rem 1.5rem;
+  font-size: 1.75rem;
+  border-radius: 18px;
+  font-family: 'Roboto',sans-serif;
+  text-decoration: none;
+  color: whitesmoke;
+
+}
+
+.subheading-title .update:hover{
+  background-color: #57c75a;
+  opacity: 1;
+  transition: 0.3s;
+}
 /*Form Style*/
 
 
@@ -543,6 +568,14 @@ input[class="unaccept"]:hover{
   margin-top: 20px;
   margin-left: -10px;
   margin-right: 20px;
+  display: inline-block;
+}
+
+.dropdown {
+  margin-top: 20px;
+  margin-left: -10px;
+  margin-right: 100px;
+  font-family: 'Roboto',sans-serif;
   float: left;
   display: inline-block;
 }
@@ -1291,4 +1324,57 @@ width: auto;
   font-family: 'Roboto', sans-serif;
   text-align: center;
   padding-top: 1rem;
+}
+
+.table-button{
+  width: 10vw;
+  height: 40px;
+  padding: 0;
+  margin: 0;
+  font-family: 'Roboto',sans-serif; 
+}
+
+#my-customer a{
+  padding: 0.5rem 2.5rem;
+  border-radius: 12px;
+  font-family: 'Roboto',sans-serif;
+  text-decoration: none;
+  background-color: rgb(15, 81, 146);
+  color: whitesmoke;
+}
+#my-customer a:hover{
+  background-color: rgb(47, 119, 185);
+  opacity: 1;
+  transition: 0.3s;
+}
+#my-customer .update{
+  background-color: #4CAF50;
+}
+#my-customer .update:hover{
+  background-color: #5bcc5f;
+  opacity: 1;
+  transition: 0.3s;
+}
+
+#my-customer .delete{
+  background-color: #c72f1b;
+}
+#my-customer .delete:hover{
+  background-color: #da3f2a;
+  opacity: 1;
+  transition: 0.3s;
+}
+
+
+.update{
+  background-color: #4CAF50;
+}
+
+.delete{
+  background-color: #c72f1b;
+}
+
+#my-customer{
+  font-size: 1.25rem;
+  font-family: 'Roboto',sans-serif; 
 }

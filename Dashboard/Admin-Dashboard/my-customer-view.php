@@ -103,32 +103,42 @@ include '../../Includes/Database-Connection/db-connection-inc.php';
         <div class="heading-title">
                 <h2>My Customers</h2>
         </div>
-        
+        <div class="subheading-title">
+            Personal Information
+        </div>
         <form action="" method="POST" >
-                    <table class="table"  >
+                    <table class="table" >
                         <thead class="thead" style="background-color: rgb(26, 64, 99); color: whitesmoke; text-align:center;">
                             <tr>
-                            <th scope="col">Name</th>
-                            <th scope="col">Account Number</th>
-                            <th scope="col">View</th>
-                            <th scope="col">Update</th>
-                            <th scope="col">Delete</th>
+                            <th scope="col">First Name</th>
+                            <th scope="col">Last Name</th>
+                            <th scope="col">Gender </th>
+                            <th scope="col">Date of Birth</th>
+                            <th scope="col">Phone No. </th>
+                            <th scope="col">Aaddhar No.</th>
+                            <th scope="col">Address</th>
                             </tr>
                         </thead>
                         <tbody>
                             <?php
-                                $sql= " SELECT * from customer_details";
+                                if (isset($_GET['customer_id'])) {
+                                    $_SESSION['customer_id'] = $_GET['customer_id'];
+                                }
+                                $sql= " SELECT * from customer_details where customer_id=".$_SESSION['customer_id'];
                                 $result= mysqli_query($conn,$sql);
 
-                                while($row = mysqli_fetch_array($result))
+                                while($row = mysqli_fetch_assoc($result))
                                 {
                                     ?>
                                 <tr style=" color: rgb(26, 64, 99); text-align:center;" >
-                                    <td id="my-customer" ><?php echo $row['cust_fname'],' ', $row['cust_lname']?></td>
-                                    <td id="my-customer"><?php echo $row['account_no']?></td>
-                                    <td id="my-customer"><a href="./my-customer-view.php?customer_id=<?php echo  $row['customer_id']?>" class="view">View</a></td>
-                                    <td id="my-customer"><a href="./my-customer-view.php?customer_id=<?php echo $row['customer_id']?>" class="update">Update</a></td>
-                                    <td id="my-customer"><a href="./my-customer-view.php?customer_id=<?php echo $row['customer_id']?>" class="delete">Delete</a></td>
+                                    <td id="my-customer"><?php echo $row['cust_fname']?></td>
+                                    <td id="my-customer"><?php echo $row['cust_lname']?></td>
+                                    <td id="my-customer"><?php echo $row['gender']?></td>
+                                    <td id="my-customer"><?php echo $row['dob']?></td>
+                                    <td id="my-customer"><?php echo $row['cust_phone_no']?></td>
+                                    <td id="my-customer"><?php echo $row['aaddhar_no']?></td>
+                                    <td id="my-customer" style="text-align:justify;"><?php echo $row['cust_address']?></td>
+                                    
                                    
                             </tr>
                                     <?php
@@ -138,6 +148,48 @@ include '../../Includes/Database-Connection/db-connection-inc.php';
                         </tbody>
                     </table>
                 </form>
+                <div class="subheading-title">
+                     Bank Related Information
+                </div>
+                <form action="" method="POST" >
+                    <table class="table"  >
+                        <thead class="thead" style="background-color: rgb(26, 64, 99); color: whitesmoke; text-align:center;">
+                            <tr>
+                            
+                            <th scope="col">Account No. </th>
+                            <th scope="col">PAN No.</th>
+                            <th scope="col">Email ID</th>
+                            <th scope="col">Transactions</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <?php
+                                if (isset($_GET['customer_id'])) {
+                                    $_SESSION['customer_id'] = $_GET['customer_id'];
+                                }
+                                $sql= " SELECT * from customer_details where customer_id=".$_SESSION['customer_id'];
+                                $result= mysqli_query($conn,$sql);
+
+                                while($row = mysqli_fetch_array($result))
+                                {
+                                    ?>
+                                <tr style=" color: rgb(26, 64, 99); text-align:center;" >
+                                    
+                                    <td id="my-customer"><?php echo $row['account_no']?></td>
+                                    <td id="my-customer"><?php echo $row['pan_no']?></td>
+                                    <td id="my-customer"><?php echo $row['cust_email_id']?></td>
+                                    <td id="my-customer"><a href="./my-customer-view.php?customer_id=<?php echo  $row['customer_id']?>" class="view">Transactions</a></td>
+                                   
+                            </tr>
+                                    <?php
+                                }
+                            ?>
+                        
+                        </tbody>
+                    </table>
+                </form>
+                <div class="subheading-title"><a href="./my-customer.php" class="update">Back</a></div>
+                
         <!--===== MAIN JS =====-->
         <script src="assets/js/main.js"></script>
     </body>

@@ -118,27 +118,31 @@ if(!isset($_SESSION['loggedin']) || $_SESSION['loggedin'] !==true)
                     <input name="cust_lname" size="30" type="text" required />
                 </div>
             </div>
-            <div class="flex-container">
+        <div class="flex-container">
             <div  class=container>
                 <label>Gender :</label>
             </div>
             <div class="container dropdown">
                 <select name="gender" width="20px" >
-                    <option value="" selected disabled>Select Gender</option>
+                    <option value="" selected disabled>Select Gender  &#8595;</option>
                     <option value="male">Male</option>
                     <option value="female">Female</option>
                     <option value="others">Others</option>
                 </select>
             </div>
-        </div>
-            <div class="flex-container">
-                <div class=container>
+            <div class=container>
                     <label>Date of Birth :</label><br>
                     <input name="dob" size="30" type="text" placeholder="yyyy-mm-dd" required />
                 </div>
+        </div>
+            <div class="flex-container">
                 <div class=container>
-                    <label>Aaddhar No :</label><br>
-                    <input name="aaddhar_no" size="25" type="text" required />
+                    <label>Aaddhar No. :</label><br>
+                    <input name="aaddhar_no" size="30" type="text" placeholder="" required />
+                </div>
+                <div class=container>
+                    <label>PAN No. :</label><br>
+                    <input name="pan_no" size="30" type="text" required />
                 </div>
             </div>
 
@@ -165,11 +169,11 @@ if(!isset($_SESSION['loggedin']) || $_SESSION['loggedin'] !==true)
             <div class="flex-container">
                 <div class=container>
                     <label>Account No :</label><br>
-                    <input name="account_no" size="25" type="text" required />
+                    <input name="account_no" size="30" type="text" required />
                 </div>
                 <div class=container>
                     <label>Opening Balance :</label><br>
-                    <input name="o_balance" size="20" type="text" required />
+                    <input name="o_balance" size="30" type="text" required />
                 </div>
             </div>
 

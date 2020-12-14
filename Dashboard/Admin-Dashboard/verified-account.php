@@ -118,6 +118,7 @@ include '../../Includes/Database-Connection/db-connection-inc.php';
                             <th scope="col">Aaddhar Number</th>
                             <th scope="col">Opening Balance</th>
                             <th scope="col">Aaddhar Card</th>
+                            <th scope="col">PAN Card</th>
                             </tr>
                         </thead>
                         <tbody>
@@ -134,6 +135,7 @@ include '../../Includes/Database-Connection/db-connection-inc.php';
                                     <td ><?php echo $row['aaddhar_no']?></td>
                                     <td >Rs.<?php echo $row['o_balance']?></td>
                                     <td><?php echo '<img src="data:image;base64,'.base64_encode($row['aaddhar_card']).'" alt="Aadharcard" style="max-width:500px; height: 250px; border-radius:25px;">'; ?></td>
+                                    <td><?php echo '<img src="data:image;base64,'.base64_encode($row['pan_card']).'" alt="Aadharcard" style="max-width:500px; height: 250px; border-radius:25px;">'; ?></td>
                             </tr>
                                     <?php
                                 }
@@ -145,7 +147,6 @@ include '../../Includes/Database-Connection/db-connection-inc.php';
             </div>
         </div>
         
-        <!--===== MAIN JS =====-->
-        <script src="assets/js/main.js"></script>
+       
     </body>
 </html>
