@@ -134,7 +134,7 @@ include '../../Includes/Database-Connection/db-connection-inc.php';
                                     <td id="my-customer"><?php echo $row['cust_fname']?></td>
                                     <td id="my-customer"><?php echo $row['cust_lname']?></td>
                                     <td id="my-customer"><?php echo $row['gender']?></td>
-                                    <td id="my-customer"><?php echo $row['dob']?></td>
+                                    <td id="my-customer"><?php echo date("d/m/Y", strtotime($row["dob"]));?></td>
                                     <td id="my-customer"><?php echo $row['cust_phone_no']?></td>
                                     <td id="my-customer"><?php echo $row['aaddhar_no']?></td>
                                     <td id="my-customer" style="text-align:justify;"><?php echo $row['cust_address']?></td>
