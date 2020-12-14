@@ -7,6 +7,7 @@ if(!isset($_SESSION['loggedin']) || $_SESSION['loggedin'] !==true)
     header("location: ../../admin-login.php");
 }
 
+include '../../Includes/Database-Connection/db-connection-inc.php';
 
 ?>
 
@@ -102,8 +103,176 @@ if(!isset($_SESSION['loggedin']) || $_SESSION['loggedin'] !==true)
             </nav>
         </div>
 
-        <?php echo "Welcome ". $_SESSION['admin_email_id']?>! You can now use this website
-        <!--===== MAIN JS =====-->
+        
+
+
+            <div class="heading-title">
+                <h2>Home </h2>
+            </div>
+
+        <div class="home-container">
+            <div class="home-wrapper">
+
+                <div class="home" id="no-customer-card">
+                    <div class="home-title" id="home-title">
+                        <i class="fas fa-user    loan-icon" style="color: rgb(26, 64, 99); , hover"></i>
+                        My Customers
+                    </div>
+
+                    <div class="home-number">
+                    <?php
+                    $sql = "SELECT count(customer_id) from customer_details;";
+                    $res = mysqli_query($conn, $sql);
+                    $result = mysqli_fetch_array($res);
+                            echo $result[0];
+                    
+                    
+                    ?>
+                    </div>
+                
+                    
+                    <div class="button-home">   
+                        <a class="btn-home" href="./my-customer.php" >
+                            <button  class="btn-home" type="submit" >
+                                <span>Manage</span>
+                            </button>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="home" id="ol-registered-card">
+                    <div class="home-title" id="home-title">
+                        <i class="fas fa-user-check loan-icon" style="color: rgb(26, 64, 99); , hover"></i>
+                        Online Registered
+                    </div>
+                    
+                    <div class="home-number">
+                        <?php
+                        $sql = "SELECT count(ol_id) from ol_registration;";
+                        $res = mysqli_query($conn, $sql);
+                        $result = mysqli_fetch_array($res);
+                                echo $result[0];
+                        
+                        
+                        ?>
+                    </div>
+                
+                    
+                    <div class="button-home">   
+                        <a class="btn-home" href="./online-approval.php" >
+                            <button  class="btn-home" type="submit" >
+                                <span>Check</span>
+                            </button>
+                        </a>
+                    </div>
+                </div>
+                <div class="home" id="verified-customer-card">
+                    <div class="home-title" id="home-title">
+                        <i class="fas fa-check-double loan-icon" style="color: rgb(26, 64, 99); , hover"></i>
+                        Verified Accounts
+                    </div>
+                    
+                    <div class="home-number">
+                        <?php
+                        $sql = "SELECT count(vc_id) from verified_customer;";
+                        $res = mysqli_query($conn, $sql);
+                        $result = mysqli_fetch_array($res);
+                                echo $result[0];
+                        
+                        
+                        ?>
+                    </div>
+                
+                    
+                    <div class="button-home">   
+                        <a class="btn-home" href="./verified-account.php" >
+                            <button  class="btn-home" type="submit" >
+                                <span>Navigate</span>
+                            </button>
+                        </a>
+                    </div>
+                </div>
+                <div class="home" id="interest-rate-card">
+                    <div class="home-title" id="home-title">
+                        <i class="fas fa-percentage loan-icon" style="color: rgb(26, 64, 99); , hover"></i>
+                        Interest Rate
+                    </div>
+                    
+                    <div class="home-number">
+                        <?php
+                        $sql = "SELECT count(ir_id) from interest_rate;";
+                        $res = mysqli_query($conn, $sql);
+                        $result = mysqli_fetch_array($res);
+                                echo $result[0];
+                        
+                        
+                        ?>
+                    </div>
+                
+                    
+                    <div class="button-home">   
+                        <a class="btn-home" href="./admin-interest-rate.php" >
+                            <button  class="btn-home" type="submit" >
+                                <span>Update</span>
+                            </button>
+                        </a>
+                    </div>
+                </div>
+                <div class="home" id="no-notice-card">
+                    <div class="home-title" id="home-title">
+                        <i class="fas fa-sticky-note loan-icon" style="color: rgb(26, 64, 99); , hover"></i>
+                        Notices
+                    </div>
+                    
+                    <div class="home-number">
+                        <?php
+                        $sql = "SELECT count(notice_id) from notice;";
+                        $res = mysqli_query($conn, $sql);
+                        $result = mysqli_fetch_array($res);
+                                echo $result[0];
+                        
+                        
+                        ?>
+                    </div>
+                
+                    
+                    <div class="button-home">   
+                        <a class="btn-home" href="./add-notice.php" >
+                            <button  class="btn-home" type="submit" >
+                                <span>Add Notice</span>
+                            </button>
+                        </a>
+                    </div>
+                </div>
+                <div class="home" id="no-blog-card">
+                    <div class="home-title" id="home-title">
+                        <i class="fab fa-blogger-b loan-icon" style="color: rgb(26, 64, 99); , hover"></i>
+                       Blogs
+                    </div>
+                    
+                    <div class="home-number">
+                    <?php
+                        $sql = "SELECT count(blog_id) from blog;";
+                        $res = mysqli_query($conn, $sql);
+                        $result = mysqli_fetch_array($res);
+                                echo $result[0];
+                        
+                        
+                        ?>
+                    </div>
+                
+                    
+                    <div class="button-home">   
+                        <a class="btn-home" href="./post-blog.php" >
+                            <button  class="btn-home" type="submit" >
+                                <span>Post Blogs</span>
+                            </button>
+                        </a>
+                    </div>
+                </div>
+                
+            </div>       
+        </div>
         <script src="assets/js/main.js"></script>
     </body>
 </html>

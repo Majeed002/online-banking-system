@@ -1397,3 +1397,185 @@ width: auto;
   opacity: 1;
   transition: 0.3s;
 }
+
+
+/* Admin Home DashBoard Design*/
+
+/*interest rate home page*/
+.home-container{
+  height: auto;
+  font-family: 'Roboto',sans-serif;
+}
+
+#no-customer-card{
+  background-image: url("https://upload.wikimedia.org/wikipedia/commons/thumb/7/7c/User_font_awesome.svg/512px-User_font_awesome.svg.png");
+  background-size: 23rem; 
+  background-repeat: no-repeat;
+  background-blend-mode: hue;
+  background-position: -150px 39px;
+} 
+
+#ol-registered-card{
+  background-image: url("https://upload.wikimedia.org/wikipedia/commons/thumb/f/fd/Font_Awesome_5_solid_user-check.svg/512px-Font_Awesome_5_solid_user-check.svg.png");
+  background-size: 24rem; 
+  background-repeat: no-repeat;
+  background-blend-mode: hue;
+  background-position: -100px 70px;
+}
+
+#verified-customer-card{
+  background-image: url("https://upload.wikimedia.org/wikipedia/commons/thumb/a/a3/Font_Awesome_5_solid_check-double.svg/512px-Font_Awesome_5_solid_check-double.svg.png");
+  background-size: 18rem; 
+  background-repeat: no-repeat;
+  background-blend-mode: hue;
+  background-position: -30px 100px;
+}
+
+#interest-rate-card{
+  background-image: url("https://upload.wikimedia.org/wikipedia/commons/thumb/4/45/Font_Awesome_5_solid_percentage.svg/449px-Font_Awesome_5_solid_percentage.svg.png");
+  background-size: 13rem; 
+  background-repeat: no-repeat;
+  background-blend-mode: hue;
+  background-position: -15px 128px; 
+}
+
+#no-notice-card{
+  background-image: url("https://upload.wikimedia.org/wikipedia/commons/thumb/d/d4/Font_Awesome_5_solid_sticky-note.svg/512px-Font_Awesome_5_solid_sticky-note.svg.png");
+  background-size: 13rem; 
+  background-repeat: no-repeat;
+  background-blend-mode: hue;
+  background-position: -20px 128px; 
+}
+
+#no-blog-card{
+  background-image: url("https://upload.wikimedia.org/wikipedia/commons/thumb/d/d3/Font_Awesome_5_brands_blogger-b.svg/512px-Font_Awesome_5_brands_blogger-b.svg.png");
+  background-size: 18rem; 
+  background-repeat: no-repeat;
+  background-blend-mode: hue;
+  background-position: -40px 120px; 
+}
+
+
+
+
+
+.home-wrapper{
+  display: grid;
+  margin: 20px;
+  grid-gap: 3rem;
+  color: rgb(26, 64, 99);
+  grid-template-columns: repeat(auto-fit, minmax(450px, 1fr));
+  padding: 0em 4em;
+}
+
+.home-wrapper > div{  
+background-color: rgba(255, 255, 255, 0.8);
+height: 350px;
+width: auto;
+border-radius: 5%;
+}
+
+.home-wrapper > div:hover{
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19),
+  0 8px 20px 0 rgba(0, 0, 0, 0.19);
+  transform: scale(1.09);
+  transition: all 0.5s ease-in-out;
+}
+
+.home-wrapper > div:hover::after{
+  content: '';
+  opacity: 1;
+}
+
+.home-wrapper .home .home-title {
+  text-align: center;
+  padding-top: 3rem;
+  margin-bottom: 20px;
+  font-size: 2.5rem;
+}
+
+.home-container .home .home-number{
+  text-align: center;
+  padding-top: 1rem;
+  margin-bottom: 20px;
+  font-size: 6rem;
+}
+
+
+
+.btn-home {
+  margin-top: 1rem;
+  margin-bottom: 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.btn-home button{
+  height:50px;
+  width: 200px;
+  border: 3px solid rgb(26, 64, 99);
+  font-size: 1rem;
+  text-transform: uppercase;
+  font-weight: bold;
+  background-color: rgb(26, 64, 99);
+  color: whitesmoke;
+  outline: none;
+  box-shadow: none;
+  text-decoration: none;
+  border-radius: 0px;
+  font-family: 'Roboto',sans-serif;
+}
+
+
+.btn-home button:hover{
+  background-color: whitesmoke;
+  color: rgb(26, 64, 99);
+  transform: scale(1.0);
+  transition: all 0.3s ease-in-out;   
+}
+
+.home-wrapper .button-home button:hover::after{
+  content: '';
+  opacity: 1;
+}
+
+
+
+
+@media (max-width:1632px) and (min-width:1025px){
+  .home-wrapper{
+      grid-template-columns: repeat(auto-fit, minmax(360px, 1fr));
+      padding: 0em 1em;
+  }
+}
+
+@media screen and (max-width:1024px){
+  
+  .home-wrapper{
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      padding: 0em 1em;
+  }
+}
+
+@media screen and (max-width:860px){
+  
+  .home-wrapper{
+      grid-template-columns: repeat(auto-fit, (minmax(260px, 1fr)));
+      padding: 0em 1em;
+  }
+  #home-title{
+      font-size: 2.2rem;
+      font-weight: 500;
+  }
+}
+@media screen and (max-width:768px){
+  
+  .home-wrapper{
+      grid-template-columns: repeat(auto-fit, (minmax(300px, 1fr)));
+      padding: 0em 1em;
+  }
+  #home-title{
+      font-size: 2.2rem;
+  }
+}
