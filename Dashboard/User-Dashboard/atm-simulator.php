@@ -94,11 +94,10 @@ if(!isset($_SESSION['customer_loggedin']) || $_SESSION['customer_loggedin'] !==t
             </nav>
         </div>
 
-        <form class="add_customer_form" action="atm_simulator_action.php" method="post">
-        <div class="flex-container-form_header">
-            <h1 id="form_header">ATM Simulator</h1>
+        <div class="heading-title">
+                <h2>ATM Simulator</h2>
         </div>
-
+        <form action="./atm-simulator-action.php" method="post">
         <div class="flex-container">
             <div class=container>
                 <label>Enter Amount:</label><br>
@@ -121,8 +120,8 @@ if(!isset($_SESSION['customer_loggedin']) || $_SESSION['customer_loggedin'] !==t
 
         <div class="flex-container">
             <div  class=container>
-                <label>Password :</b></label><br>
-                <input name="cust_pwd" size="25" type="password" required />
+                <label>Enter PAN No. :</b></label><br>
+                <input name="pan_no" size="25" type="text" required />
             </div>
         </div>
 

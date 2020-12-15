@@ -5,7 +5,7 @@ session_start();
 // check if the user is already logged in
 if(isset($_SESSION['user_mail_id']))
 {
-    header("location: ./Dashboard/User-Dashboard/profile.php");
+    header("location: ./Dashboard/User-Dashboard/my-transaction.php");
     exit;
 }
 require_once "./Includes/Database-Connection/db-connection-inc.php";
@@ -52,7 +52,7 @@ if(empty($err))
                             $_SESSION["customer_id"] = $customer_id;
                             $_SESSION["customer_loggedin"] = true;
 
-                            header("location: ./Dashboard/User-Dashboard/profile.php");
+                            header("location: ./Dashboard/User-Dashboard/my-transaction.php");
                             
                         }
                     }

@@ -7,10 +7,45 @@ if(!isset($_SESSION['customer_loggedin']) || $_SESSION['customer_loggedin'] !==t
     header("location: ../../user-login.php");
 }
 
-if (isset($_SESSION['customer_id'])) {
-    $sql0 = "SELECT * FROM beneficiary_".$_SESSION['customer_id'];
-}
+
 include '../../Includes/Database-Connection/db-connection-inc.php'; 
+
+    $cust_fname = mysqli_real_escape_string($conn, $_POST["cust_fname"]);
+    $cust_lname = mysqli_real_escape_string($conn, $_POST["cust_lname"]);
+    $account_no = mysqli_real_escape_string($conn, $_POST["account_no"]);
+    $cust_email_id = mysqli_real_escape_string($conn, $_POST["cust_email_id"]);
+    $cust_phone_no = mysqli_real_escape_string($conn, $_POST["cust_phone_no"]);
+
+    $id = $_SESSION['customer_id'];
+    $sql0 = "SELECT customer_id FROM customer_details WHERE cust_fname='".$cust_fname."' AND
+                                                cust_lname='".$cust_lname."' AND
+                                                account_no='".$account_no."' AND
+                                                cust_email_id='".$cust_email_id."' AND
+                                                cust_phone_no='".$cust_phone_no."'";
+    $result = $conn->query($sql0);
+
+    $success = 0;
+    if ($result->num_rows > 0) {
+        $row = $result->fetch_assoc();
+        $beneficiary_id = $row["customer_id"];
+
+        if ($id != $beneficiary_id) {
+            $sql1 = "INSERT INTO beneficiary_".$id." VALUES(
+                        NULL,
+                        '$beneficiary_id',
+                        '$cust_email_id',
+                        '$cust_phone_no',
+                        '$account_no'
+                    )";
+
+            if (($conn->query($sql1) === TRUE)) {
+                $success = 1;
+            }
+        }
+        else {
+            $success = -1;
+        }
+    }
 
 ?>
 
@@ -27,7 +62,7 @@ include '../../Includes/Database-Connection/db-connection-inc.php';
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css">
         <link rel="stylesheet" href="../../Assets/Modules/Styles/dashboard-main.css">
         <script defer src="../../Assets/Modules/Scripts/user-dashboard-app.js"></script>
-        <title>Transfer Fund | User Dashboard</title>
+        <title>Add Benificiary | User Dashboard</title>
     </head>
     <body id="user-body-pd" >
         <header class="user-header" id="user-header">
@@ -98,61 +133,32 @@ include '../../Includes/Database-Connection/db-connection-inc.php';
         </div>
 
         <div class="heading-title">
-                <h2>Transfer Fund</h2>
+                <h2>Add Benificary Details</h2>
         </div>
 
-        <form action="" method="POST" >
+    <div class="flex-container">
+        <div class="flex-item">
+            <?php
+            if ($success == 1) { ?>
+                <p id="info"><?php echo "Beneficiary successfully added !\n"; ?></p>
+            <?php } ?>
 
-        <div class="button-interest-rate" style="margin:0rem auto;">
-            
-            <a class="btn-interest-rate" href="./add-benificiary.php"  style="margin:0rem auto; text-decoration:none;">
-                <button  class="btn-interest-rate" type="button" >
-                    <span>ADD Benificiary</span>
-                </button>
-            </a>
-           
-        </div> 
+            <?php
+            if ($success == 0) { ?>
+                <p id="info"><?php echo "Invalid data entered/Connection error !\n"; ?></p>
+            <?php } ?>
 
-        <div class="subheading-title">
-            My Benificiaries
+            <?php
+            if ($success == -1) { ?>
+                <p id="info"><?php echo "Can't add self as beneficiary !\n"; ?></p>
+            <?php } ?>
         </div>
-                   
-                    <table class="table"  >
-                        <thead class="thead" style="background-color: rgb(26, 64, 99); color: whitesmoke; text-align:center;">
-                            <tr>
-                            <th scope="col">Name</th>
-                            <th scope="col">Account Number</th>
-                            <th scope="col">Transfer</th>
-                           
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <?php
-                                $result = $conn->query($sql0);
-                                $isBenefPresent = 0;
-                                    if ($result->num_rows > 0) {
-                                    // output data of each row
-                                    while($row = $result->fetch_assoc()) {
-                                     $sql= " SELECT cust_fname, cust_lname, account_no from customer_details where customer_id=".$row["benef_id"];
-                                     $result1 = $conn->query($sql);
-                                     if ($result1->num_rows > 0) {
-                                         $row1 = $result1->fetch_assoc();
-                                    ?>
-                                <tr style=" color: rgb(26, 64, 99); text-align:center;" >
-                                    <td id="my-customer" ><?php echo $row1['cust_fname'],' ', $row1['cust_lname']?></td>
-                                    <td id="my-customer"><?php echo $row1['account_no']?></td>
-                                    <td id="my-customer"><a href="./transfer-money.php?customer_id=<?php echo  $row1['customer_id']?>" class="view">Transfer</a></td>
-                                    
-                                   
-                            </tr>
-                                    <?php
-                                }
-                            }
-                        }
-                            ?>
-                        
-                        </tbody>
-                    </table>
-
+    </div>
+    <div class="flex-container">
+        <div class="flex-item">
+            <a href="./add-benificiary.php" class="button">Go Back</a>
+        </div>
+    </div>
+        
     </body>
 </html>
